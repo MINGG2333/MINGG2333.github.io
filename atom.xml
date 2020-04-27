@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>明明的博客</title>
-  <icon>http://yoursite.com/icon.png</icon>
+  <icon>http://mingg2333.top/icon.png</icon>
   <subtitle>学与做</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2020-04-23T07:08:36.833Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://mingg2333.top/"/>
+  <updated>2020-04-22T05:23:32.000Z</updated>
+  <id>http://mingg2333.top/</id>
   
   <author>
     <name>JI XINYU</name>
@@ -18,16 +18,19 @@
   
   <entry>
     <title>test2</title>
-    <link href="http://yoursite.com/2020/04/22/test2/"/>
-    <id>http://yoursite.com/2020/04/22/test2/</id>
+    <link href="http://mingg2333.top/2020/04/22/test2/"/>
+    <id>http://mingg2333.top/2020/04/22/test2/</id>
     <published>2020-04-22T05:23:32.000Z</published>
-    <updated>2020-04-23T07:08:36.833Z</updated>
+    <updated>2020-04-22T05:23:32.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&quot;标题&quot;&gt;标题&lt;a class=&quot;post-anchor&quot; href=&quot;#标题&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;二级&quot;&gt;二级&lt;a class=&quot;post-anchor&quot; href=&quot;#二级&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%e6%a0%87%e9%a2%98&quot;&gt;标题&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%e4%ba%8c%e7%ba%a7&quot;&gt;二级&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%e4%b8
       
     
     </summary>
@@ -38,10 +41,10 @@
   
   <entry>
     <title>hello</title>
-    <link href="http://yoursite.com/2020/04/22/hello/"/>
-    <id>http://yoursite.com/2020/04/22/hello/</id>
+    <link href="http://mingg2333.top/2020/04/22/hello/"/>
+    <id>http://mingg2333.top/2020/04/22/hello/</id>
     <published>2020-04-22T05:08:53.000Z</published>
-    <updated>2020-04-22T05:09:53.778Z</updated>
+    <updated>2020-04-22T05:08:53.000Z</updated>
     
     <summary type="html">
     
@@ -50,21 +53,21 @@
     </summary>
     
     
-      <category term="��־" scheme="http://yoursite.com/categories/%EF%BF%BD%EF%BF%BD%D6%BE/"/>
+      <category term="��־" scheme="http://mingg2333.top/categories/%EF%BF%BD%EF%BF%BD%D6%BE/"/>
     
-      <category term="����Ŀ¼" scheme="http://yoursite.com/categories/%EF%BF%BD%EF%BF%BD%D6%BE/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDL%C2%BC/"/>
+      <category term="����Ŀ¼" scheme="http://mingg2333.top/categories/%EF%BF%BD%EF%BF%BD%D6%BE/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDL%C2%BC/"/>
     
     
-      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
+      <category term="hello" scheme="http://mingg2333.top/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/04/22/hello-world/"/>
-    <id>http://yoursite.com/2020/04/22/hello-world/</id>
+    <link href="http://mingg2333.top/2020/04/22/hello-world/"/>
+    <id>http://mingg2333.top/2020/04/22/hello-world/</id>
     <published>2020-04-22T03:30:36.478Z</published>
-    <updated>2020-04-23T12:18:22.973Z</updated>
+    <updated>2020-04-22T03:30:36.478Z</updated>
     
     <summary type="html">
     
