@@ -211,11 +211,17 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><p>本文介绍QBASIC运行环境的搭建，以及电机核算程序的修改运行与error修复。</p>
+    <html><head></head><body><p>本文介绍QBASIC运行环境的搭建，以及电机核算程序的修改、运行与error处理。</p>
 <a id="more"></a>
 
-
-
+<ul>
+<li>[一、QBASIC简介与运行环境搭建](# 一、QBASIC简介与运行环境搭建)<ul>
+<li>[1.简介](## 1.简介)</li>
+<li>[2.运行环境搭建](## 2.运行环境搭建)</li>
+</ul>
+</li>
+<li>[二、电机核算程序](# 二、电机核算程序)</li>
+</ul>
 <h1 id="一、QBASIC简介与运行环境搭建">一、QBASIC简介与运行环境搭建<a class="post-anchor" href="#一、QBASIC简介与运行环境搭建"></a></h1><h2 id="1-简介">1.简介<a class="post-anchor" href="#1-简介"></a></h2><p>BASIC语言原本是方便大学生学习计算机创造的高级语言，Quick BASIC、QBASIC、Visual Basic等都是从BASIC发展而来的，或者说是BASIC的变种，QBASIC在语法与功能上与其他两者相近，稍有不同的是它是一种解释型的语言。</p>
 <h2 id="2-运行环境搭建">2.运行环境搭建<a class="post-anchor" href="#2-运行环境搭建"></a></h2><p>参考<a href="https://www.qbasic.net/" target="_blank" rel="noopener">QBasic: Compiler, Interpreter, Software download, Articles…</a>,使用仿真器的方法,比较便捷:</p>
 <p>2.1 在当前Windows上需要借助DOS模拟器,请先下载模拟器比如<a href="https://www.dosbox.com/download.php?main=1" target="_blank" rel="noopener">DOSBox</a>,下载后请自行安装,记住<code>DOSBox安装目录</code>;</p>
@@ -233,22 +239,18 @@
 <p>​        (5)点击Next进入下一步,之后很快安装完成,点击Yes退出;</p>
 <p>2.4 运行DOS仿真器,找到并运行DOS仿真器安装目录下<code>_shorcut\qb11</code>快捷方式,界面如图,</p>
 <p>​        <a href="感应电机电磁设计计算机核算程序实验.assets/2.png" data-caption="2" data-fancybox="images"><img src="感应电机电磁设计计算机核算程序实验.assets/2.png" alt="2"></a></p>
-<p>​        界面包括工具栏、提示框、快捷键提醒等,这里强调两个快捷键：<code>Esc</code>,相当于返回,几乎在任何提示框都可以使用;<code>F5</code>,在程序界面运行程序,下面即将介绍;</p>
-<p>2.5 按<code>Esc</code>退出提示框,开始编辑程序,按<code>F5</code>运行,效果如下图(在工具栏<code>Option-Display</code>中可以设置背景颜色);</p>
+<p>​        界面包括菜单栏、提示框、快捷键提醒等,这里强调两个快捷键：<code>Esc</code>,相当于返回,几乎在任何提示框都可以使用;<code>F5</code>,在程序界面运行程序,下面即将介绍;</p>
+<p>2.5 按<code>Esc</code>退出提示框,开始编辑程序,按<code>F5</code>运行,效果如下图(在菜单栏<code>Option-Display</code>中可以设置背景颜色);</p>
 <figure class="highlight"><table><tbody><tr><td class="code"><pre><code class="hljs basic">CLS : PRINT "HELLO WORLD!"<br></code></pre></td></tr></tbody></table></figure>
 
 <p><a href="感应电机电磁设计计算机核算程序实验.assets/3_1.png" data-caption="3_1" data-fancybox="images"><img src="感应电机电磁设计计算机核算程序实验.assets/3_1.png" alt="3_1"></a>    <a href="感应电机电磁设计计算机核算程序实验.assets/3_2.png" data-caption="3_2" data-fancybox="images"><img src="感应电机电磁设计计算机核算程序实验.assets/3_2.png" alt="3_2"></a></p>
-<p>2.6 在工具栏<code>File</code>中存取文件,以存文件为例,点击<code>File-Save</code>,如图,</p>
+<p>2.6 在菜单栏<code>File</code>中存取文件,以存文件为例,点击<code>File-Save</code>,如图,</p>
 <p><a href="感应电机电磁设计计算机核算程序实验.assets/4.png" data-caption="4" data-fancybox="images"><img src="感应电机电磁设计计算机核算程序实验.assets/4.png" alt="4"></a>    <a href="感应电机电磁设计计算机核算程序实验.assets/4_2.png" data-caption="4_2" data-fancybox="images"><img src="感应电机电磁设计计算机核算程序实验.assets/4_2.png" alt="4_2"></a></p>
 <p>选择D盘,它代表DOS仿真器安装目录下的<code>_source</code>文件夹(取文件也是在预先把文件放在<code>_source</code>里,打开<code>_shorcut\qb11</code>后在D盘读取),点击OK;重命名后点击OK即保存;</p>
 <p>2.7 一种退出qb11的方法:<code>File-Exit</code>.</p>
 <h1 id="二、电机核算程序">二、电机核算程序<a class="post-anchor" href="#二、电机核算程序"></a></h1><p>本实验根据陈世坤老师主编的《电机设计》一书，源QBASIC程序来自书P300-304.</p>
 <p>解决错误：</p>
 <p>C语言语法问题：1.int/int 2.sqrs(-)[^注释]</p>
-<figure class="highlight css"><table><tbody><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[^注释]</span>:试用注释功能 <span class="hljs-selector-pseudo">:happy</span>:<br></code></pre></td></tr></tbody></table></figure>
-
-<p>:happy:</p>
-<p>PicGo<br>ctrl+alt+u：上传剪贴板中的图片到服务器。<br>ctrl+alt+e：打开文件浏览器选择图片上传。</p>
 </body></html>
 
   
