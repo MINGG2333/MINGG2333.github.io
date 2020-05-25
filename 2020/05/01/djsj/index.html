@@ -201,7 +201,7 @@
             <span>
                 
                   
-                    <a href="/tags/QBASIC">QBASIC</a>
+                    <a href="/tags/qbasic">qbasic</a>
                   
                 
             </span>
@@ -216,11 +216,11 @@
 
 <ul>
 <li><a href="#qbasic">qbasic</a><ul>
-<li><a href="#%e7%ae%80%e4%bb%8b">简介</a></li>
-<li><a href="#%e8%bf%90%e8%a1%8c%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba">运行环境搭建</a></li>
+<li><a href="#简介">简介</a></li>
+<li><a href="#运行环境搭建">运行环境搭建</a></li>
 </ul>
 </li>
-<li><a href="#%e7%94%b5%e6%9c%ba%e6%a0%b8%e7%ae%97%e7%a8%8b%e5%ba%8f">电机核算程序</a><ul>
+<li><a href="#电机核算程序">电机核算程序</a><ul>
 <li><a href="#qbasic-1">qbasic</a></li>
 <li><a href="#c">c</a></li>
 </ul>
@@ -231,19 +231,19 @@
 <p>2.1 在当前Windows上需要借助DOS模拟器,请先下载模拟器比如<a href="https://www.dosbox.com/download.php?main=1" target="_blank" rel="noopener">DOSBox</a>,下载后请自行安装,记住<code>DOSBox安装目录</code>;</p>
 <p>2.2 下载DOS仿真器<a href="https://www.qbasic.net/dl.php?id=SGXCC96dXclk.&file=qbdbox" target="_blank" rel="noopener">Basic 2 DOSBox</a>(点击即下载),得到压缩包BASIC2DOSBox.zip,解压得同名文件夹;</p>
 <p>2.3 安装DOS仿真器,参考<code>BASIC2DOSBox\docs\README.pdf</code>,</p>
-<p>​        运行<code>BASIC2DOSBox\basic2dos.exe</code>,界面如图,</p>
-<p>​        <a href="/2020/05/01/djsj/1.png" data-caption="1" data-fancybox="images"><img src="/2020/05/01/djsj/1.png" alt="1"></a></p>
-<p>​        (1)第一个空白框里选择<code>DOSBox安装目录</code>下的DOSBox.exe,即填写DOSBox.exe的全路径,</p>
-<p>​        (2)第二个空白框里选择DOS仿真器将要安装存放的目录,</p>
-<p>​        (3)Installation选项卡里选择将要安装的BASIC版本,这里仅选择了QBASIC 1.1,</p>
-<p>​        (4)Options选项卡里选择安装配置,</p>
-<p>​            Shut down DOSBox when exiting指退出QBASIC 1.1后自动退出DOSBox.exe,</p>
-<p>​            Full Screen Mode指打开QBASIC 1.1后全屏(全屏后<code>Alt + Tab</code>可切换界面),</p>
-<p>​            Copy Example Files指在DOS仿真器安装目录下<code>_source\EXAMPLES</code>提供例程,</p>
-<p>​        (5)点击Next进入下一步,之后很快安装完成,点击Yes退出;</p>
+<p>?        运行<code>BASIC2DOSBox\basic2dos.exe</code>,界面如图,</p>
+<p>?        <a href="/2020/05/01/djsj/1.png" data-caption="1" data-fancybox="images"><img src="/2020/05/01/djsj/1.png" alt="1"></a></p>
+<p>?        (1)第一个空白框里选择<code>DOSBox安装目录</code>下的DOSBox.exe,即填写DOSBox.exe的全路径,</p>
+<p>?        (2)第二个空白框里选择DOS仿真器将要安装存放的目录,</p>
+<p>?        (3)Installation选项卡里选择将要安装的BASIC版本,这里仅选择了QBASIC 1.1,</p>
+<p>?        (4)Options选项卡里选择安装配置,</p>
+<p>?            Shut down DOSBox when exiting指退出QBASIC 1.1后自动退出DOSBox.exe,</p>
+<p>?            Full Screen Mode指打开QBASIC 1.1后全屏(全屏后<code>Alt + Tab</code>可切换界面),</p>
+<p>?            Copy Example Files指在DOS仿真器安装目录下<code>_source\EXAMPLES</code>提供例程,</p>
+<p>?        (5)点击Next进入下一步,之后很快安装完成,点击Yes退出;</p>
 <p>2.4 运行DOS仿真器,找到并运行DOS仿真器安装目录下<code>_shorcut\qb11</code>快捷方式,界面如图,</p>
-<p>​        <a href="/2020/05/01/djsj/2.png" data-caption="2" data-fancybox="images"><img src="/2020/05/01/djsj/2.png" alt="2"></a></p>
-<p>​        界面包括菜单栏、提示框、快捷键提醒等,这里强调两个快捷键：<code>Esc</code>,相当于返回,几乎在任何提示框都可以使用;<code>F5</code>,在程序界面运行程序,下面即将介绍;</p>
+<p>?        <a href="/2020/05/01/djsj/2.png" data-caption="2" data-fancybox="images"><img src="/2020/05/01/djsj/2.png" alt="2"></a></p>
+<p>?        界面包括菜单栏、提示框、快捷键提醒等,这里强调两个快捷键：<code>Esc</code>,相当于返回,几乎在任何提示框都可以使用;<code>F5</code>,在程序界面运行程序,下面即将介绍;</p>
 <p>2.5 按<code>Esc</code>退出提示框,开始编辑程序,按<code>F5</code>运行,效果如下图(在菜单栏<code>Option-Display</code>中可以设置背景颜色);</p>
 <figure class="highlight"><table><tbody><tr><td class="code"><pre><code class="hljs basic">CLS : PRINT "HELLO WORLD!"<br></code></pre></td></tr></tbody></table></figure>
 
@@ -291,6 +291,8 @@
   <div class="post-guide">
     <div class="item left">
         
+          <a href="/2020/05/25/wjsj/">简单复数计算器设计</a>
+        
     </div>
     <div class="item right">
         
@@ -327,7 +329,7 @@
           
         </footer>
       </div>
-    </div>
+    </div>    
   </body>
   
 </html>
