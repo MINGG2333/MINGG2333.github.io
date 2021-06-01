@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2020-06-11T12:26:49.000Z</updated>
+  <updated>2021-05-28T01:09:58.000Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -17,7 +17,149 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>AI芯片</title>
+    <title>Git</title>
+    <link href="http://mingg2333.top/2021/05/28/git/"/>
+    <id>http://mingg2333.top/2021/05/28/git/</id>
+    <published>2021-05-28T01:09:58.000Z</published>
+    <updated>2021-05-28T01:09:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git installation and usage.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tool" scheme="http://mingg2333.top/categories/tool/"/>
+    
+    
+      <category term="git" scheme="http://mingg2333.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>py libs</title>
+    <link href="http://mingg2333.top/2021/05/28/py-libs/"/>
+    <id>http://mingg2333.top/2021/05/28/py-libs/</id>
+    <published>2021-05-28T00:32:57.000Z</published>
+    <updated>2021-05-28T00:32:57.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>encoding and unicode</title>
+    <link href="http://mingg2333.top/2020/07/28/unicode/"/>
+    <id>http://mingg2333.top/2020/07/28/unicode/</id>
+    <published>2020-07-28T03:23:32.000Z</published>
+    <updated>2020-07-28T03:23:32.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;处理字符画前期深入了解了编码。&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="encoding" scheme="http://mingg2333.top/categories/encoding/"/>
+    
+      <category term="unicode" scheme="http://mingg2333.top/categories/encoding/unicode/"/>
+    
+    
+      <category term="encoding" scheme="http://mingg2333.top/tags/encoding/"/>
+    
+      <category term="unicode" scheme="http://mingg2333.top/tags/unicode/"/>
+    
+      <category term="utf-8" scheme="http://mingg2333.top/tags/utf-8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS学习笔记</title>
+    <link href="http://mingg2333.top/2020/07/26/CSnote/"/>
+    <id>http://mingg2333.top/2020/07/26/CSnote/</id>
+    <published>2020-07-26T08:20:49.000Z</published>
+    <updated>2020-07-26T08:20:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CS学习笔记概述。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="CS" scheme="http://mingg2333.top/categories/CS/"/>
+    
+    
+      <category term="CS入门" scheme="http://mingg2333.top/tags/CS%E5%85%A5%E9%97%A8/"/>
+    
+      <category term="csapp" scheme="http://mingg2333.top/tags/csapp/"/>
+    
+      <category term="算法" scheme="http://mingg2333.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>installing tensorflow</title>
+    <link href="http://mingg2333.top/2020/07/18/tensorflow/"/>
+    <id>http://mingg2333.top/2020/07/18/tensorflow/</id>
+    <published>2020-07-17T23:20:49.000Z</published>
+    <updated>2020-07-17T23:20:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;准备Intel嵌入式邀请赛初选期间，了解学习了tensorflow，下面主要记录tensorflow 2 cpu版本的安装。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tensorflow" scheme="http://mingg2333.top/categories/tensorflow/"/>
+    
+    
+      <category term="tensorflow" scheme="http://mingg2333.top/tags/tensorflow/"/>
+    
+      <category term="软件安装" scheme="http://mingg2333.top/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图像处理之字符画</title>
+    <link href="http://mingg2333.top/2020/07/15/imageprocess/"/>
+    <id>http://mingg2333.top/2020/07/15/imageprocess/</id>
+    <published>2020-07-15T08:20:49.000Z</published>
+    <updated>2020-07-15T08:20:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为入门python，做了些利用cv2，PIL库简单处理图像的学习。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="图像处理" scheme="http://mingg2333.top/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="python" scheme="http://mingg2333.top/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/python/"/>
+    
+    
+      <category term="python" scheme="http://mingg2333.top/tags/python/"/>
+    
+      <category term="图像处理" scheme="http://mingg2333.top/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="字符画" scheme="http://mingg2333.top/tags/%E5%AD%97%E7%AC%A6%E7%94%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI chip</title>
     <link href="http://mingg2333.top/2020/06/11/aiic/"/>
     <id>http://mingg2333.top/2020/06/11/aiic/</id>
     <published>2020-06-11T12:26:49.000Z</published>
@@ -148,6 +290,27 @@
     
     
       <category term="hello" scheme="http://mingg2333.top/tags/hello/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三次函数的极点水平线处性质</title>
+    <link href="http://mingg2333.top/2020/04/22/cubic_function_property/"/>
+    <id>http://mingg2333.top/2020/04/22/cubic_function_property/</id>
+    <published>2020-04-21T17:23:32.000Z</published>
+    <updated>2020-04-21T17:23:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;高二时完成的理论推导。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="theory" scheme="http://mingg2333.top/categories/theory/"/>
+    
+    
+      <category term="cubic function" scheme="http://mingg2333.top/tags/cubic-function/"/>
     
   </entry>
   
