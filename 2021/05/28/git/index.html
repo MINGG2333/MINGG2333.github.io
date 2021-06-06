@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#install"><span class="toc-text">install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-10"><span class="toc-text">windows 10</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#basic-use"><span class="toc-text">basic use</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#create-new-repository"><span class="toc-text">create new repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone-existing-repository"><span class="toc-text">clone existing repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-repository"><span class="toc-text">Configure repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#work-with-repository"><span class="toc-text">work with repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-GUI-use"><span class="toc-text">Git GUI use</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prepare-with-Github"><span class="toc-text">prepare with Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-SSH-Key"><span class="toc-text">Create SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-ssh-agent"><span class="toc-text">Configure ssh-agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-SSH-key-to-Github"><span class="toc-text">Add SSH key to Github</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#install"><span class="toc-text">install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-10"><span class="toc-text">windows 10</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#basic-use"><span class="toc-text">basic use</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#create-new-repository"><span class="toc-text">create new repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone-existing-repository"><span class="toc-text">clone existing repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-repository"><span class="toc-text">Configure repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#work-with-repository"><span class="toc-text">work with repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-GUI-use"><span class="toc-text">Git GUI use</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prepare-with-Github"><span class="toc-text">prepare with Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-SSH-Key"><span class="toc-text">Create SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-ssh-agent"><span class="toc-text">Configure ssh-agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-SSH-key-to-Github"><span class="toc-text">Add SSH key to Github</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prepare-with-Gitee"><span class="toc-text">prepare with Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-SSH-Key-1"><span class="toc-text">Create SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-SSH-key-to-Gitee"><span class="toc-text">Add SSH key to Gitee</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#what-is-git"><span class="toc-text">what is git</span></a></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -230,8 +230,17 @@
 <li><a href="#add-ssh-key-to-github">Add SSH key to Github</a></li>
 </ul>
 </li>
+<li><a href="#prepare-with-gitee">prepare with Gitee</a><ul>
+<li><a href="#create-ssh-key-1">Create SSH Key</a></li>
+<li><a href="#add-ssh-key-to-gitee">Add SSH key to Gitee</a></li>
+</ul>
+</li>
+<li><a href="#what-is-git">what is git</a></li>
 </ul>
 <h1 id="quickly-see">quickly see<a class="post-anchor" href="#quickly-see"></a></h1><p>details later, make it quick</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br>ssh-keygen -t ed25519 -C "<personal code, like a email>" [-f ~/.ssh/gitee_id_ed25519]<br><br>eval `ssh-agent -s`<br>ssh-add -l<br>ssh-add <SSH private key><br>ssh-agent -k<br><br>ssh -T git@github.com<br>ssh -T git@gitee.com<br><br>git --version<br><br>mkdir [<directory>]<br>cd [<directory>]<br>git init [<directory>]<br>git clone <repository> [<directory>]<br><br>git config --list<br>git config --global user.name "<name>"<br>git config --global user.email <email><br><br>touch README.md<br>cat README.md<br>git add README.md<br>git commit -m "first commit"<br><br>git remote -v<br>git remote add origin git@github.com:<name>/<repository>.git<br>git remote add origin2 git@gitee.com:<name>/<repository>.git<br>git remote rm origin2<br><br>git push -u origin2 master<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*origin, origin2 are personal names for repository</p>
 <h1 id="install">install<a class="post-anchor" href="#install"></a></h1><h2 id="windows-10">windows 10<a class="post-anchor" href="#windows-10"></a></h2><p>official website:</p>
 <p><a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git for Windows</a> or <a href="http://www.git-scm.com/download/" target="_blank" rel="noopener">Git - Downloads (git-scm.com)</a></p>
 <p>you can refer to( remember your installation directory of git if you want to set it as environment variable later):</p>
@@ -262,16 +271,16 @@
 <h2 id="work-with-repository">work with repository<a class="post-anchor" href="#work-with-repository"></a></h2><p><a href="/2021/05/28/git/7V3U3DF%7B844%5D%7BX9C5XYX%5DLS.png" data-caption="img" data-fancybox="images"><img src="/2021/05/28/git/7V3U3DF%7B844%5D%7BX9C5XYX%5DLS.png" alt="img"></a></p>
 <center>frequency use</center>
 
-<p>more use, refer to <a href="https://www.runoob.com/git/git-basic-operations.html" target="_blank" rel="noopener">Git 基本操作 | 菜鸟教程 (runoob.com)</a></p>
+<p>more use, refer to <a href="https://www.runoob.com/git/git-basic-operations.html" target="_blank" rel="noopener">Git 基本操作 | 菜鸟教程 (runoob.com)</a>, <a href="https://www.runoob.com/git/git-remote-repo.html" target="_blank" rel="noopener">Git 远程仓库(Github) | 菜鸟教程 (runoob.com)</a>, <a href="https://www.runoob.com/git/git-gitee.html" target="_blank" rel="noopener">Git Gitee | 菜鸟教程 (runoob.com)</a>.</p>
 <p>*you can place your remote repositories in Github, preparation see [prepare with Github](# prepare with Github).</p>
 <h2 id="Git-GUI-use">Git GUI use<a class="post-anchor" href="#Git-GUI-use"></a></h2><p>refer to <a href="https://blog.csdn.net/NOOBBB/article/details/65627240?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control" target="_blank" rel="noopener">使用Git 总结-msysGit与GitHub 使用_荒野之鹰-CSDN博客</a> or <a href="https://blog.csdn.net/u010388829/article/details/41055813" target="_blank" rel="noopener"> Windows平台下Git的安装msysgit与配置_睡得香吃得好胆子大的专栏-CSDN博客</a></p>
-<h1 id="prepare-with-Github">prepare with Github<a class="post-anchor" href="#prepare-with-Github"></a></h1><p>work with a remote repository, refer to <a href="https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">使用 SSH 连接到 GitHub - GitHub Docs</a></p>
+<h1 id="prepare-with-Github">prepare with Github<a class="post-anchor" href="#prepare-with-Github"></a></h1><p>configure your account SSH Key, refer to <a href="https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">使用 SSH 连接到 GitHub - GitHub Docs</a></p>
 <h2 id="Create-SSH-Key">Create SSH Key<a class="post-anchor" href="#Create-SSH-Key"></a></h2><p>check existing keys:</p>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br></code></pre></td></tr></tbody></table></figure>
 
 <p>*”~/.ssh” is the default directory of SSH keys.</p>
 <p>otherwise, create a SSH key for your device using Git Bash:</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t [algorithm] -C "<github email>"<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t [algorithm] -C "<personal code, like a email>"<br></code></pre></td></tr></tbody></table></figure>
 
 <p>*algorithm(optional): rsa [-b 4096], ed25519(recommend).</p>
 <h2 id="Configure-ssh-agent">Configure ssh-agent<a class="post-anchor" href="#Configure-ssh-agent"></a></h2><p>ssh-agent stores unencrypted keys in memory( for Unix-like OS) and communicates with SSH clients using a Unix domain socket</p>
@@ -296,9 +305,11 @@
 <h2 id="Add-SSH-key-to-Github">Add SSH key to Github<a class="post-anchor" href="#Add-SSH-key-to-Github"></a></h2><ol>
 <li>open responding SSH public key with a editor like Notepad, then copy the contents of the .pub file to your clipboard,</li>
 </ol>
-<p>*SSH public key example: ~/.ssh/id_ed25519.pub</p>
+<p>*SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cat ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
+
 <ol start="2">
-<li>go into your own github setting -> SSH and GPG keys, and create a new SSH key,</li>
+<li>go into your own Github setting -> SSH and GPG keys, and create a new SSH key,</li>
 </ol>
 <p><a href="/2021/05/28/git/fggsagagwrg.png" data-caption="fggsagagwrg" data-fancybox="images"><img src="/2021/05/28/git/fggsagagwrg.png" alt="fggsagagwrg"></a></p>
 <p>then give a name of the key filling in the “title”, and paste the SSH public key contents into the “Key” field.</p>
@@ -309,6 +320,29 @@
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></tbody></table></figure>
 
 <p>if something wrong, baidu or google.</p>
+<h1 id="prepare-with-Gitee">prepare with Gitee<a class="post-anchor" href="#prepare-with-Gitee"></a></h1><p>configure your account SSH Key</p>
+<h2 id="Create-SSH-Key-1">Create SSH Key<a class="post-anchor" href="#Create-SSH-Key-1"></a></h2><p>check existing keys:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*”~/.ssh” is the default directory of SSH keys.</p>
+<p>otherwise, create a SSH key for your device using Git Bash:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t [algorithm] -C "<personal code, like a email>"<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*algorithm(optional): rsa [-b 4096], ed25519(recommend).</p>
+<h2 id="Add-SSH-key-to-Gitee">Add SSH key to Gitee<a class="post-anchor" href="#Add-SSH-key-to-Gitee"></a></h2><ol>
+<li>open responding SSH public key with a editor like Notepad, then copy the contents of the .pub file to your clipboard,</li>
+</ol>
+<p>*SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cat ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>go into your own Gitee setting -> SSH keys, then fill the blank and add a new SSH key: give a name of the key filling in the “title”, and paste the SSH public key contents into the “Key” field.</li>
+<li>test SSH connection:</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh -T git@gitee.com<br></code></pre></td></tr></tbody></table></figure>
+
+<p>if something wrong, baidu or google.</p>
+<h1 id="what-is-git">what is git<a class="post-anchor" href="#what-is-git"></a></h1><p>refer to <a href="https://zhuanlan.zhihu.com/p/361367094" target="_blank" rel="noopener">谈谈 Git 存储原理及相关实现 - 知乎 (zhihu.com)</a> and so on.</p>
 </body></html>
 
   
@@ -334,6 +368,8 @@
   
   <div class="post-guide">
     <div class="item left">
+        
+          <a href="/2021/06/06/blog/">blog</a>
         
     </div>
     <div class="item right">
