@@ -16,7 +16,7 @@
     <meta name="description" content="学习 实践 思考 记录" />
     
     <title>
-      py libs - 明明的博客
+      matlab - 明明的博客
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python-amp-pip"><span class="toc-text">python&amp;pip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#os"><span class="toc-text">os</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partial"><span class="toc-text">partial</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map"><span class="toc-text">map</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#str"><span class="toc-text">str</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string"><span class="toc-text">string</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#numpy"><span class="toc-text">numpy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#txt"><span class="toc-text">txt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xlrd-amp-xlwt"><span class="toc-text">xlrd&amp;xlwt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#more"><span class="toc-text">more</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#about-mat"><span class="toc-text">about mat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#about-struct"><span class="toc-text">about struct</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#save"><span class="toc-text">save</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#read-minist-dataset"><span class="toc-text">read minist dataset</span></a></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -164,15 +164,15 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">py libs</div>
+      <div class="title">matlab</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
-          <span>2021/05/28</span>
+          <span>2021/06/10</span>
         </span>
 
         
-          <span class="item leancloud-visitors" id="/2021/05/28/py-libs/" data-flag-title="py libs">
+          <span class="item leancloud-visitors" id="/2021/06/10/matlab/" data-flag-title="matlab">
             <span class="iconfont icon-eye1"></span>
             <span class="leancloud-visitors-count"></span>
           </span>
@@ -185,45 +185,21 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><a id="more"></a>
-
-<h1 id="python-amp-pip">python&pip<a class="post-anchor" href="#python-amp-pip"></a></h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> windows</span><br>where python<br><span class="hljs-meta">#</span><span class="bash"> linux</span><br>whereis python<br><br>pip list<br><br>python2 -m pip list <br>python3 -m pip list<br><br>pip list<br>pip3 list<br></code></pre></td></tr></tbody></table></figure>
-
-<h1 id="os">os<a class="post-anchor" href="#os"></a></h1><p>handle directory</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-comment"># walk</span><br><br>path = <span class="hljs-string">r'./'</span><br>ext = <span class="hljs-string">'.py'</span><br><br>roots_dict = {}<br><span class="hljs-keyword">for</span> root, dirs, files <span class="hljs-keyword">in</span> os.walk(path):<br>    <span class="hljs-string">'''</span><br><span class="hljs-string">    root is a string, the path to the directory, consistent with 'path'.</span><br><span class="hljs-string">    dirs is a list of the names of the subdirectories in root (excluding '.' and '..').</span><br><span class="hljs-string">    files is a list of the names of the non-directory files in root.</span><br><span class="hljs-string">        Note that the names in the lists are just names, with no path components.</span><br><span class="hljs-string">        To get a full path (which begins with top) to a file or directory in root,</span><br><span class="hljs-string">        do os.path.join(root, name).</span><br><span class="hljs-string">    '''</span><br>    print(<span class="hljs-string">'there are {} dir(s) and {} file(s) in the root of {}'</span>.format(<br>        len(dirs), len(files), root))<br>    roots_dict[root] = dirs + files<br><br>    files_filter = []<br>    <span class="hljs-keyword">if</span> ext != <span class="hljs-literal">None</span>:<br>        <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>            <span class="hljs-keyword">if</span> os.path.splitext(file)[<span class="hljs-number">-1</span>] <span class="hljs-keyword">in</span> ext:<br>                files_filter.append(file)<br>    <span class="hljs-keyword">else</span>:<br>        files_filter.extend(files)<br>    print(<span class="hljs-string">'len(files_filter)'</span>, <span class="hljs-string">': '</span>, len(files_filter))<br>    <span class="hljs-keyword">if</span> len(files_filter) == <span class="hljs-number">0</span>:<br>        print()<br>        <span class="hljs-keyword">continue</span><br><br>    <span class="hljs-comment"># insert operation to process files_filter</span><br>    print()<br>print(roots_dict)<br></code></pre></td></tr></tbody></table></figure>
+    <html><head></head><body><h1 id="about-mat">about mat<a class="post-anchor" href="#about-mat"></a></h1><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">% create</span><br>A = <span class="hljs-built_in">magic</span>(<span class="hljs-number">4</span>)<br><span class="hljs-number">1</span>:<span class="hljs-number">5</span><br><span class="hljs-comment">% [1,2,3,4,5]</span><br><span class="hljs-comment">% transpose</span><br>B = A.'<br>A = transpose(B)<br><span class="hljs-comment">% stack by horizon, have the same rows</span><br>c = [a b]<br>c = [a, b]<br><span class="hljs-comment">% stack by verticalness, have the same columns</span><br>c = [a; b]<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<h1 id="partial">partial<a class="post-anchor" href="#partial"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Func</span><span class="hljs-params">(a, b = None)</span>:</span><br>    print(a, b)<br>    <span class="hljs-keyword">return</span><br><br>worker = partial(Func, b=<span class="hljs-number">1</span>)<br>worker([<span class="hljs-string">'test'</span>])<br><br><span class="hljs-comment"># ['test'] 1</span><br></code></pre></td></tr></tbody></table></figure>
+<h1 id="about-struct">about struct<a class="post-anchor" href="#about-struct"></a></h1><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><code class="hljs matlab">A.b<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<h1 id="map">map<a class="post-anchor" href="#map"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">map(str, a)<br></code></pre></td></tr></tbody></table></figure>
+<h1 id="save">save<a class="post-anchor" href="#save"></a></h1><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><code class="hljs matlab">save(<span class="hljs-string">'data2.mat'</span>, <span class="hljs-string">'descr'</span>);<br>save(<span class="hljs-string">'data2.mat'</span>, <span class="hljs-string">'label'</span>,<span class="hljs-string">'-append'</span>);<br></code></pre></td></tr></tbody></table></figure>
 
 
 
-<h1 id="str">str<a class="post-anchor" href="#str"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># str is a str instance or contains several str instances</span><br><span class="hljs-string">','</span>.join(str)<br>str.split(<span class="hljs-string">' '</span>)<br></code></pre></td></tr></tbody></table></figure>
+<h1 id="read-minist-dataset">read minist dataset<a class="post-anchor" href="#read-minist-dataset"></a></h1><p>refer to <a href="http://www.cxyzjd.com/article/tracer9/51253604" target="_blank" rel="noopener">【机器学习】MATLAB读取mnist数据库_心所愿，力必坚！-程序员宅基地 - 程序员宅基地 (cxyzjd.com)</a>:</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">% loadMNISTImages.m</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">images</span> = <span class="hljs-title">loadMNISTImages</span><span class="hljs-params">(filename)</span></span><br><span class="hljs-comment">%loadMNISTImages returns a 28x28x[number of MNIST images] matrix containing</span><br><span class="hljs-comment">%the raw MNIST images</span><br><br>fp = fopen(filename, <span class="hljs-string">'rb'</span>);<br>assert(fp ~= <span class="hljs-number">-1</span>, [<span class="hljs-string">'Could not open '</span>, filename, <span class="hljs-string">''</span>]);<br><br><span class="hljs-built_in">magic</span> = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br>assert(<span class="hljs-built_in">magic</span> == <span class="hljs-number">2051</span>, [<span class="hljs-string">'Bad magic number in '</span>, filename, <span class="hljs-string">''</span>]);<br><br>numImages = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br>numRows = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br>numCols = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br><br>images = fread(fp, <span class="hljs-built_in">inf</span>, <span class="hljs-string">'unsigned char'</span>);<br>images = <span class="hljs-built_in">reshape</span>(images, numCols, numRows, numImages);<br>images = <span class="hljs-built_in">permute</span>(images,[<span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span>]);<br><br>fclose(fp);<br><br><span class="hljs-comment">% Reshape to #pixels x #examples</span><br>images = <span class="hljs-built_in">reshape</span>(images, <span class="hljs-built_in">size</span>(images, <span class="hljs-number">1</span>) * <span class="hljs-built_in">size</span>(images, <span class="hljs-number">2</span>), <span class="hljs-built_in">size</span>(images, <span class="hljs-number">3</span>));<br><span class="hljs-comment">% Convert to double and rescale to [0,1]</span><br>images = double(images) / <span class="hljs-number">255</span>;<br><br><span class="hljs-keyword">end</span><br><br><br><span class="hljs-comment">% loadMNISTLabels.m</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">labels</span> = <span class="hljs-title">loadMNISTLabels</span><span class="hljs-params">(filename)</span></span><br><span class="hljs-comment">%loadMNISTLabels returns a [number of MNIST images]x1 matrix containing</span><br><span class="hljs-comment">%the labels for the MNIST images</span><br><br>fp = fopen(filename, <span class="hljs-string">'rb'</span>);<br>assert(fp ~= <span class="hljs-number">-1</span>, [<span class="hljs-string">'Could not open '</span>, filename, <span class="hljs-string">''</span>]);<br><br><span class="hljs-built_in">magic</span> = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br>assert(<span class="hljs-built_in">magic</span> == <span class="hljs-number">2049</span>, [<span class="hljs-string">'Bad magic number in '</span>, filename, <span class="hljs-string">''</span>]);<br><br>numLabels = fread(fp, <span class="hljs-number">1</span>, <span class="hljs-string">'int32'</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'ieee-be'</span>);<br><br>labels = fread(fp, <span class="hljs-built_in">inf</span>, <span class="hljs-string">'unsigned char'</span>);<br><br>assert(<span class="hljs-built_in">size</span>(labels,<span class="hljs-number">1</span>) == numLabels, <span class="hljs-string">'Mismatch in label count'</span>);<br><br>fclose(fp);<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></tbody></table></figure>
 
-
-
-<h1 id="string">string<a class="post-anchor" href="#string"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> string<br></code></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="numpy">numpy<a class="post-anchor" href="#numpy"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>.sort(axis=<span class="hljs-number">1</span>)<br>np.argwhere<br></code></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="txt">txt<a class="post-anchor" href="#txt"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> codecs<br><br><span class="hljs-keyword">if</span> (sys.version_info >= (<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)):<br>    fd = open(filename, <span class="hljs-string">'r'</span>)<br>    f = fd<br><span class="hljs-keyword">elif</span> (sys.version_info >= <span class="hljs-number">2.7</span>):<br>	fd = codecs.open(filename, <span class="hljs-string">'r'</span>)<br>	f = fd<br>    <br>line = f.readline()<br>splitline = line.strip().split(<span class="hljs-string">' '</span>)<br><span class="hljs-comment"># or</span><br>lines = f.readlines()<br>splitlines = [x.strip().split(<span class="hljs-string">' '</span>) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> lines]<br></code></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="xlrd-amp-xlwt">xlrd&xlwt<a class="post-anchor" href="#xlrd-amp-xlwt"></a></h1><p>handle .xls</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> xlwt<br>workbook = xlwt.Workbook(encoding = <span class="hljs-string">'utf-8'</span>)<br>worksheet = workbook.add_sheet(<span class="hljs-string">'Worksheet'</span>+str(<span class="hljs-number">0</span>))<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'Num'</span>)<span class="hljs-comment">#row, col, *args</span><br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'unicode'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'char'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'char_wide'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-string">'char_hash'</span>)<br>workbook.save(<span class="hljs-string">'Excel_test'</span>+str(<span class="hljs-number">0</span>)+<span class="hljs-string">'.xls'</span>)<br><br><span class="hljs-keyword">import</span> xlrd<br>exce = xlrd.open_workbook(<span class="hljs-string">'Excel_test.xls'</span>)<br>sheet1 = exce.sheet_by_name(<span class="hljs-string">'Worksheet1'</span>)<br>nrows = sheet1.nrows<br><br>unicod = sheet1.col_values(<span class="hljs-number">1</span>)<br>char_wide = sheet1.col_values(<span class="hljs-number">3</span>)<br>char_hash = sheet1.col_values(<span class="hljs-number">4</span>)<br></code></pre></td></tr></tbody></table></figure>
-
-
-
-<h1 id="more">more<a class="post-anchor" href="#more"></a></h1><p>refer to <a href="http://www.pythondoc.com/pythontutorial3/appetite.html" target="_blank" rel="noopener">1. 开胃菜 — Python tutorial 3.6.3 documentation (pythondoc.com)</a></p>
 </body></html>
 
   
@@ -250,12 +226,12 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2021/05/28/git/">Git</a>
+          <a href="/2021/06/27/ai-env/">ai-env</a>
         
     </div>
     <div class="item right">
         
-          <a href="/2020/07/28/unicode/">encoding and unicode</a>
+          <a href="/2021/06/08/mmdet/">mmdet</a>
         
     </div>
   </div>
@@ -267,7 +243,7 @@
       本文作者：<a href="http://mingg2333.top">JI XINYU</a>
     </div>
     <div class="link">
-      永久链接：<a href="http://mingg2333.top/2021/05/28/py-libs/">http://mingg2333.top/2021/05/28/py-libs/</a>
+      永久链接：<a href="http://mingg2333.top/2021/06/10/matlab/">http://mingg2333.top/2021/06/10/matlab/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="http://mingg2333.top">JI XINYU</a>的博客，转载请注明出处！

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      ai-env - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-python"><span class="toc-text">install python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-GPU-NPU-support"><span class="toc-text">CPU&#x2F;GPU&#x2F;NPU support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-ML-lib"><span class="toc-text">install ML-lib</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">JI XINYU</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">JI XINYU</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ai-env</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/06/27</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/06/27/ai-env/" data-flag-title="ai-env">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><a id="more"></a>
+
+<h1 id="Python">Python<a class="post-anchor" href="#Python"></a></h1><h2 id="install-python">install python<a class="post-anchor" href="#install-python"></a></h2><ol>
+<li>if in windows, go into <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Download Python | Python.org</a>, download and install what you need; To choose which windows version, refer to <a href="https://www.jianshu.com/p/bcb44e9d8efb" target="_blank" rel="noopener">python官网的几个windows版本的区别 - 简书 (jianshu.com)</a>.</li>
+</ol>
+<p>*suggestion: add python to PATH of environment variables;install pip.</p>
+<h2 id="CPU-GPU-NPU-support">CPU/GPU/NPU support<a class="post-anchor" href="#CPU-GPU-NPU-support"></a></h2><p>it depends on your device hardware, and the requirments of machine learning library, like TensorFlow, Pytorch, MindSpore and so on:</p>
+<ol>
+<li><p>if use <strong>NVIDIA GPU</strong> which supports CUDA(refer to <a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">CUDA GPUs | NVIDIA Developer</a>), generally the following 3 NVIDIA® softwares should be installed:</p>
+<ul>
+<li><p><a href="https://www.nvidia.com/drivers" target="_blank" rel="noopener">NVIDIA® GPU drivers</a>;</p>
+<p>The version depends on the CUDA version, and the CUDA version depends on the requirments of machine learning library, so you should read related documents, like <a href="https://tensorflow.google.cn/install/gpu" target="_blank" rel="noopener">GPU support  | TensorFlow (google.cn)</a>, to choose CUDA version, which should be not lower than that in documents.</p>
+<p>To verify your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">nvidia-smi<br></code></pre></td></tr></tbody></table></figure>
+
+<p>usually CUDA version is also displayed according to CUDA Driver API;</p>
+</li>
+<li><p><a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">CUDA® Toolkit</a>;</p>
+<p>read related documents, like <a href="https://tensorflow.google.cn/install/gpu" target="_blank" rel="noopener">GPU support  | TensorFlow (google.cn)</a>, to choose CUDA version as the same as(or maybe not lower than) that in documents.</p>
+<p>To verify your installation:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain">nvcc -V<br></code></pre></td></tr></tbody></table></figure>
+
+<p>CUDA version will be displayed according to CUDA Runtime API, which should be not higher than that according to CUDA Driver API,</p>
+<p>or running 2 compiled Examples, refer to <a href="https://zhuanlan.zhihu.com/p/139668028" target="_blank" rel="noopener">windows 验证CUDA和CUDNN是否安装成功 - 知乎 (zhihu.com)</a> and <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html" target="_blank" rel="noopener">Installation Guide Windows :: CUDA Toolkit Documentation (nvidia.com)</a>, in windows:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cd C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1<br>cd extras\demo_suite<br>deviceQuery.exe<br>bandwidthTest.exe<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*v11.1 is a example version.</p>
+</li>
+<li><p><a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener">cuDNN</a>.</p>
+<p>installtion refering to <a href="https://zhuanlan.zhihu.com/p/139668028" target="_blank" rel="noopener">windows 验证CUDA和CUDNN是否安装成功 - 知乎 (zhihu.com)</a>, and to check your installation version in windows, </p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cd C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1<br>cd include<br>cudnn_version.h<br></code></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+</li>
+<li><p>if use <strong>Intel GPU</strong>,</p>
+</li>
+<li><p>if use <strong>Huawei Ascend</strong> which supports CANN,</p>
+</li>
+<li><p>if use <strong>AMD/ATI GPU</strong> which supports AMD-MLP, which is based on OpenCL supporting parallel computing across various devices, give it up.</p>
+</li>
+<li><p>if use DirectML on Windows hardware include <strong>AMD, Intel and NVIDIA GPUs</strong>,</p>
+<p>refer to <a href="https://blogs.windows.com/windowsdeveloper/2020/06/17/gpu-accelerated-ml-training-inside-the-windows-subsystem-for-linux/" target="_blank" rel="noopener">GPU accelerated ML training inside the Windows Subsystem for Linux - Windows Developer Blog</a>, <a href="https://github.com/microsoft/DirectML" target="_blank" rel="noopener">GitHub - microsoft/DirectML</a>, <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-accelerated-training#students-and-beginners" target="_blank" rel="noopener">GPU accelerated ML training | Microsoft Docs</a>.</p>
+</li>
+</ol>
+<h2 id="install-ML-lib">install ML-lib<a class="post-anchor" href="#install-ML-lib"></a></h2><p>machine learning libraries(frameworks) include TensorFlow, Pytorch, MindSpore and so on</p>
+<ol>
+<li><p>if use TensorFlow, refer to <a href="https://tensorflow.google.cn/install" target="_blank" rel="noopener">Install TensorFlow 2 (google.cn)</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Current stable release <span class="hljs-keyword">for</span> CPU and GPU</span><br>pip3 install tensorflow<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed absl-py-0.13.0 astunparse-1.6.3 cached-property-1.5.2 cachetools-4.2.2 certifi-2021.5.30 chardet-4.0.0 flatbuffers-1.12 gast-0.4.0 google-auth-1.32.0 google-auth-oauthlib-0.4.4 google-pasta-0.2.0 grpcio-1.34.1 h5py-3.1.0 idna-2.10 importlib-metadata-4.6.0 keras-nightly-2.5.0.dev2021032900 keras-preprocessing-1.1.2 markdown-3.3.4 numpy-1.19.5 oauthlib-3.1.1 opt-einsum-3.3.0 protobuf-3.17.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.1 requests-oauthlib-1.3.0 rsa-4.7.2 six-1.15.0 tensorboard-2.5.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.0 tensorflow-2.5.0 tensorflow-estimator-2.5.0 termcolor-1.1.0 typing-extensions-3.7.4.3 urllib3-1.26.6 werkzeug-2.0.1 wheel-0.36.2 wrapt-1.12.1 zipp-3.4.1</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>To verify your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"<br><span class="hljs-meta">#</span><span class="bash"> ...Successfully opened dynamic library xxx</span><br><span class="hljs-meta">#</span><span class="bash"> ...tf.Tensor(1177.0052, shape=(), dtype=float32)</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>For more verification, refer to <a href="https://blog.csdn.net/weixin_40726794/article/details/108169440" target="_blank" rel="noopener">Tensorflow 2环境下,程序快速测试 GPU是否安装成功_sTeven LI-CSDN博客_tensorflow2测试gpu</a>.</p>
+</li>
+<li><p>if use Pytorch, refer to <a href="https://pytorch.org/" target="_blank" rel="noopener">PyTorch</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio===0.9.0 -f https://download.pytorch.org/whl/torch_stable.html<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed numpy-1.21.0 pillow-8.2.0 torch-1.9.0+cu111 torchaudio-0.9.0 torchvision-0.10.0+cu111 typing-extensions-3.10.0.0</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>To verify your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -c "import torch;print(torch.__version__);print(torch.version.cuda);print(torch.backends.cudnn.version());print(torch.cuda.is_available())<br>"<br><span class="hljs-meta">#</span><span class="bash"> 1.9.0+cu111</span><br><span class="hljs-meta">#</span><span class="bash"> 11.1</span><br><span class="hljs-meta">#</span><span class="bash"> 8005</span><br><span class="hljs-meta">#</span><span class="bash"> True</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>For more verification, refer to <a href="https://blog.csdn.net/weixin_35576881/article/details/89709116" target="_blank" rel="noopener">pytorch：测试GPU是否可用_明月几时有，把酒问青天-CSDN博客</a>, <a href="https://blog.csdn.net/liming_2464/article/details/99457626" target="_blank" rel="noopener">PyTorch_GPU加速测试_liming_2464的博客-CSDN博客</a>.</p>
+</li>
+<li><p>if use MindSpore, refer to <a href="https://www.mindspore.cn/install" target="_blank" rel="noopener">MindSpore安装指南</a>, <a href="http://mingg2333.top/2021/06/07/hiascend/">ascend - 明明的博客 (mingg2333.top)</a>:</p>
+<p>Before installing MindSpore, you should install GCC, refer to <a href="https://m.linuxidc.com/Linux/2019-06/159059.htm" target="_blank" rel="noopener">如何在Ubuntu 18.04上安装GCC编译器 (linuxidc.com)</a>, <a href="https://blog.csdn.net/lucifa_li/article/details/79483686" target="_blank" rel="noopener">Ubuntu下gcc安装及使用_lucifa_li的博客-CSDN博客_ubuntu下载gcc</a>, then </p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.1/MindSpore/cpu/windows_x64/mindspore-1.2.1-cp37-cp37m-win_amd64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed asttokens-2.0.5 cffi-1.14.5 decorator-5.0.9 easydict-1.9 mindspore-1.2.1 mpmath-1.2.1 packaging-20.9 psutil-5.8.0 pycparser-2.20 pyparsing-2.4.7 scipy-1.7.0 sympy-1.8</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>if use OpenVINO, </p>
+</li>
+</ol>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/06/27/vm/">vm</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/06/10/matlab/">matlab</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">JI XINYU</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/06/27/ai-env/">http://mingg2333.top/2021/06/27/ai-env/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">JI XINYU</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2021
+            <a href="http://mingg2333.top">JI XINYU</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

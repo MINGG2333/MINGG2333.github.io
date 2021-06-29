@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-hexo"><span class="toc-text">use hexo</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-hexo"><span class="toc-text">use hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#configure-deploy"><span class="toc-text">configure deploy</span></a></li></ol></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -188,9 +188,12 @@
     <html><head></head><body><p> how to build and publish your own blog</p>
 <a id="more"></a>
 
-<h1 id="quickly-see">quickly see<a class="post-anchor" href="#quickly-see"></a></h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">hexo n "<blog name>"<br>hexo s -g<br>hexo d -g<br></code></pre></td></tr></tbody></table></figure>
+<h1 id="quickly-see">quickly see<a class="post-anchor" href="#quickly-see"></a></h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">hexo n "<blog name>"<br>hexo s -g<br>hexo d -g<br>hexo clean<br></code></pre></td></tr></tbody></table></figure>
 
 <h1 id="use-hexo">use hexo<a class="post-anchor" href="#use-hexo"></a></h1><p>refer to <a href="https://www.jianshu.com/p/189fd945f38f" target="_blank" rel="noopener">搭建个人博客-hexo+github详细完整步骤 - 简书 (jianshu.com)</a>, <a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="noopener">hexo常用命令笔记 - SegmentFault 思否</a>. </p>
+<h2 id="configure-deploy">configure deploy<a class="post-anchor" href="#configure-deploy"></a></h2><p>refer to <a href="https://segmentfault.com/a/1190000005125610" target="_blank" rel="noopener">设置 SSH 使用 hexo deploy 时免输用户名密码 - SegmentFault 思否</a>:</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:{user</span> <span class="hljs-string">name}/{repo</span> <span class="hljs-string">name}.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></tbody></table></figure>
+
 </body></html>
 
   

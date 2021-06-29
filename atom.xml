@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2021-06-06T16:29:11.000Z</updated>
+  <updated>2021-06-28T08:29:53.000Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,143 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows Subsystem for Linux</title>
+    <link href="http://mingg2333.top/2021/06/28/WSL/"/>
+    <id>http://mingg2333.top/2021/06/28/WSL/</id>
+    <published>2021-06-28T08:29:53.000Z</published>
+    <updated>2021-06-28T08:29:53.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h1 id=&quot;what-is-WSL&quot;&gt;what is WSL&lt;a class=&quot;post-anchor&quot; href=&quot;#what-is-WSL&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;WSL is a 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="PC" scheme="http://mingg2333.top/tags/PC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DoubleSystem</title>
+    <link href="http://mingg2333.top/2021/06/28/DoubleSystem/"/>
+    <id>http://mingg2333.top/2021/06/28/DoubleSystem/</id>
+    <published>2021-06-28T03:06:34.000Z</published>
+    <updated>2021-06-28T03:06:34.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="PC" scheme="http://mingg2333.top/tags/PC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vm</title>
+    <link href="http://mingg2333.top/2021/06/27/vm/"/>
+    <id>http://mingg2333.top/2021/06/27/vm/</id>
+    <published>2021-06-27T14:12:05.000Z</published>
+    <updated>2021-06-27T14:12:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;p&gt;refer to &lt;a href=&quot;https://blog.csdn.net/u012611644/article/details/80728806&quot; target=&quot;_blank&quot; 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="PC" scheme="http://mingg2333.top/tags/PC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ai-env</title>
+    <link href="http://mingg2333.top/2021/06/27/ai-env/"/>
+    <id>http://mingg2333.top/2021/06/27/ai-env/</id>
+    <published>2021-06-27T03:18:30.000Z</published>
+    <updated>2021-06-27T03:18:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h1 id=&quot;Python&quot;&gt;Python&lt;a class=&quot;post-anchor&quot; href=&quot;#Python&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;install-python&quot;&gt;ins
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>matlab</title>
+    <link href="http://mingg2333.top/2021/06/10/matlab/"/>
+    <id>http://mingg2333.top/2021/06/10/matlab/</id>
+    <published>2021-06-10T05:00:21.000Z</published>
+    <updated>2021-06-10T05:00:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 id=&quot;about-mat&quot;&gt;about mat&lt;a class=&quot;post-anchor&quot; href=&quot;#about-mat&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight matlab&quot;&gt;&lt;tab
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mmdet</title>
+    <link href="http://mingg2333.top/2021/06/08/mmdet/"/>
+    <id>http://mingg2333.top/2021/06/08/mmdet/</id>
+    <published>2021-06-08T05:35:42.000Z</published>
+    <updated>2021-06-08T05:35:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;densehead/anchorhead&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;roihead&lt;/td&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ascend</title>
@@ -84,7 +221,7 @@
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
-&lt;h1 id=&quot;quickly-see&quot;&gt;quickly see&lt;a class=&quot;post-anchor&quot; href=&quot;#quickly-see&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;figure clas
+&lt;h1 id=&quot;python-amp-pip&quot;&gt;python&amp;pip&lt;a class=&quot;post-anchor&quot; href=&quot;#python-amp-pip&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;figure
       
     
     </summary>
@@ -323,48 +460,6 @@
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Che
       
-    
-    </summary>
-    
-    
-      <category term="test" scheme="http://mingg2333.top/categories/test/"/>
-    
-    
-      <category term="hello" scheme="http://mingg2333.top/tags/hello/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三次函数的极点水平线处性质</title>
-    <link href="http://mingg2333.top/2020/04/22/cubic_function_property/"/>
-    <id>http://mingg2333.top/2020/04/22/cubic_function_property/</id>
-    <published>2020-04-21T17:23:32.000Z</published>
-    <updated>2020-04-21T17:23:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;高二时完成的理论推导。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="theory" scheme="http://mingg2333.top/categories/theory/"/>
-    
-    
-      <category term="cubic function" scheme="http://mingg2333.top/tags/cubic-function/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello</title>
-    <link href="http://mingg2333.top/2020/04/22/hello/"/>
-    <id>http://mingg2333.top/2020/04/22/hello/</id>
-    <published>2020-04-21T17:23:32.000Z</published>
-    <updated>2020-04-21T17:23:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;awsl&lt;/p&gt;
     
     </summary>
     

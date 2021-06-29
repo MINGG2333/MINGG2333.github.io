@@ -199,6 +199,7 @@
 
 <h1 id="test">test<a class="post-anchor" href="#test"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> mindspore.context <span class="hljs-keyword">as</span> context<br><span class="hljs-keyword">import</span> mindspore.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">from</span> mindspore <span class="hljs-keyword">import</span> Tensor<br><span class="hljs-keyword">from</span> mindspore.ops <span class="hljs-keyword">import</span> operations <span class="hljs-keyword">as</span> P<br><br>context.set_context(mode=context.GRAPH_MODE, device_target=<span class="hljs-string">"CPU"</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mul</span><span class="hljs-params">(nn.Cell)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span><br>        super(Mul, self).__init__()<br>        self.mul = P.Mul()<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">construct</span><span class="hljs-params">(self, x, y)</span>:</span><br>        <span class="hljs-keyword">return</span> self.mul(x, y)<br><br>x = Tensor(np.array([<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>]).astype(np.float32))<br>y = Tensor(np.array([<span class="hljs-number">4.0</span>, <span class="hljs-number">5.0</span>, <span class="hljs-number">6.0</span>]).astype(np.float32))<br><br>mul = Mul()<br>print(mul(x, y))<br><span class="hljs-comment"># [4.0, 10.0, 18.0]</span><br></code></pre></td></tr></tbody></table></figure>
 
+<p><a href="https://r.huaweistatic.com/s/ascendstatic/lst/computing/computing-right.svg" target="_blank" rel="noopener" data-caption="img" data-fancybox="images"><img src="https://r.huaweistatic.com/s/ascendstatic/lst/computing/computing-right.svg" alt="img"></a></p>
 </body></html>
 
   
@@ -224,6 +225,8 @@
   
   <div class="post-guide">
     <div class="item left">
+        
+          <a href="/2021/06/08/mmdet/">mmdet</a>
         
     </div>
     <div class="item right">
