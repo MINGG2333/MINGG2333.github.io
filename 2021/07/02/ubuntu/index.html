@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      ubuntu - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#User"><span class="toc-text">User</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#root"><span class="toc-text">root</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-dependency"><span class="toc-text">Install dependency</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#offline"><span class="toc-text">offline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#online"><span class="toc-text">online</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hosts-and-proxy"><span class="toc-text">hosts and proxy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#local-site"><span class="toc-text">local site</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#system"><span class="toc-text">system</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shell"><span class="toc-text">shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#apt-get"><span class="toc-text">apt-get</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tar-gz-tgz"><span class="toc-text">tar gz tgz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#makefile"><span class="toc-text">makefile</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#directory"><span class="toc-text">directory</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#file"><span class="toc-text">file</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#process"><span class="toc-text">process</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Environment-Variables"><span class="toc-text">Environment Variables</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#system-1"><span class="toc-text">system</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#driver"><span class="toc-text">driver</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#root-1"><span class="toc-text">root</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">JI XINYU</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">JI XINYU</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ubuntu</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/07/02</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/07/02/ubuntu/" data-flag-title="ubuntu">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><a id="more"></a>
+
+<h1 id="User">User<a class="post-anchor" href="#User"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># current user</span><br>whoami<br><span class="hljs-comment"># change user password</span><br><span class="hljs-comment"># for the first time to `sudo passwd`, current root password is the installation user password</span><br>passwd [current user]<br>sudo passwd [root]<br><span class="hljs-comment"># su: substitute user, use `man su` for more help</span><br>su [root]<br>su - [root]<br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="root">root<a class="post-anchor" href="#root"></a></h2><h1 id="Install-dependency">Install dependency<a class="post-anchor" href="#Install-dependency"></a></h1><h2 id="offline">offline<a class="post-anchor" href="#offline"></a></h2><p>you can install some basic tools or libraries offline by using Ubuntu installation file, like ubuntu-18.04.5-desktop-amd64.iso, refer to <a href="https://yuanbaoqiang.blog.csdn.net/article/details/109596767" target="_blank" rel="noopener">Ubuntu-离线安装基本依赖（gcc、make、dkms等）_快乐学术猿-CSDN博客_ubuntu安装dkms</a>.</p>
+<p>Notice: not suggested because of the old versions and special installation order.</p>
+<h2 id="online">online<a class="post-anchor" href="#online"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="hosts-and-proxy">hosts and proxy<a class="post-anchor" href="#hosts-and-proxy"></a></h1><p>for faster access</p>
+<h2 id="local-site">local site<a class="post-anchor" href="#local-site"></a></h2><p>refer to <a href="https://www.cnblogs.com/JarvisCJ/p/8395569.html" target="_blank" rel="noopener">ubuntu加速github - Jarvis_Xu - 博客园 (cnblogs.com)</a>,</p>
+<h2 id="system">system<a class="post-anchor" href="#system"></a></h2><p>use <a href="https://github.com/Dreamacro/clash" target="_blank" rel="noopener">clash for Linux: A rule-based tunnel in Go.</a>.</p>
+<ol>
+<li><p>Download and extract software clash from <a href="https://github.com/Dreamacro/clash/releases" target="_blank" rel="noopener">Releases · clash</a>, and move the executable file to be customized <code>/usr/local/bin/clash</code>, then execute it to automatically get <code>~/.config/clash</code> and two configuration file in it.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">wget https://github.com/Dreamacro/clash/releases/download/v1.6.0/clash-linux-amd64-v1.6.0.gz<br>ls<br>sudo gzip -x clash-linux-amd64-v1.6.0.gz<br><span class="hljs-built_in">export</span> CLASH=/usr/<span class="hljs-built_in">local</span>/bin/clash<br>sudo mv clash-linux-amd64-v1.6.0 <span class="hljs-variable">${CLASH}</span><br>sudo chmod +x <span class="hljs-variable">${CLASH}</span><br>sudo <span class="hljs-variable">${CLASH}</span><br>`Ctrl + C`<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Notice: you can build locally referring to <a href="https://github.com/Dreamacro/clash/wiki" target="_blank" rel="noopener">Home · Dreamacro/clash Wiki · GitHub</a>.</p>
+</li>
+<li><p>Update your own <code>config.yaml</code> to <code>~/.config/clash/config.yaml</code>,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> CLASH_URL={your own subscription address}<br>wget --no-check-certificate -O ~/.config/clash/config.yaml <span class="hljs-variable">${CLASH_URL}</span><br><span class="hljs-comment"># or</span><br>curl -L -o ~/.config/clash/config.yaml <span class="hljs-variable">${CLASH_URL}</span><br><span class="hljs-comment"># or, refer to https://blog.csdn.net/Undefinedefity/article/details/117171436</span><br>curl -H <span class="hljs-string">"User-Agent: ClashX/1.20.4.1"</span> https://*****.yaml > config.yaml<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Optional: you can update the <code>~/.config/clash/Country.mmdb</code> too, use the following command lines or download from <a href="https://gitee.com/mirrors/Pingtunnel/blob/master/GeoLite2-Country.mmdb" target="_blank" rel="noopener">GeoLite2-Country.mmdb · Gitee 极速下载/Pingtunnel - Gitee.com</a>.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> Countrymmdb_URL=https://www.sub-speeder.com/client-download/Country.mmdb><br><span class="hljs-comment"># or</span><br><span class="hljs-built_in">export</span> Countrymmdb_URL=https://whiter.cc/cached-apps/linux/Country.mmdb<br>wget --no-check-certificate -O ~/.config/clash/Country.mmdb <span class="hljs-variable">${Countrymmdb_URL}</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Configure Ubuntu system proxy responding to <code>~/.config/clash/config.yaml</code>, suggest to use GUI in <code>Settings -> Network -> Network Proxy -> Manual</code>, or use shell command lines referring to <a href="https://zhuanlan.zhihu.com/p/369344633" target="_blank" rel="noopener">Linux下安装&配置Clash以实现代理上网 - 知乎 (zhihu.com)</a>. </p>
+</li>
+<li><p>Set automatical action, like Boot and Update. you can refer to <a href="https://blog.csdn.net/dongheli/article/details/114788088#commentBox" target="_blank" rel="noopener">在 Ubuntu 上使用 clash 代理工具_dongheli的专栏-CSDN博客</a>, <a href="https://blog.csdn.net/Undefinedefity/article/details/117171436" target="_blank" rel="noopener">Ubuntu 18.04 使用clash_Undefinedefity的博客-CSDN博客</a>, and <a href="https://zhuanlan.zhihu.com/p/369344633" target="_blank" rel="noopener">Linux下安装&配置Clash以实现代理上网 - 知乎 (zhihu.com)</a>.</p>
+<p>Notice: if you plan to write a systemd unit <code>.service</code> yourself, you need to put it at <code>/lib/systemd/system</code> on Ubuntu and use an absolute path to an executable or a simple file name without any slashes while writing <code>ExecStart=</code>, for example you cannot use <code>~</code>, refer to <a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html#ExecStart=" target="_blank" rel="noopener">systemd.service (www.freedesktop.org)</a>. Besides, you must use <code>systemctl daemon-reload</code> in shell to make changes and modification of <code>.service</code> valid, refer to <a href="https://www.tecmint.com/manage-services-using-systemd-and-systemctl-in-linux/" target="_blank" rel="noopener">How to Manage ‘Systemd’ Services and Units Using ‘Systemctl’ in Linux (tecmint.com)</a> and <a href="https://linux.cn/article-5926-1.html" target="_blank" rel="noopener">技术|systemctl 命令完全指南 (linux.cn)</a>.</p>
+</li>
+</ol>
+<p>Notice: if your system time is not correct, there would be something wrong on clash.</p>
+<h1 id="shell">shell<a class="post-anchor" href="#shell"></a></h1><p>how to execute <code>.sh</code> file, refer to <a href="https://blog.csdn.net/u012336923/article/details/50474692" target="_blank" rel="noopener">ubuntu执行.sh文件几种方式区别_yao伟斌-CSDN博客</a>.</p>
+<p>command lines syntax, <a href="https://blog.csdn.net/weixin_33890499/article/details/92389451" target="_blank" rel="noopener">echo和Shell特殊变量：Shell $0, $#, $*, $@, $?, $$和命令行参数_weixin_33890499的博客-CSDN博客</a>.</p>
+<h1 id="apt-get">apt-get<a class="post-anchor" href="#apt-get"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo apt-get install git<br></code></pre></td></tr></tbody></table></figure>
+
+<p>refer to <a href="https://zhuanlan.zhihu.com/p/135953477" target="_blank" rel="noopener">2020最详细安装Ubuntu指南 - 知乎 (zhihu.com)</a>, <a href="https://blog.csdn.net/sinat_40025092/article/details/79785185" target="_blank" rel="noopener">ubuntu新安装完成后配置_sinat_40025092的博客-CSDN博客</a>,</p>
+<h1 id="tar-gz-tgz">tar gz tgz<a class="post-anchor" href="#tar-gz-tgz"></a></h1><p>refer to <a href="https://blog.csdn.net/songbinxu/article/details/80435665" target="_blank" rel="noopener">Ubuntu 常用解压与压缩命令_songbinxu的博客-CSDN博客_ubuntu zip</a>,</p>
+<h1 id="makefile">makefile<a class="post-anchor" href="#makefile"></a></h1><p>refer to <a href="https://www.cnblogs.com/cthon/p/9076787.html" target="_blank" rel="noopener">MakeFile 文件的使用 - CTHON - 博客园 (cnblogs.com)</a>, <a href="https://www.cnblogs.com/qiaozhoulin/p/4896326.html" target="_blank" rel="noopener">Makefile的使用方法 - linqiaozhou - 博客园 (cnblogs.com)</a></p>
+<h1 id="directory">directory<a class="post-anchor" href="#directory"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">pwd</span><br>mkdir<br>rm -rf<br>rm -rf {directory name}/*<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="file">file<a class="post-anchor" href="#file"></a></h1><p>refer to <a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">Linux vi/vim | 菜鸟教程 (runoob.com)</a>, <a href="https://zhidao.baidu.com/question/59790034.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">linux下的Source命令的基本功能_百度知道 (baidu.com)</a>, </p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">touch<br>vim<br><span class="hljs-built_in">source</span><br>rm<br>cat<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="process">process<a class="post-anchor" href="#process"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ps aux<br>ps -fe<br><br>sudo <span class="hljs-built_in">kill</span> {PID of process}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="Environment-Variables">Environment Variables<a class="post-anchor" href="#Environment-Variables"></a></h1><p>refer to <a href="https://www.jianshu.com/p/12fbfa8c7489" target="_blank" rel="noopener">ubuntu－设置系统环境变量 - 简书 (jianshu.com)</a>,</p>
+<h1 id="system-1">system<a class="post-anchor" href="#system-1"></a></h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain">sudo vim ~/.bashrc<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="driver">driver<a class="post-anchor" href="#driver"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ubuntu-drivers devices<br>sudo ubuntu-drivers autoinstall<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="root-1">root<a class="post-anchor" href="#root-1"></a></h1><p>refer to <a href="https://www.cnblogs.com/masbay/p/10744900.html" target="_blank" rel="noopener">ubuntu18.04获取root权限并用root用户登录 - 不妨不妨，来日方长 - 博客园 (cnblogs.com)</a>,</p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/06/29/conda/">conda</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">JI XINYU</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/07/02/ubuntu/">http://mingg2333.top/2021/07/02/ubuntu/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">JI XINYU</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2021
+            <a href="http://mingg2333.top">JI XINYU</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

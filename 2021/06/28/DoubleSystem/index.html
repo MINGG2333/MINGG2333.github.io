@@ -191,7 +191,33 @@
       <div>
       </div>
     </div>
-    
+    <html><head></head><body><a id="more"></a>
+
+<p>refer to <a href="https://www.cnblogs.com/masbay/p/11627727.html" target="_blank" rel="noopener">Windows10安装ubuntu18.04双系统教程 - 不妨不妨，来日方长 - 博客园 (cnblogs.com)</a>, <a href="https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-ubuntu-18-04-alongside-with-windows-10-or-8-in-dual-boot.html" target="_blank" rel="noopener">How to Install Ubuntu 18.04 Alongside With Windows 10 or 8 in Dual Boot (itzgeek.com)</a>.</p>
+<p>Download: <a href="https://releases.ubuntu.com/18.04.5/" target="_blank" rel="noopener">Ubuntu 18.04.5 LTS (Bionic Beaver) offical websit</a></p>
+<p>Notice: </p>
+<ol>
+<li><p>BIOS and Boot GUIs differ from each other due to different vendor of Computer, so it is better to search the guide according to Computer on the Internet. And in some GUIs, there is no <code>USB Boot</code> option, but only USB model name instead, like Kingston Data Traveler.</p>
+</li>
+<li><p>if you have specific independent display card, you may meet troubles into <code>Install Ubuntu</code> on the GNU GRUB. To solve it, you need to restart to <code>USB Boot</code> and disable the graphics features by setting the<code>nomodeset</code>option before <code>Install Ubuntu</code>, please consult tips on the GNU GRUB bootloader screen and partly refer to <a href="https://www.dell.com/support/kbdoc/zh-cn/000123893/manual-nomodeset-kernel-boot-line-option-for-linux-booting?lang=en" target="_blank" rel="noopener">Manual “nomodeset” Kernel Boot Line Option for Linux Booting | Dell 中国</a>, <a href="https://www.geek-share.com/detail/2718521163.html" target="_blank" rel="noopener">ubuntu U盘安装时黑屏花屏 nouveau错误 - 极客分享 (geek-share.com)</a>, <a href="https://www.linuxdiyf.com/linux/20266.html" target="_blank" rel="noopener">启动Ubuntu 16.04 Live DVD/USB碰到花屏的解决方案_Linux系统教程_红联Linux门户 (linuxdiyf.com)</a>.</p>
+<p><a href="/2021/06/28/DoubleSystem/grub%20boot%20screen.png" data-caption="grub boot screen" data-fancybox="images"><img src="/2021/06/28/DoubleSystem/grub%20boot%20screen.png" alt="grub boot screen"></a></p>
+</li>
+<li><p>During <code>Install Ubuntu</code>, there is a step called <code>installation type</code>, where there is a option ‘’<strong>Install Ubuntu alongside Windows Boot Manager</strong>“, which means you now Install Ubuntu 18.04 Alongside With Windows 10 in Dual Boot correctly. But you can choose “<strong>Something else</strong>“ for partition layout and its size.</p>
+<p><a href="/2021/06/28/DoubleSystem/Install%20Ubuntu%20alongside%20Windows%20Boot%20Manager.png" data-caption="Install Ubuntu alongside Windows Boot Manager" data-fancybox="images"><img src="/2021/06/28/DoubleSystem/Install%20Ubuntu%20alongside%20Windows%20Boot%20Manager.png" alt="Install Ubuntu alongside Windows Boot Manager"></a></p>
+</li>
+<li><p>During <code>Restart</code> after installation, you may meet trouble again after choosing <code>Ubuntu</code> on the GNU GRUB menu if you specific independent display card. To solve it, refer to <a href="https://www.cnblogs.com/masbay/p/10718514.html" target="_blank" rel="noopener">ubuntu双系统启动时卡死解决办法 - 不妨不妨，来日方长 - 博客园 (cnblogs.com)</a>, <a href="https://www.dell.com/support/kbdoc/zh-cn/000123893/manual-nomodeset-kernel-boot-line-option-for-linux-booting?lang=en" target="_blank" rel="noopener">Manual “nomodeset” Kernel Boot Line Option for Linux Booting | Dell 中国</a>. If you access to Internet right now, I suggest you to install GPU drivers instead of modifying <code>/etc/default/grub</code> and setting to <code>nomodeset</code> mode as above websits mentioned, seeing next notice.</p>
+</li>
+<li><p>Install NVIDIA driver, refer to <a href="https://jingyan.baidu.com/article/7e440953e161436ec0e2efb3.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">Ubuntu 安装Nvidia显卡驱动-百度经验 (baidu.com)</a>. Use the following command line to check your diver, if nothing outputs, try to restart.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">nvidia-smi<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+</li>
+</ol>
+<p>For more comprehensive guide, refer to <a href="https://www.cnblogs.com/masbay/p/10745170.html" target="_blank" rel="noopener">windows10安装ubuntu双系统教程（绝对史上最详细） - 不妨不妨，来日方长 - 博客园 (cnblogs.com)</a>.</p>
+</body></html>
 
   
     <div class="post-reward">
