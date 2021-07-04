@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2021-07-03T07:41:34.000Z</updated>
+  <updated>2021-07-04T03:18:30.000Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ML Environment</title>
+    <link href="http://mingg2333.top/2021/07/04/ai-env/"/>
+    <id>http://mingg2333.top/2021/07/04/ai-env/</id>
+    <published>2021-07-04T03:18:30.000Z</published>
+    <updated>2021-07-04T03:18:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h1 id=&quot;CPU-GPU-NPU-support&quot;&gt;CPU/GPU/NPU support&lt;a class=&quot;post-anchor&quot; href=&quot;#CPU-GPU-NPU-suppor
+      
+    
+    </summary>
+    
+    
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>testauto</title>
@@ -30,6 +54,7 @@
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;change1&lt;/p&gt;
 &lt;p&gt;change2&lt;/p&gt;
 &lt;p&gt;change3&lt;/p&gt;
+&lt;p&gt;change4&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;
       
     
@@ -152,30 +177,6 @@
     
     
       <category term="PC" scheme="http://mingg2333.top/tags/PC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>machine learning environment configuration</title>
-    <link href="http://mingg2333.top/2021/06/27/ai-env/"/>
-    <id>http://mingg2333.top/2021/06/27/ai-env/</id>
-    <published>2021-06-27T03:18:30.000Z</published>
-    <updated>2021-06-27T03:18:30.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;h2 id=&quot;CPU-GPU-NPU-support&quot;&gt;CPU/GPU/NPU support&lt;a class=&quot;post-anchor&quot; href=&quot;#CPU-GPU-NPU-suppor
-      
-    
-    </summary>
-    
-    
-    
-      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
     
   </entry>
   
