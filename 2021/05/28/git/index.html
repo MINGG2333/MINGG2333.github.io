@@ -294,7 +294,7 @@
 </center>
 
 <p>run ssh-agent using Git Bash:</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">eval `ssh-agent -s`<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Windows</span><br><span class="hljs-built_in">eval</span> `ssh-agent -s`<br><span class="hljs-comment"># Linux</span><br><span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(ssh-agent -s)</span>"</span><br></code></pre></td></tr></tbody></table></figure>
 
 <p>check keys loaded in the ssh-agent:</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ssh-add -l<br></code></pre></td></tr></tbody></table></figure>
@@ -311,7 +311,7 @@
 <li>open responding SSH public key with a editor like Notepad, then copy the contents of the .pub file to your clipboard,</li>
 </ol>
 <p>*SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cat ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># windows</span><br>cat ~/.ssh/id_ed25519.pub<br><span class="hljs-comment"># Linux</span><br>sudo apt-get update<br>sudo apt-get install xclip<br>xclip -selection clipboard &lt; ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="2">
 <li>go into your own Github setting -&gt; SSH and GPG keys, and create a new SSH key,</li>
