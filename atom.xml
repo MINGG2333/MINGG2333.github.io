@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2021-07-05T05:36:51.000Z</updated>
+  <updated>2021-07-05T06:06:45.017Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>paper/index</title>
+    <link href="http://mingg2333.top/2021/07/05/paper/index/"/>
+    <id>http://mingg2333.top/2021/07/05/paper/index/</id>
+    <published>2021-07-05T06:06:45.017Z</published>
+    <updated>2021-07-05T06:06:45.017Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;embed src=&quot;paper/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf&quot; width=&quot;100%&quot; height=&quot;850px&quot;&gt;
+&lt;/body&gt;&lt;/html&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>paper</title>
@@ -452,29 +473,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>AI chip</title>
-    <link href="http://mingg2333.top/2020/06/11/aiic/"/>
-    <id>http://mingg2333.top/2020/06/11/aiic/</id>
-    <published>2020-06-11T12:26:49.000Z</published>
-    <updated>2020-06-11T12:26:49.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近对AI芯片进行了进一步的了解，进行一些总结。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="summary" scheme="http://mingg2333.top/categories/summary/"/>
-    
-    
-      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
-    
-      <category term="IC" scheme="http://mingg2333.top/tags/IC/"/>
     
   </entry>
   
