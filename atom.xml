@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2021-07-04T14:03:39.000Z</updated>
+  <updated>2021-07-05T01:35:48.000Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>blog</title>
+    <link href="http://mingg2333.top/2021/07/05/blog/"/>
+    <id>http://mingg2333.top/2021/07/05/blog/</id>
+    <published>2021-07-05T01:35:48.000Z</published>
+    <updated>2021-07-05T01:35:48.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt; how to build and publish your own blog&lt;/p&gt;
+&lt;p&gt;Created: 2021-06-06 23:57:18&lt;/p&gt;
+&lt;p&gt;Modified: 2021-7-5 09:35:48&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Fuzz</title>
@@ -236,25 +255,6 @@
     <summary type="html">
     
       &lt;p&gt;use ascend&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>blog</title>
-    <link href="http://mingg2333.top/2021/06/06/blog/"/>
-    <id>http://mingg2333.top/2021/06/06/blog/</id>
-    <published>2021-06-06T15:57:18.000Z</published>
-    <updated>2021-06-06T15:57:18.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt; how to build and publish your own blog&lt;/p&gt;
-&lt;p&gt;Created: 2021-06-06 23:57:18&lt;/p&gt;
-&lt;p&gt;Modified: 2021-7-4 22:06:07&lt;/p&gt;
     
     </summary>
     
