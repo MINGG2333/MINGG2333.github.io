@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      python - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python-and-pip"><span class="toc-text">python and pip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#basic-operation"><span class="toc-text">basic operation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#math-operation"><span class="toc-text">math operation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#advanced-operation"><span class="toc-text">advanced operation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lambda-and-function"><span class="toc-text">lambda and function</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map"><span class="toc-text">map</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iterator"><span class="toc-text">iterator</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#str"><span class="toc-text">str</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#join-split-format-ast-literal-eval"><span class="toc-text">join  split  format  ast.literal_eval</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dict"><span class="toc-text">dict</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#numpy"><span class="toc-text">numpy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string"><span class="toc-text">string</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#matplotlib"><span class="toc-text">matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pyplot"><span class="toc-text">pyplot</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#os"><span class="toc-text">os</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#path"><span class="toc-text">path</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#walk"><span class="toc-text">walk</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#functools"><span class="toc-text">functools</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#partial"><span class="toc-text">partial</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#txt"><span class="toc-text">txt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xls"><span class="toc-text">xls</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#static-variables"><span class="toc-text">static variables</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">JI XINYU</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">JI XINYU</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">python</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/07/11</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/07/11/py-libs/" data-flag-title="python">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-05-28 08:32:57</p>
+<p>Modified: Sun Jul 11 10:29:04 CST 2021</p>
+<a id="more"></a>
+
+<p>refer to <a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html</a>, <a href="https://www.runoob.com/python/python-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/python/python-tutorial.html</a>, <a href="http://www.pythondoc.com/pythontutorial3/appetite.html" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/appetite.html</a></p>
+<h1 id="python-and-pip">python and pip<a class="post-anchor" href="#python-and-pip"></a></h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> windows</span><br>where python<br><span class="hljs-meta">#</span><span class="bash"> linux</span><br>whereis python<br><span class="hljs-meta">#</span><span class="bash"> pip</span><br>python3 -m pip list<br>pip3 list<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="basic-operation">basic operation<a class="post-anchor" href="#basic-operation"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">b = a<br>a <span class="hljs-keyword">is</span> b<br><span class="hljs-comment"># True</span><br><span class="hljs-comment">#c = a.copy()</span><br><span class="hljs-comment">#c is a</span><br><span class="hljs-comment">## False</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="math-operation">math operation<a class="post-anchor" href="#math-operation"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">a = <span class="hljs-number">3.75</span><br>int(a)<br>round(a)<br><span class="hljs-keyword">import</span> math<br>math.floor(a)<br>math.ceil(a)<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="advanced-operation">advanced operation<a class="post-anchor" href="#advanced-operation"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># retun</span><br><br><span class="hljs-comment"># pass</span><br><br><span class="hljs-comment"># raise</span><br><br><span class="hljs-comment"># assert</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="lambda-and-function">lambda and function<a class="post-anchor" href="#lambda-and-function"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span><span class="hljs-params">(x,y)</span>:</span><br><span class="hljs-comment"># or def sum(x:int=1,y:int=2) -&gt; int:</span><br>      <span class="hljs-keyword">return</span> x+y<br>p = <span class="hljs-keyword">lambda</span> x,y:x+y<br>sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)==p(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br><span class="hljs-comment"># True</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="map">map<a class="post-anchor" href="#map"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">a = [<span class="hljs-number">2</span>] * <span class="hljs-number">9</span><br>list(map(str, a))<br><span class="hljs-comment"># ['2', '2', '2', '2', '2', '2', '2', '2', '2']</span><br>list(map(<span class="hljs-keyword">lambda</span> x:x**<span class="hljs-number">2</span>, a))<br><span class="hljs-comment"># [4, 4, 4, 4, 4, 4, 4, 4, 4]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="iterator">iterator<a class="post-anchor" href="#iterator"></a></h1><p>refer to <a href="https://www.runoob.com/python3/python3-iterator-generator.html" target="_blank" rel="noopener">https://www.runoob.com/python3/python3-iterator-generator.html</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyNumbers</span>:</span><br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span><span class="hljs-params">(self)</span>:</span><br>    self.a = <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> self<br>  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__next__</span><span class="hljs-params">(self)</span>:</span><br>    self.a += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> self.a &gt;= <span class="hljs-number">10</span>:<br>      <span class="hljs-keyword">raise</span> StopIteration<br>    <span class="hljs-keyword">return</span> self.a<br><span class="hljs-comment"># usage 1</span><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> myclass:<br><span class="hljs-comment"># or for x in iter(myclass):</span><br>    print(x)<br>    <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">5</span>:<br>        <span class="hljs-keyword">break</span><br><span class="hljs-comment"># usage 2</span><br>myiter = iter(myclass)<br>next(myiter)<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="str">str<a class="post-anchor" href="#str"></a></h1><h2 id="join-split-format-ast-literal-eval">join  split  format  ast.literal_eval<a class="post-anchor" href="#join-split-format-ast-literal-eval"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># a &lt;class 'str'&gt; or list(&lt;class 'str'&gt;) or tuple(&lt;class 'str'&gt;)</span><br>a = <span class="hljs-string">'gdfgdf'</span><br>a = [<span class="hljs-string">'gdfgdf'</span>,<span class="hljs-string">'hfgdhjfj'</span>]<br><span class="hljs-string">','</span>.join(a)<br><span class="hljs-comment"># 'g,d,f,g,d,f'</span><br><span class="hljs-comment"># 'gdfgdf,hfgdhjfj'</span><br><br><span class="hljs-comment"># b &lt;class 'str'&gt;</span><br>b = <span class="hljs-string">'g,d,f,g,d,f'</span><br>b = <span class="hljs-string">'gdfgdf,hfgdhjfj'</span><br>b.split(<span class="hljs-string">','</span>)<br><span class="hljs-comment"># ['g', 'd', 'f', 'g', 'd', 'f']</span><br><span class="hljs-comment"># ['gdfgdf', 'hfgdhjfj']</span><br><br><span class="hljs-string">'***{}***{}***'</span>.format(a,b)<br><span class="hljs-comment"># "***['gdfgdf', 'hfgdhjfj']***gdfgdf,hfgdhjfj***"</span><br><br><span class="hljs-comment"># c str(&lt;class 'list'&gt;) or str(&lt;class 'tuple'&gt;) or ...</span><br>c = <span class="hljs-string">"['gdfgdf', 'hfgdhjfj']"</span><br><span class="hljs-keyword">import</span> ast<br>ast.literal_eval(c)<br><span class="hljs-comment"># ['gdfgdf', 'hfgdhjfj']</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="dict">dict<a class="post-anchor" href="#dict"></a></h1><p>refer to <a href="https://www.runoob.com/python/python-dictionary.html" target="_blank" rel="noopener">https://www.runoob.com/python/python-dictionary.html</a></p>
+<h1 id="numpy">numpy<a class="post-anchor" href="#numpy"></a></h1><p>refer to <a href="https://juejin.cn/post/6844903827473219597" target="_blank" rel="noopener">https://juejin.cn/post/6844903827473219597</a>, <a href="https://blog.csdn.net/weixin_38283159/article/details/78793277" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38283159/article/details/78793277</a>, <a href="https://www.cnblogs.com/mzct123/p/8659193.html" target="_blank" rel="noopener">https://www.cnblogs.com/mzct123/p/8659193.html</a>, </p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br>a=np.arange(<span class="hljs-number">12</span>)<br><span class="hljs-comment"># a &lt;- array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])</span><br><span class="hljs-comment"># shape: (12,)</span><br>a.resize(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)<br><span class="hljs-comment"># or a.shape=(2,3,2)</span><br><span class="hljs-comment"># a &lt;- array([[[ 0,  1],</span><br><span class="hljs-comment">#         [ 2,  3],</span><br><span class="hljs-comment">#         [ 4,  5]],</span><br><br><span class="hljs-comment">#        [[ 6,  7],</span><br><span class="hljs-comment">#         [ 8,  9],</span><br><span class="hljs-comment">#         [10, 11]]])</span><br>a.reshape(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<br><span class="hljs-comment"># array([[ 0,  1,  2,  3],</span><br><span class="hljs-comment">#        [ 4,  5,  6,  7],</span><br><span class="hljs-comment">#        [ 8,  9, 10, 11]])</span><br>a.dtype, a.shape, a.size, a.ndim<br><span class="hljs-comment"># (dtype('int64'), (2, 3, 2), 12, 3)</span><br>b = a<br>c = a.copy()<br>d = a.ravel()<br>e = a.flatten()<br><span class="hljs-comment"># d,e &lt;- array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])</span><br>a[<span class="hljs-number">0</span>] = <span class="hljs-number">666</span><br><span class="hljs-comment"># or b[0] = 666</span><br><span class="hljs-comment"># a,b &lt;- array([[[666, 666],</span><br><span class="hljs-comment">#         [666, 666],</span><br><span class="hljs-comment">#         [666, 666]],</span><br><br><span class="hljs-comment">#        [[  6,   7],</span><br><span class="hljs-comment">#         [  8,   9],</span><br><span class="hljs-comment">#         [ 10,  11]]])</span><br><span class="hljs-comment"># d &lt;- array([666, 666, 666, 666, 666, 666,   6,   7,   8,   9,  10,  11])</span><br>d[<span class="hljs-number">0</span>]=<span class="hljs-number">555</span><br><span class="hljs-comment"># a,b &lt;- array([[[555, 666],</span><br><span class="hljs-comment">#         [666, 666],</span><br><span class="hljs-comment">#         [666, 666]],</span><br><br><span class="hljs-comment">#        [[  6,   7],</span><br><span class="hljs-comment">#         [  8,   9],</span><br><span class="hljs-comment">#         [ 10,  11]]])</span><br><span class="hljs-comment"># d &lt;- array([555, 666, 666, 666, 666, 666,   6,   7,   8,   9,  10,  11])</span><br>a[...,np.newaxis,:]<br><span class="hljs-comment"># or np.expand_dims(a, axis=2)</span><br><span class="hljs-comment"># array([[[[555, 666]],</span><br><br><span class="hljs-comment">#         [[666, 666]],</span><br><br><span class="hljs-comment">#         [[666, 666]]],</span><br><br><br><span class="hljs-comment">#        [[[  6,   7]],</span><br><br><span class="hljs-comment">#         [[  8,   9]],</span><br><br><span class="hljs-comment">#         [[ 10,  11]]]])</span><br><span class="hljs-comment"># shape:(2, 3, 1, 2)</span><br>f = a[...,np.newaxis,:]<br>f.transpose(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>)<br><span class="hljs-comment"># f.transpose()</span><br><span class="hljs-comment"># array([[[[555,   6],</span><br><span class="hljs-comment">#          [666,   8],</span><br><span class="hljs-comment">#          [666,  10]]],</span><br><br><br><span class="hljs-comment">#        [[[666,   7],</span><br><span class="hljs-comment">#          [666,   9],</span><br><span class="hljs-comment">#          [666,  11]]]])</span><br><span class="hljs-comment"># shape:(2, 1, 3, 2)</span><br>np.squeeze(f)<br><span class="hljs-comment"># array([[[555, 666],</span><br><span class="hljs-comment">#         [666, 666],</span><br><span class="hljs-comment">#         [666, 666]],</span><br><br><span class="hljs-comment">#        [[  6,   7],</span><br><span class="hljs-comment">#         [  8,   9],</span><br><span class="hljs-comment">#         [ 10,  11]]])</span><br><span class="hljs-comment"># shape:(2, 3, 2)</span><br><br>np.argwhere(f&lt;<span class="hljs-number">100</span>)<br><span class="hljs-comment"># array([[1, 0, 0, 0],</span><br><span class="hljs-comment">#        [1, 0, 0, 1],</span><br><span class="hljs-comment">#        [1, 1, 0, 0],</span><br><span class="hljs-comment">#        [1, 1, 0, 1],</span><br><span class="hljs-comment">#        [1, 2, 0, 0],</span><br><span class="hljs-comment">#        [1, 2, 0, 1]])</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Note: the dtype of np.str_ includes the limitation of length of the str.</p>
+<h1 id="string">string<a class="post-anchor" href="#string"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> string<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="matplotlib">matplotlib<a class="post-anchor" href="#matplotlib"></a></h1><h2 id="pyplot">pyplot<a class="post-anchor" href="#pyplot"></a></h2><p>refer to <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html" target="_blank" rel="noopener">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html</a>.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain">import numpy as np<br>import matplotlib.pyplot as plt<br><br>x = np.arange(0, 5, 0.1)<br>y = np.sin(x)<br>plt.plot(x, y)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="os">os<a class="post-anchor" href="#os"></a></h1><p>handle directory</p>
+<h2 id="path">path<a class="post-anchor" href="#path"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os, sys<br>path = __file__<br><span class="hljs-comment"># path &lt;- file full path &lt;class 'str'&gt;</span><br>os.path.basename(path)<br><span class="hljs-comment"># file name</span><br>os.path.dirname(path)<br><span class="hljs-comment"># directory path</span><br>os.path.split(path)<br><span class="hljs-comment"># [directory path, file name]</span><br>os.path.splitext(path)<br><span class="hljs-comment"># [file path, extension name]</span><br><br>os.path.join(basepath, relpath, ...)<br>os.path.relpath(path[, basepath])<br><br>os.path.exists(path)<br>os.path.isfile(path)<br>os.path.isdir(path)<br><br>os.path.getsize(path)<br><br><span class="hljs-comment"># frequent use along</span><br>os.mkdir(path)<br>sys.path.append(path)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="walk">walk<a class="post-anchor" href="#walk"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># walk</span><br><span class="hljs-keyword">import</span> os<br>path = <span class="hljs-string">r'./'</span><br>ext = <span class="hljs-string">'.py'</span><br>roots_dict = {}<br><span class="hljs-keyword">for</span> root, dirs, files <span class="hljs-keyword">in</span> os.walk(path):<br>    <span class="hljs-string">'''</span><br><span class="hljs-string">    root is a string, the path to the directory, consistent with 'path'.</span><br><span class="hljs-string">    dirs is a list of the names of the subdirectories in root (excluding '.' and '..').</span><br><span class="hljs-string">    files is a list of the names of the non-directory files in root.</span><br><span class="hljs-string">        Note that the names in the lists are just names, with no path components.</span><br><span class="hljs-string">        To get a full path (which begins with top) to a file or directory in root,</span><br><span class="hljs-string">        do os.path.join(root, name).</span><br><span class="hljs-string">    '''</span><br>    print(<span class="hljs-string">'there are {} dir(s) and {} file(s) in the root of {}'</span>.format( \<br>        len(dirs), len(files), root))<br>    roots_dict[root] = dirs + files<br><br>    files_filter = []<br>    <span class="hljs-keyword">if</span> ext != <span class="hljs-literal">None</span>:<br>        <span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> files:<br>            <span class="hljs-keyword">if</span> os.path.splitext(file)[<span class="hljs-number">-1</span>] <span class="hljs-keyword">in</span> ext:<br>                files_filter.append(file)<br>    <span class="hljs-keyword">else</span>:<br>        files_filter.extend(files)<br>    print(<span class="hljs-string">'len(files_filter)'</span>, <span class="hljs-string">': '</span>, len(files_filter))<br>    <span class="hljs-keyword">if</span> len(files_filter) == <span class="hljs-number">0</span>:<br>        print()<br>        <span class="hljs-keyword">continue</span><br><br>    <span class="hljs-comment"># insert operation to process files_filter</span><br>    print()<br>print(roots_dict)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="functools">functools<a class="post-anchor" href="#functools"></a></h1><h2 id="partial">partial<a class="post-anchor" href="#partial"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> partial<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Func</span><span class="hljs-params">(a, b = None)</span>:</span><br>    print(a, b)<br>    <span class="hljs-keyword">pass</span><br>worker = partial(Func, b=<span class="hljs-number">1</span>)<br>worker(a=<span class="hljs-string">'test'</span>)<br><span class="hljs-comment"># test 1</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+<h1 id="txt">txt<a class="post-anchor" href="#txt"></a></h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> codecs<br><br><span class="hljs-keyword">if</span> (sys.version_info &gt;= (<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)):<br>    fd = open(filename, <span class="hljs-string">'r'</span>)<br>    f = fd<br><span class="hljs-keyword">elif</span> (sys.version_info &gt;= <span class="hljs-number">2.7</span>):<br>	fd = codecs.open(filename, <span class="hljs-string">'r'</span>)<br>	f = fd<br>    <br>line = f.readline()<br>splitline = line.strip().split(<span class="hljs-string">' '</span>)<br><span class="hljs-comment"># or</span><br>lines = f.readlines()<br>splitlines = [x.strip().split(<span class="hljs-string">' '</span>) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> lines]<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="xls">xls<a class="post-anchor" href="#xls"></a></h1><p>handle .xls</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> xlwt<br>workbook = xlwt.Workbook(encoding = <span class="hljs-string">'utf-8'</span>)<br>worksheet = workbook.add_sheet(<span class="hljs-string">'Worksheet'</span>+str(<span class="hljs-number">0</span>))<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'Num'</span>)<span class="hljs-comment">#row, col, *args</span><br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'unicode'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'char'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'char_wide'</span>)<br>worksheet.write(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-string">'char_hash'</span>)<br>workbook.save(<span class="hljs-string">'Excel_test'</span>+str(<span class="hljs-number">0</span>)+<span class="hljs-string">'.xls'</span>)<br><br><span class="hljs-keyword">import</span> xlrd<br>exce = xlrd.open_workbook(<span class="hljs-string">'Excel_test.xls'</span>)<br>sheet1 = exce.sheet_by_name(<span class="hljs-string">'Worksheet1'</span>)<br>nrows = sheet1.nrows<br><br>unicod = sheet1.col_values(<span class="hljs-number">1</span>)<br>char_wide = sheet1.col_values(<span class="hljs-number">3</span>)<br>char_hash = sheet1.col_values(<span class="hljs-number">4</span>)<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="static-variables">static variables<a class="post-anchor" href="#static-variables"></a></h1><p>refer to <a href="https://www.jianshu.com/p/3ed1037b7c18" target="_blank" rel="noopener">https://www.jianshu.com/p/3ed1037b7c18</a>, </p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">static_vars</span><span class="hljs-params">(**kwargs)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorate</span><span class="hljs-params">(func)</span>:</span><br>        <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> kwargs:<br>            setattr(func, k, kwargs[k])<br>        <span class="hljs-keyword">return</span> func<br>    <span class="hljs-keyword">return</span> decorate<br><span class="hljs-meta">@static_vars(counter = 0)</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span>:</span><br>    foo.counter += <span class="hljs-number">1</span><br></code></pre></td></tr></tbody></table></figure>
+
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/07/07/VScode/">Visual Stdio Code</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">JI XINYU</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/07/11/py-libs/">http://mingg2333.top/2021/07/11/py-libs/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">JI XINYU</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2021
+            <a href="http://mingg2333.top">JI XINYU</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2021-07-07T03:36:46.000Z</updated>
+  <updated>2021-07-11T08:29:04.000Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python</title>
+    <link href="http://mingg2333.top/2021/07/11/py-libs/"/>
+    <id>http://mingg2333.top/2021/07/11/py-libs/</id>
+    <published>2021-07-11T08:29:04.000Z</published>
+    <updated>2021-07-11T08:29:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-05-28 08:32:57&lt;/p&gt;
+&lt;p&gt;Modified: Sun Jul 11 10:29:04 CST 2021&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Visual Stdio Code</title>
@@ -342,28 +360,6 @@
     
     
       <category term="git" scheme="http://mingg2333.top/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>py libs</title>
-    <link href="http://mingg2333.top/2021/05/28/py-libs/"/>
-    <id>http://mingg2333.top/2021/05/28/py-libs/</id>
-    <published>2021-05-28T00:32:57.000Z</published>
-    <updated>2021-05-28T00:32:57.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;h1 id=&quot;python-amp-pip&quot;&gt;python&amp;amp;pip&lt;a class=&quot;post-anchor&quot; href=&quot;#python-amp-pip&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;fi
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
