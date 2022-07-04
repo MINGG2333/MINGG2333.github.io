@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      ML Environment - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CPU-GPU-NPU-support"><span class="toc-text">CPU&#x2F;GPU&#x2F;NPU support</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-python"><span class="toc-text">install python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-ML-lib"><span class="toc-text">install ML-lib</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TensorFlow-2"><span class="toc-text">TensorFlow 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TensorFlow-1-3"><span class="toc-text">TensorFlow 1.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PyTorch"><span class="toc-text">PyTorch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytorch-lightning"><span class="toc-text">pytorch_lightning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MindSpore"><span class="toc-text">MindSpore</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenVINO"><span class="toc-text">OpenVINO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Keras"><span class="toc-text">Keras</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NVIDIA-GPU"><span class="toc-text">NVIDIA GPU</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD-CPU"><span class="toc-text">AMD CPU</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ML Environment</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/09/18</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/09/17/ai-env/" data-flag-title="ML Environment">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/AI">AI</a>
+                  
+                
+                  
+                    <a href="/tags/machine learning">machine learning</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-07-04 11:18:30</p>
+<p>Modified: Fri Sep 17 18:39:12 CST 2021</p>
+<a id="more"></a>
+
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">CUDA_VISIBLE_DEVICES=0<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="CPU-GPU-NPU-support">CPU/GPU/NPU support<a class="post-anchor" href="#CPU-GPU-NPU-support"></a></h1><p>What you need to install to support advanced computing depends on your hardware of device, and the requirements of machine learning library, like TensorFlow, Torch, MindSpore and so on.</p>
+<ol>
+<li><p>if use <strong>NVIDIA GPU</strong> supporting CUDA (<a href="https://timdettmers.com/2020/09/07/which-gpu-for-deep-learning/#General_Recommendations" target="_blank" rel="noopener">how to choose</a>), usually the following NVIDIA® dependencies need installed:</p>
+<ul>
+<li><p>version check, refer to <a href="https://blog.csdn.net/weixin_41803874/article/details/91913063" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41803874/article/details/91913063</a>, <a href="https://docs.nvidia.com/deploy/cuda-compatibility" target="_blank" rel="noopener">https://docs.nvidia.com/deploy/cuda-compatibility</a>, <a href="https://tensorflow.google.cn/install/source#gpu" target="_blank" rel="noopener">https://tensorflow.google.cn/install/source#gpu</a>. ps. <a href="https://github.com/tensorflow/tensorflow/issues/43718#issuecomment-703871083" target="_blank" rel="noopener">cuda 10.0 seems to not support RTX30</a>, so that <a href="https://blog.csdn.net/Gxy19980906/article/details/119654306" target="_blank" rel="noopener">use cuda 11</a>.</p>
+</li>
+<li><p><a href="https://www.nvidia.com/drivers" target="_blank" rel="noopener">NVIDIA® GPU drivers</a>.</p>
+<p>check GPU:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">lspci | grep <span class="hljs-string">'VGA'</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>It usually has been installed since operation system was installed.</p>
+<p>In Ubuntu, it is recommended to use GUI to install or change your GPU driver, refer to <a href="https://www.cyberciti.biz/faq/ubuntu-linux-install-nvidia-driver-latest-proprietary-driver/" target="_blank" rel="noopener">Ubuntu Linux Install Nvidia Driver (Latest Proprietary Driver) - nixCraft (cyberciti.biz)</a>, OR use terminal:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># refer to https://cyfeng.science/2020/05/02/ubuntu-install-nvidia-driver-cuda-cudnn-suits/</span><br>ubuntu-drivers devices<br>sudo ubuntu-drivers autoinstall<br><span class="hljs-comment"># or sudo apt install nvidia-driver-440</span><br><span class="hljs-comment"># reboot</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>In windows, download the installation packages from <a href="https://www.nvidia.com/Download/index.aspx" target="_blank" rel="noopener">NVIDIA official website</a> and install it.</p>
+<p>Now, if you use <code>conda</code>, you can just install the runtime files of <code>cuda</code> and <code>cudnn</code>, and skip the following two installation(<a href="https://blog.csdn.net/qq_40947610/article/details/114707085" target="_blank" rel="noopener">the differences</a>):</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># conda isntall `cuda` and `cudnn`, for example:</span><br>conda install cudatoolkit=10.0 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/linux-64/<br>conda install cudnn=7.4 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/linux-64/<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p><a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">CUDA® Toolkit</a>.</p>
+<p>Read related software documents, like <a href="https://tensorflow.google.cn/install/gpu" target="_blank" rel="noopener">GPU support  | TensorFlow (google.cn)</a>, to choose correct CUDA version.</p>
+<p>Note: you need to choose <code>runfile</code> packages to install old version if you use Ubuntu.</p>
+<p>For Ubuntu 18.04 LTS, refer to the CUDA installation section in <a href="https://zhuanlan.zhihu.com/p/72298520" target="_blank" rel="noopener">Ubuntu 18.04安装CUDA和cuDNN - 知乎 (zhihu.com)</a> and install CUDA without selecting driver component. Note that you would better to record those information.</p>
+<p><a href="/2021/09/17/ai-env/F612FF78A7E6C94E5B592667B8F80B0F.jpg" data-caption="F612FF78A7E6C94E5B592667B8F80B0F" data-fancybox="images"><img src="/2021/09/17/ai-env/F612FF78A7E6C94E5B592667B8F80B0F.jpg" alt="F612FF78A7E6C94E5B592667B8F80B0F"></a></p>
+<p>For Windows 10, you can refer to the CUDA installation section in <a href="https://zhuanlan.zhihu.com/p/94220564" target="_blank" rel="noopener">win10安装CUDA和cuDNN的正确姿势 - 知乎 (zhihu.com)</a>. Uninstall and install CUDA refer to <a href="https://blog.csdn.net/m0_37605642/article/details/99100924" target="_blank" rel="noopener">windows下CUDA的卸载以及安装_m0_37605642的博客-CSDN博客_cuda卸载</a>, note that you can keep the high version of components of Display Driver, PhysX, NVIDIA GeForce Experience.</p>
+<p>Notice: do not care about the GPU drivers, you can verify CUDA firstly according to the following instructions, and if there is mismatching information printed, change your drivers later. To verify your installation:</p>
+<ol>
+<li>check <code>nvcc</code>, execute the following command line in shell:</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">nvcc -V<br></code></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p>If there is no information printed, check your environment variables:</p>
+<p>in Ubuntu, execute the following command line in shell, refer to <a href="https://www.jianshu.com/p/12fbfa8c7489" target="_blank" rel="noopener">ubuntu－设置系统环境变量 - 简书 (jianshu.com)</a>, <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup" target="_blank" rel="noopener">Environment Setup :: CUDA Toolkit Documentation (nvidia.com)</a>, <a href="https://zhuanlan.zhihu.com/p/72298520" target="_blank" rel="noopener">Ubuntu 18.04安装CUDA和cuDNN - 知乎 (zhihu.com)</a>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">'# CUDA'</span> &gt;&gt; ~/.bashrc<br><span class="hljs-built_in">echo</span> <span class="hljs-string">'export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}'</span> &gt;&gt; ~/.bashrc<br><span class="hljs-built_in">echo</span> <span class="hljs-string">'export LD_LIBRARY_PATH=/usr/local/cuda/lib64\</span><br><span class="hljs-string">${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}'</span> &gt;&gt; ~/.bashrc<br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<p>If environment variables has been set done, CUDA <strong>Runtime</strong> version will be printed according to CUDA Runtime API, which should be not higher than CUDA <strong>Driver</strong> version, which you can look up by executing the following command line:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">nvidia-smi<br><br>pip install gpustat<br>gpustat -i 1 -cup --force-color<br><span class="hljs-comment"># watch --color -n 1 gpustat --force-color -cup</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p><a href="/2021/09/17/ai-env/3B06FC6348F8E3857C1438660E4F41CD.jpg" data-caption="3B06FC6348F8E3857C1438660E4F41CD" data-fancybox="images"><img src="/2021/09/17/ai-env/3B06FC6348F8E3857C1438660E4F41CD.jpg" alt="3B06FC6348F8E3857C1438660E4F41CD"></a></p>
+<p>if you do not get CUDA <strong>Driver</strong> version printed or your CUDA <strong>Driver</strong> version is lower than <strong>Runtime</strong> version, install or update your <strong>NVIDIA® GPU drivers</strong> according to next step.</p>
+<ol start="2">
+<li>running compiled examples,</li>
+</ol>
+<p>in windows, refer to <a href="https://zhuanlan.zhihu.com/p/139668028" target="_blank" rel="noopener">windows 验证CUDA和CUDNN是否安装成功 - 知乎 (zhihu.com)</a>, <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html" target="_blank" rel="noopener">Installation Guide Windows :: CUDA Toolkit Documentation (nvidia.com)</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cd C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1<br>cd extras\demo_suite<br>deviceQuery.exe<br>bandwidthTest.exe<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*v11.1 is the version of your CUDA.</p>
+<p>in Ubuntu,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/cuda/samples/1_Utilities/deviceQuery<br>sudo make<br>./deviceQuery<br><span class="hljs-built_in">cd</span> ..<br><span class="hljs-built_in">cd</span> bandwidthTest<br>sudo make<br>./bandwidthTest<br></code></pre></td></tr></tbody></table></figure>
+
+<p>If <code>Result = PASS</code> is printed, your CUDA has been installed well, and you can <strong>skip</strong> the step of <strong>NVIDIA® GPU drivers</strong>, while if there is something wrong with mismatching between driver version and CUDA version, carry out the next step.</p>
+</li>
+<li><p><a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener">cuDNN</a>. Refer to <a href="https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html" target="_blank" rel="noopener">https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html</a>.</p>
+<p>Check your installation version, in windows, </p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cd C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1<br>cd include<br>cudnn_version.h<br></code></pre></td></tr></tbody></table></figure>
+
+<p>in Ubuntu,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">cat /usr/<span class="hljs-built_in">local</span>/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2<br></code></pre></td></tr></tbody></table></figure></li>
+</ul>
+<ol start="2">
+<li><p>if use <strong>Intel iGPU/FPGA(deprecated)/VPUs/HDDL/MYRIAD/HETERO</strong> with OpenVINO, </p>
+</li>
+<li><p>if use <strong>Huawei Ascend</strong> which supports CANN,</p>
+</li>
+<li><p>if use <strong>AMD/ATI GPU</strong> which supports AMD-MLP, which is based on OpenCL supporting parallel computing across various devices, give it up.</p>
+</li>
+<li><p>if use DirectML on Windows hardware include <strong>AMD, Intel and NVIDIA GPUs</strong>,</p>
+<p>refer to <a href="https://blogs.windows.com/windowsdeveloper/2020/06/17/gpu-accelerated-ml-training-inside-the-windows-subsystem-for-linux/" target="_blank" rel="noopener">GPU accelerated ML training inside the Windows Subsystem for Linux - Windows Developer Blog</a>, <a href="https://docs.microsoft.com/zh-cn/windows/win32/direct3d12/dml" target="_blank" rel="noopener">直接机器学习 (DirectML) - Win32 apps | Microsoft Docs</a>, <a href="https://github.com/microsoft/DirectML" target="_blank" rel="noopener">GitHub - microsoft/DirectML</a>, <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-accelerated-training#students-and-beginners" target="_blank" rel="noopener">GPU with DirectML | Microsoft Docs</a>.</p>
+<p>Refer to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-faq" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-faq</a>, to know how to use multiple GPUs by DirectML.</p>
+</li>
+<li><p>if use CUDA supports a laptop with an iGPU and a dGPU running Ubuntu, refer to <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#faq7" target="_blank" rel="noopener">Installation Guide Linux :: CUDA Toolkit Documentation (nvidia.com)</a>.</p>
+</li>
+<li><p>if use Google Cloud or kaggle,</p>
+</li>
+</ol>
+<h1 id="Python">Python<a class="post-anchor" href="#Python"></a></h1><h2 id="install-python">install python<a class="post-anchor" href="#install-python"></a></h2><ol>
+<li><p>if use windows, go into <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Download Python | Python.org</a>, download and install what you need; To choose which windows version, refer to <a href="https://www.jianshu.com/p/bcb44e9d8efb" target="_blank" rel="noopener">python官网的几个windows版本的区别 - 简书 (jianshu.com)</a>.</p>
+<p>*suggestion: add python to PATH of environment variables;install pip.</p>
+</li>
+<li><p>if use Ubuntu, </p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># use source file</span><br>wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz<br>tar -zxvf Python-3.7.5.tgz<br><span class="hljs-built_in">cd</span> Python-3.7.5<br><span class="hljs-comment">#  --enable-loadable-sqlite-extensions if use libsqlite3-dev</span><br>./configure --prefix=/usr/<span class="hljs-built_in">local</span>/python3.7.5 --<span class="hljs-built_in">enable</span>-shared<br>make<br>sudo make install<br><span class="hljs-comment"># or use apt</span><br>apt-get install python3.7<br><span class="hljs-comment">#set environmental variables</span><br>vim .bashrc<br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><span class="hljs-built_in">export</span> PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">source</span> .bashrc<br><span class="hljs-comment"># test</span><br>python3 --version<br>pip3 --version<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>use <a href="https://www.anaconda.com/" target="_blank" rel="noopener">Anaconda</a> or <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda</a>(recommended), </p>
+</li>
+</ol>
+<h2 id="install-ML-lib">install ML-lib<a class="post-anchor" href="#install-ML-lib"></a></h2><p>machine learning libraries(frameworks) include TensorFlow, PyTorch, MindSpore and so on</p>
+<h3 id="TensorFlow-2">TensorFlow 2<a class="post-anchor" href="#TensorFlow-2"></a></h3><ol>
+<li><p>if use TensorFlow 2, refer to <a href="https://tensorflow.google.cn/install" target="_blank" rel="noopener">Install TensorFlow 2 (google.cn)</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Current stable release <span class="hljs-keyword">for</span> CPU and GPU</span><br>pip3 install tensorflow<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed absl-py-0.13.0 astunparse-1.6.3 cached-property-1.5.2 cachetools-4.2.2 certifi-2021.5.30 chardet-4.0.0 flatbuffers-1.12 gast-0.4.0 google-auth-1.32.0 google-auth-oauthlib-0.4.4 google-pasta-0.2.0 grpcio-1.34.1 h5py-3.1.0 idna-2.10 importlib-metadata-4.6.0 keras-nightly-2.5.0.dev2021032900 keras-preprocessing-1.1.2 markdown-3.3.4 numpy-1.19.5 oauthlib-3.1.1 opt-einsum-3.3.0 protobuf-3.17.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.1 requests-oauthlib-1.3.0 rsa-4.7.2 six-1.15.0 tensorboard-2.5.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.0 tensorflow-2.5.0 tensorflow-estimator-2.5.0 termcolor-1.1.0 typing-extensions-3.7.4.3 urllib3-1.26.6 werkzeug-2.0.1 wheel-0.36.2 wrapt-1.12.1 zipp-3.4.1</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>To verify your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -c "import tensorflow.compat.v1 as tf; tf.test.gpu_device_name(); tf.test.is_gpu_available()"<br><span class="hljs-meta">#</span><span class="bash"> ...Successfully opened dynamic library xxx</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>For more verification, refer to <a href="https://blog.csdn.net/weixin_40726794/article/details/108169440" target="_blank" rel="noopener">Tensorflow 2环境下,程序快速测试 GPU是否安装成功_sTeven LI-CSDN博客_tensorflow2测试gpu</a>.</p>
+<p>or install CPU version:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip3 install tensorflow-cpu<br><span class="hljs-comment"># Successfully installed absl-py-0.13.0 astunparse-1.6.3 cached-property-1.5.2 cachetools-4.2.2 charset-normalizer-2.0.4 clang-5.0 flatbuffers-1.12 gast-0.4.0 google-auth-1.35.0 google-auth-oauthlib-0.4.6 google-pasta-0.2.0 grpcio-1.40.0 h5py-3.1.0 idna-3.2 importlib-metadata-4.8.1 keras-2.6.0 keras-preprocessing-1.1.2 markdown-3.3.4 numpy-1.19.5 oauthlib-3.1.1 opt-einsum-3.3.0 protobuf-3.17.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.26.0 requests-oauthlib-1.3.0 rsa-4.7.2 six-1.15.0 tensorboard-2.6.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.0 tensorflow-cpu-2.6.0 tensorflow-estimator-2.6.0 termcolor-1.1.0 typing-extensions-3.7.4.3 urllib3-1.26.6 werkzeug-2.0.1 wrapt-1.12.1 zipp-3.5.0</span><br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<h3 id="TensorFlow-1-3">TensorFlow 1.3<a class="post-anchor" href="#TensorFlow-1-3"></a></h3><p>If you use <a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">Anaconda</a> or the smaller <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda</a>, following the steps in <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/" target="_blank" rel="noopener">https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">conda create -n tf tensorflow=1.13<br>conda activate tf<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Note that <code>MSVC 2015 update 3</code> is needed as Compiler for TensorFlow 1.3, refer to <a href="https://www.tensorflow.org/install/source_windows#cpu" target="_blank" rel="noopener">https://www.tensorflow.org/install/source_windows#cpu</a>, so you need to install the <a href="https://support.microsoft.com/en-gb/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0" target="_blank" rel="noopener">Visual Studio 2015, 2017 and 2019</a>, refer to <a href="https://www.tensorflow.org/install/pip#system-requirements" target="_blank" rel="noopener">https://www.tensorflow.org/install/pip#system-requirements</a>.</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">for CPU only<br>pip3 install tensorflow==1.13<br>python -c "import tensorflow as tf; tf.test.gpu_device_name(); tf.test.is_gpu_available()"<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># pyhton</span><br><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf<br><span class="hljs-comment">#session = tf.Session()</span><br>file_handle = tf.gfile.GFile(<span class="hljs-string">'face_mask_detection.pb'</span>, <span class="hljs-string">"rb"</span>)<br>graph_def = tf.GraphDef()<br>graph_def.ParseFromString(file_handle.read())<br>tf.import_graph_def(graph_def, name=<span class="hljs-string">"net"</span>)<br>input_name=<span class="hljs-string">"images"</span> {input name of model}<br>input_var = tf.get_default_graph().get_tensor_by_name(<span class="hljs-string">"net/%s:0"</span> % input_name)<br>input_var.get_shape().as_list()<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="PyTorch">PyTorch<a class="post-anchor" href="#PyTorch"></a></h3><ol start="2">
+<li><p>if use Torch, refer to <a href="https://pytorch.org/" target="_blank" rel="noopener">PyTorch</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio===0.9.0 -f https://download.pytorch.org/whl/torch_stable.html<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed numpy-1.21.0 pillow-8.2.0 torch-1.9.0+cu111 torchaudio-0.9.0 torchvision-0.10.0+cu111 typing-extensions-3.10.0.0</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>To verify your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -c "import torch; \<br>print(torch.__version__); \<br>print(torch.version.cuda); \<br>print(torch.backends.cudnn.version()); \<br>print(torch.cuda.is_available()); \<br>print(torch.cuda.device_count()); \<br>print(torch.cuda.current_device()); \<br>print(torch.cuda.device(0)); \<br>print(torch.cuda.get_device_name(0))"<br><span class="hljs-meta">#</span><span class="bash"> 1.9.0+cu111</span><br><span class="hljs-meta">#</span><span class="bash"> 11.1 <span class="hljs-comment"># may not consist with above</span></span><br><span class="hljs-meta">#</span><span class="bash"> 8005</span><br><span class="hljs-meta">#</span><span class="bash"> True</span><br><span class="hljs-meta">#</span><span class="bash"> 1</span><br><span class="hljs-meta">#</span><span class="bash"> 0</span><br><span class="hljs-meta">#</span><span class="bash"> &lt;torch.cuda.device at 0x7efce0b03be0&gt;</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-string">'GeForce GTX 950M'</span></span><br><span class="hljs-meta">#</span><span class="bash"> refer to: https://stackoverflow.com/questions/48152674/how-to-check-if-pytorch-is-using-the-gpu</span><br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<p>For more verification, refer to <a href="https://blog.csdn.net/weixin_35576881/article/details/89709116" target="_blank" rel="noopener">pytorch：测试GPU是否可用_明月几时有，把酒问青天-CSDN博客</a>, <a href="https://blog.csdn.net/liming_2464/article/details/99457626" target="_blank" rel="noopener">PyTorch_GPU加速测试_liming_2464的博客-CSDN博客</a>.</p>
+<h3 id="pytorch-lightning">pytorch_lightning<a class="post-anchor" href="#pytorch-lightning"></a></h3><p><a href="https://blog.csdn.net/weixin_46062098/article/details/109713240" target="_blank" rel="noopener">https://blog.csdn.net/weixin_46062098/article/details/109713240</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/157742258" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/157742258</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/235392539" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/235392539</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/319810661" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/319810661</a></p>
+<h3 id="MindSpore">MindSpore<a class="post-anchor" href="#MindSpore"></a></h3><ol start="3">
+<li><p>if use MindSpore, refer to <a href="https://www.mindspore.cn/install" target="_blank" rel="noopener">MindSpore安装指南</a>,<a href="https://www.mindspore.cn/tutorial/training/zh-CN/r1.2/quick_start/quick_video.html" target="_blank" rel="noopener">手把手安装和体验</a>:</p>
+<p>Before installing MindSpore, you should install GCC, refer to <a href="https://m.linuxidc.com/Linux/2019-06/159059.htm" target="_blank" rel="noopener">如何在Ubuntu 18.04上安装GCC编译器 (linuxidc.com)</a>, <a href="https://blog.csdn.net/lucifa_li/article/details/79483686" target="_blank" rel="noopener">Ubuntu下gcc安装及使用_lucifa_li的博客-CSDN博客_ubuntu下载gcc</a>, and m4,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo apt-get install m4<br></code></pre></td></tr></tbody></table></figure>
+
+<p>and gmp, refer to <a href="https://cloud.tencent.com/developer/article/1828724" target="_blank" rel="noopener">安装gmp-6.1.2库 - 云+社区 - 腾讯云 (tencent.com)</a>, </p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">xz -d gmp-6.1.2.tar.xz<br>tar -xvf gmp-6.1.2.tar<br><span class="hljs-built_in">cd</span> gmp-6.1.2<br>./configure --<span class="hljs-built_in">enable</span>-cxx --prefix=/usr/<span class="hljs-built_in">local</span>/gmp6 --build=x86_64-linux<br>make<br>make check<br>sudo make install<br><span class="hljs-comment"># vim ~/.bashrc</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="hljs-built_in">local</span>/gmp6/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><span class="hljs-comment"># :wq</span><br><span class="hljs-comment"># test</span><br><span class="hljs-built_in">cd</span> ..<br>gcc test_gmpxx.cpp -lgmp -lm -o <span class="hljs-built_in">test</span><br>./<span class="hljs-built_in">test</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>and cmake, refer to <a href="https://support.huaweicloud.com/prtg-kunpengdbs/kunpengpercona_02_0006.html" target="_blank" rel="noopener">update cmake</a>:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># slowly download</span><br>wget https://cmake.org/files/v3.21/cmake-3.21.2.tar.gz --no-check-certificate<br>tar -zxvf cmake-3.21.2.tar.gz<br><span class="hljs-built_in">cd</span> cmake-3.21.2<br>./bootstrap<br>make<br>sudo make install<br><span class="hljs-built_in">hash</span> -r<br>cmake --version<br></code></pre></td></tr></tbody></table></figure>
+
+<p>then install CPU version:</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.1/MindSpore/cpu/windows_x64/mindspore-1.2.1-cp37-cp37m-win_amd64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed asttokens-2.0.5 cffi-1.14.5 decorator-5.0.9 easydict-1.9 mindspore-1.2.1 mpmath-1.2.1 packaging-20.9 psutil-5.8.0 pycparser-2.20 pyparsing-2.4.7 scipy-1.7.0 sympy-1.8</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   or install CUDA GPU version:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.1/MindSpore/gpu/ubuntu_x86/cuda-10.1/mindspore_gpu-1.2.1-cp37-cp37m-linux_x86_64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-comment"># Successfully installed asttokens-2.0.5 astunparse-1.6.3 cffi-1.14.5 decorator-5.0.9 easydict-1.9 mindspore-gpu-1.2.1 mpmath-1.2.1 numpy-1.21.0 packaging-20.9 pillow-8.2.0 protobuf-3.17.3 psutil-5.8.0 pycparser-2.20 pyparsing-2.4.7 scipy-1.7.0 six-1.16.0 sympy-1.8</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   <a href="/2021/09/17/ai-env/D82D9ACDEAE9FE9370DE8130B0703F02.jpg" data-caption="D82D9ACDEAE9FE9370DE8130B0703F02" data-fancybox="images"><img src="/2021/09/17/ai-env/D82D9ACDEAE9FE9370DE8130B0703F02.jpg" alt="D82D9ACDEAE9FE9370DE8130B0703F02"></a></p>
+<p>   Otherwise, install Ascend 310 Linux version:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># check environmental variables ahead</span><br>ldd --version<br>gcc --version<br><span class="hljs-comment"># gmp</span><br>cmake --version<br>python3.7.5 --version<br>pip3.7.5 --version<br><br>pip3.7.5 install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.3.0/MindSpore/ascend/x86_64/mindspore_ascend-1.3.0-cp37-cp37m-linux_x86_64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-comment"># Successfully installed asttokens-2.0.5 astunparse-1.6.3 mindspore-ascend-1.3.0 packaging-21.0 protobuf-3.18.0 wheel-0.37.0</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   install <code>Ascend Data Center Solution 21.0.2</code>, inlcude driver, firmware of nnrt(neural network runtime) and toolkit(the last two are included in the insider CANN version ?), then</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> <span class="hljs-variable">${install_path}</span><br><span class="hljs-built_in">cd</span> ..<br>ls -l<br>sudo chown HwHiAiUser:HwHiAiUser Ascend<br><br>pip3.7.5 install <span class="hljs-variable">${install_path}</span>/fwkacllib/lib64/topi-0.4.0-py3-none-any.whl<br>pip3.7.5 install <span class="hljs-variable">${install_path}</span>/fwkacllib/lib64/te-0.4.0-py3-none-any.whl<br><br><span class="hljs-comment"># add environmental variables</span><br><span class="hljs-comment"># control log level. 0-DEBUG, 1-INFO, 2-WARNING, 3-ERROR, default level is WARNING.</span><br><span class="hljs-built_in">export</span> GLOG_v=2<br><span class="hljs-comment"># lib libraries that the mindspore depends on, modify "pip3" according to the actual situation</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=`pip3.7.5 show mindspore-ascend | grep Location | awk <span class="hljs-string">'{print $2"/mindspore/lib"}'</span> | xargs realpath`:<span class="hljs-variable">${LD_LIBRARY_PATH}</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   Optional:</p>
+<p>   install MindInsight:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.0/MindInsight/ascend/ubuntu_x86/mindinsight-1.2.0-cp37-cp37m-linux_x86_64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-comment"># Successfully installed Click-8.0.1 Flask-2.0.1 Flask-Cors-3.0.10 Jinja2-3.0.1 MarkupSafe-2.0.1 Werkzeug-2.0.1 future-0.18.2 google-pasta-0.2.0 grpcio-1.38.1 gunicorn-20.1.0 importlib-metadata-4.6.0 itsdangerous-2.0.1 joblib-1.0.1 marshmallow-3.12.1 mindinsight-1.2.0 pandas-1.3.0 python-dateutil-2.8.1 pytz-2021.1 pyyaml-5.4.1 scikit-learn-0.24.2 threadpoolctl-2.1.0 treelib-1.6.1 typing-extensions-3.10.0.0 yapf-0.31.0 zipp-3.4.1</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   install MindArmour:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.0/MindArmour/x86_64/mindarmour-1.2.0-cp37-cp37m-linux_x86_64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-comment"># Successfully installed cycler-0.10.0 kiwisolver-1.3.1 matplotlib-3.4.2 mindarmour-1.2.0</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>   install MindSpore Hub:</p>
+<p>   Download <code>.whl</code> file from <a href="https://www.mindspore.cn/versions" target="_blank" rel="noopener">MindSpore Hub下载页面</a>, then</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install mindspore_hub-1.2.0-py3-none-any.whl<br><span class="hljs-comment"># Successfully installed mindspore-hub-1.2.0 mistune-0.8.4</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="OpenVINO">OpenVINO<a class="post-anchor" href="#OpenVINO"></a></h3><ol start="4">
+<li><p>if use OpenVINO, refer to <a href="https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html" target="_blank" rel="noopener">Intel® Distribution of OpenVINO™ Toolkit</a>. There are several <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_install_guides_installing_openvino_windows.html#system_requirements" target="_blank" rel="noopener">requirements</a>, like <a href="https://cmake.org/download/" target="_blank" rel="noopener">cmake</a> if you use Windows 10 OS. You need to set the related environment variables:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">conda create -n openvino python=3.7<br><br>conda activate openvino<br>"E:\Program Files (x86)\Intel\openvino_2021\bin\setupvars.bat"<br><span class="hljs-meta">#</span><span class="bash"> Python 3.7.11</span><br><span class="hljs-meta">#</span><span class="bash"> [setupvars.bat] OpenVINO environment initialized</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Then you need to configure the Model Optimizer:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cd /d E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\model_optimizer\install_prerequisites<br><span class="hljs-meta">#</span><span class="bash"> the Internet access is required <span class="hljs-keyword">for</span> the next step</span><br>install_prerequisites.bat<br><span class="hljs-meta">#</span><span class="bash"> WARNING: The script normalizer.exe is installed <span class="hljs-keyword">in</span> <span class="hljs-string">'~\AppData\Roaming\Python\Python37\Scripts'</span> <span class="hljs-built_in">which</span> is not on PATH.</span><br><span class="hljs-meta">#</span><span class="bash"> Consider adding this directory to PATH or, <span class="hljs-keyword">if</span> you prefer to suppress this warning, use --no-warn-script-location.</span><br><span class="hljs-meta">#</span><span class="bash"> Successfully installed absl-py-0.13.0 astunparse-1.6.3 cachetools-4.2.2 charset-normalizer-2.0.4 defusedxml-0.7.1 flatbuffers-1.12 gast-0.3.3 google-auth-1.35.0 google-auth-oauthlib-0.4.6 google-pasta-0.2.0 graphviz-0.17 grpcio-1.32.0 h5py-2.10.0 idna-3.2 importlib-metadata-4.8.1 keras-preprocessing-1.1.2 markdown-3.3.4 mxnet-1.2.0 networkx-2.6.2 numpy-1.19.5 oauthlib-3.1.1 onnx-1.10.1 opt-einsum-3.3.0 protobuf-3.17.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.26.0 requests-oauthlib-1.3.0 rsa-4.7.2 six-1.15.0 tensorboard-2.6.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.0 tensorflow-2.4.3 tensorflow-estimator-2.4.0 termcolor-1.1.0 typing-extensions-3.7.4.3 urllib3-1.26.6 werkzeug-2.0.1 wrapt-1.12.1 zipp-3.5.0</span><br><span class="hljs-meta">#</span><span class="bash">- Inference Engine found <span class="hljs-keyword">in</span>:    E:\Program Files (x86)\Intel\openvino_2021\python\python3.7\openvino</span><br><span class="hljs-meta">#</span><span class="bash"> Inference Engine version:       2021.4.0-3839-cd81789d294-releases/2021/4</span><br><span class="hljs-meta">#</span><span class="bash"> Model Optimizer version:        2021.4.0-3839-cd81789d294-releases/2021/4</span><br><span class="hljs-meta">#</span><span class="bash"> *****************************************************************************************</span><br><span class="hljs-meta">#</span><span class="bash"> Optional: To speed up model conversion process, install protobuf-*.egg located <span class="hljs-keyword">in</span> the</span><br><span class="hljs-meta">#</span><span class="bash"> <span class="hljs-string">"model-optimizer\install_prerequisites"</span> folder or building protobuf library from sources.</span><br><span class="hljs-meta">#</span><span class="bash"> For more information please refer to Model Optimizer FAQ, question <span class="hljs-comment">#80.</span></span><br><span class="hljs-meta">#</span><span class="bash"> or install <span class="hljs-keyword">for</span> one like tf2</span><br>install_prerequisites_tf2.bat<br></code></pre></td></tr></tbody></table></figure>
+
+<p>For advanced configuration for Model Optimizer, refer to <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_MO_DG_prepare_model_Config_Model_Optimizer.html" target="_blank" rel="noopener">Installing Model Optimizer Pre-Requisites</a> and <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html" target="_blank" rel="noopener">Model Optimizer Developer Guide</a>.</p>
+<p>If you want to compute on iGPU, you can install the Intel Graphics Driver ahead.</p>
+<p>To use demo of OpenVINO, refer to <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_get_started_get_started_windows.html" target="_blank" rel="noopener">Get Started Guide for Windows</a>. There are some <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_get_started_get_started_windows.html#use_the_demo_scripts_to_learn_the_workflow" target="_blank" rel="noopener">demos</a>, for more refer to <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_IE_DG_Samples_Overview.html" target="_blank" rel="noopener">Inference Engine Samples</a> and <a href="https://docs.openvinotoolkit.org/2021.4/omz_demos.html" target="_blank" rel="noopener">Demo Applications</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">conda activate openvino<br>"E:\Program Files (x86)\Intel\openvino_2021\bin\setupvars.bat"<br>cd /d E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\demo<br>.\demo_squeezenet_download_convert_run.bat<br>.\demo_security_barrier_camera.bat -d GPU<br>.\demo_benchmark_app.bat -d GPU<br></code></pre></td></tr></tbody></table></figure>
+
+<p>To use OpenVINO with its workflow, refer to <a href="https://docs.openvinotoolkit.org/2021.4/index.html#index" target="_blank" rel="noopener">OpenVINO™ Toolkit Overview</a> and <a href="https://docs.openvinotoolkit.org/2021.4/openvino_docs_get_started_get_started_windows.html#using-sample-application" target="_blank" rel="noopener">Learn the Workflow</a>, </p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># python</span><br><span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> path<br><span class="hljs-keyword">from</span> openvino.inference_engine <span class="hljs-keyword">import</span> IECore<br>ie = IECore()<br>model = <span class="hljs-string">'{path of model}'</span><br>net = ie.read_network(model, path.splitext(model)[<span class="hljs-number">0</span>] + <span class="hljs-string">".bin"</span>)<br><span class="hljs-comment"># assert len(net.input_info) == {}, "Demo supports {} input topologies"</span><br><span class="hljs-comment"># assert len(net.outputs) == {}, "Demo supports {} output topologies"</span><br><span class="hljs-comment"># next(iter(net.input_info))</span><br><span class="hljs-comment"># sorted(net.outputs)</span><br>net.outputs.keys()<br>net.outputs[{name}].shape<br>net.input_info[{name}].input_data.shape<br></code></pre></td></tr></tbody></table></figure>
+
+<p>There are more information with <a href="https://docs.openvinotoolkit.org/latest/api_references.html" target="_blank" rel="noopener">API</a> and <a href="https://docs.openvinotoolkit.org/latest/ie_python_api/annotated.html" target="_blank" rel="noopener">Data Structures</a>.</p>
+<p>To download public model and run Model Optimizer:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Download public squeezenet1.1 model</span><br>python "E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\open_model_zoo\tools\downloader\downloader.py" ^<br>--name "squeezenet1.1" ^<br>--output_dir "~\Documents\Intel\OpenVINO\openvino_models\models" ^<br>--cache_dir "~\Documents\Intel\OpenVINO\openvino_models\cache"<br><span class="hljs-meta">#</span><span class="bash"> Run Model Optimizer, Converting squeezenet1.1 to IR (FP16)</span><br>python "E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\open_model_zoo\tools\downloader\converter.py" ^<br>--mo "E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\model_optimizer\mo.py" ^<br>--name "squeezenet1.1" ^<br>-d "~\Documents\Intel\OpenVINO\openvino_models\models" ^<br>-o "~\Documents\Intel\OpenVINO\openvino_models\ir" ^<br>--precisions "FP16"<br><span class="hljs-meta">#</span><span class="bash"> or</span><br>python "E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\model_optimizer\mo.py" ^<br>--framework=caffe ^<br>--data_type=FP16 ^<br>--output_dir=~\Documents\Intel\OpenVINO\openvino_models\ir\public\squeezenet1.1\FP16 ^<br>--model_name=squeezenet1.1 ^<br>--input_shape=[1,3,227,227] ^<br>--input=data ^<br>--mean_values=data[104.0,117.0,123.0] ^<br>--output=prob ^<br>--input_model=~\Documents\Intel\OpenVINO\openvino_models\models\public\squeezenet1.1/squeezenet1.1.caffemodel ^<br>--input_proto=~\Documents\Intel\OpenVINO\openvino_models\models\public\squeezenet1.1/squeezenet1.1.prototxt<br></code></pre></td></tr></tbody></table></figure>
+
+<p>To generate VS solution for Inference Engine samples using cmake:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">Creating Visual Studio 16 2019 x64 files in ~\Documents\Intel\OpenVINO\inference_engine_samples_build...<br>-- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.19043.<br>-- The C compiler identification is MSVC 19.29.30040.0<br>-- The CXX compiler identification is MSVC 19.29.30040.0<br>-- Detecting C compiler ABI info<br>-- Detecting C compiler ABI info - done<br>-- Check for working C compiler: E:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/bin/Hostx64/x64/cl.exe - skipped<br>-- Detecting C compile features<br>-- Detecting C compile features - done<br>-- Detecting CXX compiler ABI info<br>-- Detecting CXX compiler ABI info - done<br>-- Check for working CXX compiler: E:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/bin/Hostx64/x64/cl.exe - skipped<br>-- Detecting CXX compile features<br>-- Detecting CXX compile features - done<br>CMake Warning (dev) at thirdparty/cnpy/CMakeLists.txt:11 (if):<br>  Policy CMP0054 is not set: Only interpret if() arguments as variables or<br>  keywords when unquoted.  Run "cmake --help-policy CMP0054" for policy<br>  details.  Use the cmake_policy command to set the policy and suppress this<br>  warning.<br><br>  Quoted variables like "MSVC" will no longer be dereferenced when the policy<br>  is set to NEW.  Since the policy is not set the OLD behavior will be used.<br>This warning is for project developers.  Use -Wno-dev to suppress it.<br><br>-- Configuring done<br>-- Generating done<br>-- Build files have been written to: ~/Documents/Intel/OpenVINO/inference_engine_samples_build<br></code></pre></td></tr></tbody></table></figure>
+
+<p>To build Inference Engine samples using MS Visual Studio (MSBuild.exe):</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">"E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" Samples.sln /p:Configuration=Release /t:cpp_samples\classification_sample_async /clp:ErrorsOnly /m<br><span class="hljs-meta">#</span><span class="bash"> 用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.10.2+857e5a733</span><br><span class="hljs-meta">#</span><span class="bash"> 版权所有(C) Microsoft Corporation。保留所有权利。</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>To run Inference Engine classification sample:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">"~\Documents\Intel\OpenVINO\inference_engine_samples_build\intel64\Release\classification_sample_async.exe" ^<br>-i "E:\Program Files (x86)\Intel\openvino_2021\deployment_tools\demo\car.png" ^<br>-m "~\Documents\Intel\OpenVINO\openvino_models\ir\public\squeezenet1.1\FP16\squeezenet1.1.xml" ^<br>-d CPU<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Optinal:</p>
+<p>Use <a href="https://docs.openvinotoolkit.org/2021.4/workbench_docs_Workbench_DG_Introduction.html" target="_blank" rel="noopener">OpenVINO™ Deep Learning Workbench Overview</a>.</p>
+<p>Use <a href="https://docs.openvinotoolkit.org/2021.4/pot_README.html" target="_blank" rel="noopener">Post-Training Optimization Tool</a>.</p>
+<p><a href="/2021/09/17/ai-env/OpenVINO-diagram.png" data-caption="OpenVINO-diagram.png" data-fancybox="images"><img src="/2021/09/17/ai-env/OpenVINO-diagram.png" alt="OpenVINO-diagram.png"></a></p>
+</li>
+</ol>
+<p><a href="/2021/09/17/ai-env/openvino%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D.jpeg" data-caption="openvino文件介绍" data-fancybox="images"><img src="/2021/09/17/ai-env/openvino%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D.jpeg" alt="openvino文件介绍"></a></p>
+<h3 id="Keras">Keras<a class="post-anchor" href="#Keras"></a></h3><p>troubleshooting:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain">    original_keras_version = f.attrs['keras_version'].decode('utf8')<br>AttributeError: 'str' object has no attribute 'decode<br><br>pip install h5py==2.10 -i https://pypi.tuna.tsinghua.edu.cn/simple/<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="NVIDIA-GPU">NVIDIA GPU<a class="post-anchor" href="#NVIDIA-GPU"></a></h1><p>set for computing only: <a href="https://blog.csdn.net/ZIV555/article/details/51755096" target="_blank" rel="noopener">https://blog.csdn.net/ZIV555/article/details/51755096</a>; <a href="https://blog.csdn.net/Santo_Wong_94/article/details/50735418" target="_blank" rel="noopener">https://blog.csdn.net/Santo_Wong_94/article/details/50735418</a></p>
+<p><a href="/2021/09/17/ai-env/image-20220109194436027.png" data-caption="image-20220109194436027" data-fancybox="images"><img src="/2021/09/17/ai-env/image-20220109194436027.png" alt="image-20220109194436027"></a></p>
+<p><a href="/2021/09/17/ai-env/image-20220109194445179.png" data-caption="image-20220109194445179" data-fancybox="images"><img src="/2021/09/17/ai-env/image-20220109194445179.png" alt="image-20220109194445179"></a></p>
+<h1 id="AMD-CPU">AMD CPU<a class="post-anchor" href="#AMD-CPU"></a></h1><p><a href="https://www.techradar.com/news/amd-ryzen-threadripper-vs-epyc-what-should-professionals-use" target="_blank" rel="noopener">https://www.techradar.com/news/amd-ryzen-threadripper-vs-epyc-what-should-professionals-use</a></p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain"># desktop<br>https://www.amd.com/zh-hans/products/ryzen-threadripper<br></code></pre></td></tr></tbody></table></figure>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/10/04/Perl/">Perl</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/09/17/shared-documents/">shared documents</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/09/17/ai-env/">http://mingg2333.top/2021/09/17/ai-env/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

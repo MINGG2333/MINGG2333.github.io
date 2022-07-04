@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      Git - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#install"><span class="toc-text">install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows-10"><span class="toc-text">windows 10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-Debian"><span class="toc-text">Ubuntu&#x2F;Debian</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#basic-use"><span class="toc-text">basic use</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#create-new-repository"><span class="toc-text">create new repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clone-existing-repository"><span class="toc-text">clone existing repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-repository"><span class="toc-text">Configure repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#work-with-repository"><span class="toc-text">work with repository</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#checkout"><span class="toc-text">checkout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-GUI-use"><span class="toc-text">Git GUI use</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prepare-with-Github"><span class="toc-text">prepare with Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-SSH-Key"><span class="toc-text">Create SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-ssh-agent"><span class="toc-text">Configure ssh-agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-SSH-key-to-Github"><span class="toc-text">Add SSH key to Github</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prepare-with-Gitee"><span class="toc-text">prepare with Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-SSH-Key-1"><span class="toc-text">Create SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Add-SSH-key-to-Gitee"><span class="toc-text">Add SSH key to Gitee</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#more-about-git"><span class="toc-text">more about git</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Git</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/07/29</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/07/29/git/" data-flag-title="Git">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/software">software</a>
+                
+              
+                
+                  <a href="/categories/version controller">version controller</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/git">git</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-05-28 09:09:58</p>
+<p>Modified: 2021-7-29 12:09:56</p>
+<p>Git installation and usage.</p>
+<a id="more"></a>
+
+<ul>
+<li><a href="#quickly-see">quickly see</a></li>
+<li><a href="#install">install</a><ul>
+<li><a href="#windows-10">windows 10</a></li>
+</ul>
+</li>
+<li><a href="#basic-use">basic use</a><ul>
+<li><a href="#create-new-repository">create new repository</a></li>
+<li><a href="#clone-existing-repository">clone existing repository</a></li>
+<li><a href="#configure-repository">Configure repository</a></li>
+<li><a href="#work-with-repository">work with repository</a></li>
+<li><a href="#git-gui-use">Git GUI use</a></li>
+</ul>
+</li>
+<li><a href="#prepare-with-github">prepare with Github</a><ul>
+<li><a href="#create-ssh-key">Create SSH Key</a></li>
+<li><a href="#configure-ssh-agent">Configure ssh-agent</a></li>
+<li><a href="#add-ssh-key-to-github">Add SSH key to Github</a></li>
+</ul>
+</li>
+<li><a href="#prepare-with-gitee">prepare with Gitee</a><ul>
+<li><a href="#create-ssh-key-1">Create SSH Key</a></li>
+<li><a href="#add-ssh-key-to-gitee">Add SSH key to Gitee</a></li>
+</ul>
+</li>
+<li><a href="#what-is-git">what is git</a></li>
+</ul>
+<h1 id="quickly-see">quickly see<a class="post-anchor" href="#quickly-see"></a></h1><p>details later, make it quick</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br>ssh-keygen -t ed25519 -C "&lt;personal code, like a email&gt;" [-f ~/.ssh/gitee_id_ed25519]<br><br>eval `ssh-agent -s`<br>ssh-add -l<br>ssh-add &lt;SSH private key&gt;<br>ssh-agent -k<br><br>ssh -T git@github.com<br>ssh -T git@gitee.com<br><br>git --version<br><br>mkdir [&lt;directory&gt;]<br>cd [&lt;directory&gt;]<br>git init [&lt;directory&gt;]<br>git clone &lt;repository&gt; [&lt;directory&gt;]<br><br>git config --list<br>git config --global user.name MINGG2333<br>git config --global user.email @foxmail.com<br><br>git status -s<br>git log<br><br>touch README.md<br>cat README.md<br>git add README.md<br>git commit -m "first commit"<br><br>git remote -v<br>git remote add origin git@github.com:&lt;name&gt;/&lt;repository&gt;.git<br>git remote add origin2 git@gitee.com:&lt;name&gt;/&lt;repository&gt;.git<br>git remote rename origin oschina<br>git remote set-url origin 仓库地址<br>git remote rm origin2<br><br>git push -u origin2 master<br>git pull -u origin2 master<br><br>git branch -M main<br><br>git branch<br>git checkout master<br><br>git fetch origin2<br>git diff --stat main origin2/main<br><br>git submodule add &lt;url&gt; &lt;directoty&gt;<br>git rm --cached &lt;object&gt;<br><br>git clone --recursive https://github.com/RishabhMaheshwary/query-attack.git<br><br><span class="hljs-meta">#</span><span class="bash"> git lfs: An open <span class="hljs-built_in">source</span> Git extension <span class="hljs-keyword">for</span> versioning large files</span><br>curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash<br>sudo apt-get install git-lfs<br>git-lfs install<br>git lfs pull<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*origin, origin2 are personal names for repository</p>
+<h1 id="install">install<a class="post-anchor" href="#install"></a></h1><p>check your installation using command line( like Git CMD, Git Bash):</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">git --version<br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="windows-10">windows 10<a class="post-anchor" href="#windows-10"></a></h2><p>official website:</p>
+<p><a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git for Windows</a> or <a href="http://www.git-scm.com/download/" target="_blank" rel="noopener">Git - Downloads (git-scm.com)</a></p>
+<p>you can refer to( remember your installation directory of git if you want to set it as environment variable later):</p>
+<p><a href="https://blog.csdn.net/yyykj/article/details/103201960?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-9.control" target="_blank" rel="noopener"> Windows系统Git安装教程（详解Git安装过程）_IT技术实战-CSDN博客</a></p>
+<p>*set <code>{installation directory}\cmd\git.exe</code> as environment variable in <code>Path</code> if you want to use it in other command line like cmd.exe</p>
+<h2 id="Ubuntu-Debian">Ubuntu/Debian<a class="post-anchor" href="#Ubuntu-Debian"></a></h2><p>For the latest stable Git version in Ubuntu/Debian:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo apt-get install git<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="basic-use">basic use<a class="post-anchor" href="#basic-use"></a></h1><p>you can create a new repository or clone a existing one</p>
+<p><a href="/2021/07/29/git/hdsgfgsdsht.png" data-caption="construction of a git repository" data-fancybox="images"><img src="/2021/07/29/git/hdsgfgsdsht.png" alt="construction of a git repository"></a></p>
+<center>construction of a git repository
+    (HEAD is the core, local repository)</center>
+
+<h2 id="create-new-repository">create new repository<a class="post-anchor" href="#create-new-repository"></a></h2><p>create a local repository(版本库), a directory of ‘.git’, in the ‘directory ‘ using Git Bash :</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">git init [&lt;directory&gt;]<br></code></pre></td></tr></tbody></table></figure>
+
+<p><a href="/2021/07/29/git/image-20210528141522842.png" data-caption="image-20210528141522842" data-fancybox="images"><img src="/2021/07/29/git/image-20210528141522842.png" alt="image-20210528141522842"></a></p>
+<h2 id="clone-existing-repository">clone existing repository<a class="post-anchor" href="#clone-existing-repository"></a></h2><p>clone a existing repository in ‘directory ‘ using Git Bash:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">git clone &lt;repository&gt; [&lt;directory&gt;]<br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="Configure-repository">Configure repository<a class="post-anchor" href="#Configure-repository"></a></h2><p>check your configuration:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">git config --list<br></code></pre></td></tr></tbody></table></figure>
+
+<p>set your information for local repository before “commit”:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">git config --global user.name "&lt;name&gt;"<br>git config --global user.email &lt;email&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>more configuration, refer to <a href="https://www.runoob.com/git/git-create-repositorysitory.html" target="_blank" rel="noopener">Git 创建仓库 | 菜鸟教程 (runoob.com)</a></p>
+<h2 id="work-with-repository">work with repository<a class="post-anchor" href="#work-with-repository"></a></h2><p><a href="/2021/07/29/git/7V3U3DF%7B844%5D%7BX9C5XYX%5DLS.png" data-caption="img" data-fancybox="images"><img src="/2021/07/29/git/7V3U3DF%7B844%5D%7BX9C5XYX%5DLS.png" alt="img"></a></p>
+<center>frequency use</center>
+
+<p>more use, refer to <a href="https://gitee.com/help/articles/4114" target="_blank" rel="noopener">Git 仓库基础操作 - Gitee</a>, <a href="https://www.runoob.com/git/git-basic-operations.html" target="_blank" rel="noopener">Git 基本操作 | 菜鸟教程 (runoob.com)</a>, <a href="https://www.runoob.com/git/git-remote-repo.html" target="_blank" rel="noopener">Git 远程仓库(Github) | 菜鸟教程 (runoob.com)</a>, <a href="https://www.runoob.com/git/git-gitee.html" target="_blank" rel="noopener">Git Gitee | 菜鸟教程 (runoob.com)</a>.</p>
+<p>*you can place your remote repositories in Github, preparation see [prepare with Github](# prepare with Github).</p>
+<h3 id="checkout">checkout<a class="post-anchor" href="#checkout"></a></h3><p>refer to <a href="https://www.cnblogs.com/hutaoer/archive/2013/05/07/git_checkout.html" target="_blank" rel="noopener">git checkout 命令详解</a>,</p>
+<h2 id="Git-GUI-use">Git GUI use<a class="post-anchor" href="#Git-GUI-use"></a></h2><p>refer to <a href="https://blog.csdn.net/NOOBBB/article/details/65627240?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-2.control" target="_blank" rel="noopener">使用Git 总结-msysGit与GitHub 使用_荒野之鹰-CSDN博客</a> or <a href="https://blog.csdn.net/u010388829/article/details/41055813" target="_blank" rel="noopener"> Windows平台下Git的安装msysgit与配置_睡得香吃得好胆子大的专栏-CSDN博客</a></p>
+<h1 id="prepare-with-Github">prepare with Github<a class="post-anchor" href="#prepare-with-Github"></a></h1><p>configure your account SSH Key, refer to <a href="https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">使用 SSH 连接到 GitHub - GitHub Docs</a></p>
+<h2 id="Create-SSH-Key">Create SSH Key<a class="post-anchor" href="#Create-SSH-Key"></a></h2><p>check existing keys:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*”~/.ssh” is the default directory of SSH keys.</p>
+<p>otherwise, create a SSH key for your device using Git Bash:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t [algorithm] -C "&lt;personal code, like a email&gt;"<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*algorithm(optional): rsa [-b 4096], ed25519(recommend).</p>
+<h2 id="Configure-ssh-agent">Configure ssh-agent<a class="post-anchor" href="#Configure-ssh-agent"></a></h2><p>ssh-agent stores unencrypted keys in memory( for Unix-like OS) and communicates with SSH clients using a Unix domain socket</p>
+<p><a href="/2021/07/29/git/efasfs.png" data-caption="efasfs" data-fancybox="images"><img src="/2021/07/29/git/efasfs.png" alt="efasfs"></a></p>
+<center>ssh-agent principle
+</center>
+
+<p>run ssh-agent using Git Bash:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Windows</span><br><span class="hljs-built_in">eval</span> `ssh-agent -s`<br><span class="hljs-comment"># Linux</span><br><span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(ssh-agent -s)</span>"</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>check keys loaded in the ssh-agent:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ssh-add -l<br></code></pre></td></tr></tbody></table></figure>
+
+<p> if none, add SSH private key to the ssh-agent:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-add &lt;SSH private key&gt;<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*SSH private key example: ~/.ssh/id_ed25519</p>
+<p>switch off the agent using Git Bash, refer to <a href="https://zhuanlan.zhihu.com/p/126117538" target="_blank" rel="noopener">ssh agent详解 - 知乎 (zhihu.com)</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-agent -k<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*if not use agent, there maybe warnings, solution refer to: <a href="https://blog.csdn.net/feng991254/article/details/80506119?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control" target="_blank" rel="noopener">Win10 从零搭建Git环境_feng991254的专栏-CSDN博客</a> or<a href="https://blog.csdn.net/ydf8525/article/details/52968373" target="_blank" rel="noopener"> win10 git环境搭建_ydf8525的专栏-CSDN博客</a></p>
+<h2 id="Add-SSH-key-to-Github">Add SSH key to Github<a class="post-anchor" href="#Add-SSH-key-to-Github"></a></h2><ol>
+<li>open responding SSH public key with a editor like Notepad, then copy the contents of the .pub file to your clipboard,</li>
+</ol>
+<p>*SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># windows</span><br>cat ~/.ssh/id_ed25519.pub<br><span class="hljs-comment"># Linux</span><br>sudo apt-get update<br>sudo apt-get install xclip<br>xclip -selection clipboard &lt; ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>go into your own Github setting -&gt; SSH and GPG keys, and create a new SSH key,</li>
+</ol>
+<p><a href="/2021/07/29/git/fggsagagwrg.png" data-caption="fggsagagwrg" data-fancybox="images"><img src="/2021/07/29/git/fggsagagwrg.png" alt="fggsagagwrg"></a></p>
+<p>then give a name of the key filling in the “title”, and paste the SSH public key contents into the “Key” field.</p>
+<p><a href="/2021/07/29/git/image-20210601135946523.png" data-caption="image-20210601135946523" data-fancybox="images"><img src="/2021/07/29/git/image-20210601135946523.png" alt="image-20210601135946523"></a></p>
+<ol start="3">
+<li>test SSH connection:</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></tbody></table></figure>
+
+<p>if something wrong, baidu or google.</p>
+<h1 id="prepare-with-Gitee">prepare with Gitee<a class="post-anchor" href="#prepare-with-Gitee"></a></h1><p>configure your account SSH Key</p>
+<h2 id="Create-SSH-Key-1">Create SSH Key<a class="post-anchor" href="#Create-SSH-Key-1"></a></h2><p>check existing keys:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ls -al ~/.ssh<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*”~/.ssh” is the default directory of SSH keys.</p>
+<p>otherwise, create a SSH key for your device using Git Bash:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t [algorithm] -C "&lt;personal code, like a email&gt;"<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*algorithm(optional): rsa [-b 4096], ed25519(recommend).</p>
+<h2 id="Add-SSH-key-to-Gitee">Add SSH key to Gitee<a class="post-anchor" href="#Add-SSH-key-to-Gitee"></a></h2><ol>
+<li>open responding SSH public key with a editor like Notepad, then copy the contents of the .pub file to your clipboard,</li>
+</ol>
+<p>*SSH public key example: ~/.ssh/id_ed25519.pub, so you can print it in line:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">cat ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>go into your own Gitee setting -&gt; SSH keys, then fill the blank and add a new SSH key: give a name of the key filling in the “title”, and paste the SSH public key contents into the “Key” field.</li>
+<li>test SSH connection:</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh -T git@gitee.com<br></code></pre></td></tr></tbody></table></figure>
+
+<p>if something wrong, baidu or google.</p>
+<h1 id="more-about-git">more about git<a class="post-anchor" href="#more-about-git"></a></h1><p><a href="https://zhuanlan.zhihu.com/p/361367094" target="_blank" rel="noopener">谈谈 Git 存储原理及相关实现 - 知乎 (zhihu.com)</a>,</p>
+<p><a href="https://zhuanlan.zhihu.com/p/94008510" target="_blank" rel="noopener">看完这篇还不会用Git，那我就哭了！ - 知乎 (zhihu.com)</a>,</p>
+<p><a href="http://git.oschina.net/progit/" target="_blank" rel="noopener">http://git.oschina.net/progit/</a>,</p>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000</a>,</p>
+<p><a href="https://gitee.com/help/articles/4104" target="_blank" rel="noopener">https://gitee.com/help/articles/4104</a>,</p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/08/01/Notebook/">Notebook</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/07/29/VScode/">Visual Stdio Code</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/07/29/git/">http://mingg2333.top/2021/07/29/git/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

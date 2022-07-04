@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      ascend - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#quickly-see"><span class="toc-text">quickly see</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ModelArts-use"><span class="toc-text">ModelArts use</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#guide"><span class="toc-text">guide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#local-code"><span class="toc-text">local code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#online-training"><span class="toc-text">online training</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PyCharm"><span class="toc-text">PyCharm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VS-Code"><span class="toc-text">VS Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#local-dataset"><span class="toc-text">local dataset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#local-development-with-SDK"><span class="toc-text">local development with SDK</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python-package"><span class="toc-text">python package</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CANN"><span class="toc-text">CANN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ascend-in-Huawei-Cloud"><span class="toc-text">Ascend in Huawei Cloud</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MindSpore-installation"><span class="toc-text">MindSpore installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Euler-OS"><span class="toc-text">Euler OS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mind-Studio"><span class="toc-text">Mind Studio</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MindX-SDK"><span class="toc-text">MindX SDK</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ascend</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/09/10</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/09/10/hiascend/" data-flag-title="ascend">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-06-07 00:29:11</p>
+<p>Modified: 2021-09-10 10:31</p>
+<p>use ascend</p>
+<a id="more"></a>
+
+<h1 id="quickly-see">quickly see<a class="post-anchor" href="#quickly-see"></a></h1><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -c "import mindspore;print(mindspore.__version__)"<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> mindspore<br><span class="hljs-keyword">from</span> mindspore <span class="hljs-keyword">import</span> context<br><span class="hljs-keyword">from</span> mindspore.context <span class="hljs-keyword">import</span> ParallelMode<br><span class="hljs-comment"># data parallel - training data divided</span><br><span class="hljs-comment"># after BP: AllReduce</span><br>context.set_auto_parallel_context(parallel_mode=ParallelMode.DATA_PARALLEL)<br><span class="hljs-comment"># op level model parallel</span><br>self.matmul=ops.MatMul().shard(((<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)))<br>c=self.matmul(A,B)<br>context.set_auto_parallel_context(parallel_mode=ParallelMode.SEMI_AUTO_PARALLEL)<br><br>context.set_auto_parallel_context(parallel_mode=ParallelMode.AUTO_PARALLEL)<br><br>self.matmul=ops.MatMul.set_strategy({[<span class="hljs-number">4</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]})<br>c=self.matmul(A,B)<br>context.set_auto_parallel_context(parallel_mode=ParallelMode.SEMI_AUTO_PARALLEL)<br><span class="hljs-comment"># pipline level model parallel</span><br><span class="hljs-comment"># I think it is better that all of the pieces of pipline occupy the same time of calculation.</span><br>self.subnet1 = subnet().pipeline_stages(<span class="hljs-number">0</span>)<br>self.subnet2 = subnet().pipeline_stages(<span class="hljs-number">1</span>)<br>x = self.subnet1(x)<br>x = self.subnet2(x)<br>context.set_auto_parallel_context(pipeline_stages=<span class="hljs-number">2</span>)<br><span class="hljs-comment"># Rematerialization -- reduce the ocupation of training data in DRAM</span><br><span class="hljs-comment"># there is gradient value produced in DRAM too</span><br><span class="hljs-comment"># there are weight and other parameter(like EMA for optimizer) stored in SRAM</span><br>x = self.net1(x)<br>self.net1.recompute() <span class="hljs-comment"># ?</span><br>x = self.net2(x)<br>x = self.net1(x)<br>self.net1.recompute()<br>x = self.net2(x)<br><span class="hljs-comment"># data parallel - parameter shard -- divide parameter of inner layers into SRAMs</span><br><span class="hljs-comment"># befor FP: AllGether</span><br><span class="hljs-comment"># after BP: ReduceScatter</span><br><span class="hljs-comment"># example: fusion every 10 layers of transformer for OpenAI - gpt3</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(config.num_layers):<br>    self.blocks.append(Block(config, i+<span class="hljs-number">1</span>)).set_comm_fusion(int(i/<span class="hljs-number">10</span>)+<span class="hljs-number">2</span>)<br>context.set_auto_parallel_context(enable_parallel_optimizer=<span class="hljs-literal">True</span>,parallel_mode=ParallelMode.DATA_PARALLEL)<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="ModelArts-use">ModelArts use<a class="post-anchor" href="#ModelArts-use"></a></h1><h2 id="guide">guide<a class="post-anchor" href="#guide"></a></h2><p>local code in PC -&gt; cloud code in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a> -&gt; <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=zh-cn#/algorithms" target="_blank" rel="noopener">my ModelArts algorithm</a> /algorithm subscribed in <a href="https://marketplace.huaweicloud.com/markets/aihub/modelhub/list/" target="_blank" rel="noopener">AI Gallery</a> -&gt; <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=en-us#/trainingJobs" target="_blank" rel="noopener">Training Jobs</a> -&gt; </p>
+<p>local dataset in PC/cloud dataset in <a href="https://marketplace.huaweicloud.com/markets/aihub/datasets/list/" target="_blank" rel="noopener">AI Gallery</a>  -&gt; cloud dataset in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a>-&gt; <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=en-us#/trainingJobs" target="_blank" rel="noopener">Training Jobs</a> -&gt; </p>
+<p>-&gt; output in <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=en-us#/trainingJobs" target="_blank" rel="noopener">Training Jobs</a> -&gt; output in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a> </p>
+<h2 id="local-code">local code<a class="post-anchor" href="#local-code"></a></h2><p>according to PyCharm with the Plugin of ModelArts:</p>
+<h3 id="online-training">online training<a class="post-anchor" href="#online-training"></a></h3><p>local code in PC -&gt; cloud code in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a> -&gt; <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=zh-cn#/algorithms" target="_blank" rel="noopener">my ModelArts algorithm</a> -&gt; <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=en-us#/trainingJobs" target="_blank" rel="noopener">Training Jobs</a> -&gt; output in <a href="https://console.huaweicloud.com/modelarts/?agencyId=08786f8df980109b1fc0c01eb6fc25f8&amp;region=cn-north-4&amp;locale=en-us#/trainingJobs" target="_blank" rel="noopener">Training Jobs</a> -&gt; output in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a> </p>
+<p>=&gt; local code in PC -&gt; the whole job &amp; log in <strong>PyCharm</strong> </p>
+<p><a href="/2021/09/10/hiascend/image-20210728201155839.png" data-caption="image-20210728201155839" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210728201155839.png" alt="image-20210728201155839"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210728203122068.png" data-caption="image-20210728203122068" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210728203122068.png" alt="image-20210728203122068"></a></p>
+<p>what you need to install are 3 items, refer to <a href="https://support.huaweicloud.com/bestpractice-modelarts/modelarts_10_0021.html" target="_blank" rel="noopener">https://support.huaweicloud.com/bestpractice-modelarts/modelarts_10_0021.html</a>:</p>
+<ul>
+<li>install the <a href="https://modelarts-pycharm-plugin.obs.cn-north-1.myhuaweicloud.com/Pycharm-ToolKit-2.2.zip" target="_blank" rel="noopener">Plugin of ModelArts</a>;</li>
+<li>create the Access Key and set it for your ModelArts(you can still use the Agency type Authorization if existing), refer to <a href="https://support.huaweicloud.com/prepare-modelarts/modelarts_08_0008.html#section0" target="_blank" rel="noopener">获取访问密钥</a>;</li>
+<li>set it for the Plugin of ModelArts, refer to <a href="https://support.huaweicloud.com/tg-modelarts/modelarts_15_0005.html" target="_blank" rel="noopener">使用访问秘钥登录</a>.</li>
+</ul>
+<h3 id="PyCharm">PyCharm<a class="post-anchor" href="#PyCharm"></a></h3><p>create and open one on Notebook -&gt; remote configure on PyCharm -&gt; restart and wait -&gt; enter remote interpreter environment opening a script(connecting to remote host) -&gt; upload files(synch and auto-upload files) -&gt; wait a while(after index files) and then open requirements.txt and install dependency -&gt;</p>
+<p>open terminal -&gt; cd work/pangu_alpha -&gt; ls -&gt; python src/preprocess.py -&gt; bash myrun.sh -&gt; debug train.py（trial）</p>
+<p><a href="/2021/09/10/hiascend/image-20210806145821878.png" data-caption="image-20210806145821878" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210806145821878.png" alt="image-20210806145821878"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210806145852764.png" data-caption="image-20210806145852764" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210806145852764.png" alt="image-20210806145852764"></a></p>
+<p>Update the whitelist of Notebook -&gt; connect in PyCharm-&gt; (tool-deployment) -&gt;  (change remote host) enter remote interpreter environment opening a script -&gt; upload files(synch and auto-upload files) -&gt; wait a while(after index files) and then open requirements.txt and install dependency -&gt;</p>
+<p>open terminal -&gt; cd work/PanguGit-&gt; ls -&gt; python src/preprocess.py -&gt; bash myrun.sh -&gt; (configure first, like python interpreter)run train.py</p>
+<p>Test, refer to <a href="https://bbs.huaweicloud.com/forum/thread-133615-1-1.html" target="_blank" rel="noopener">https://bbs.huaweicloud.com/forum/thread-133615-1-1.html</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">ssh ma-user@dev-modelarts-cnnorth4.huaweicloud.com -p 31261 -i .ssh/KeyPair-remote-dev.pem<br>python -c "import mindspore;print(mindspore.__version__)"<br>exit<br></code></pre></td></tr></tbody></table></figure>
+
+<p><a href="/2021/09/10/hiascend/image-20210909202354600.png" data-caption="image-20210909202354600" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210909202354600.png" alt="image-20210909202354600"></a></p>
+<h3 id="VS-Code">VS Code<a class="post-anchor" href="#VS-Code"></a></h3><p>refer to <a href="https://support.huaweicloud.com/engineers-modelarts/modelarts_30_0016.html" target="_blank" rel="noopener">配置本地IDE（VSCode手动连接）</a>.</p>
+<p>Firstly, make sure you use <a href="https://code.visualstudio.com/updates/v1_57" target="_blank" rel="noopener">VSCode 1.57.1</a> with Extensions installed including Python and Remote-SSH, create a Notebook with SSH and prepare a pair of SSH key of Huawei Cloud.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">Host {name of Notebook1}<br>     HostName 114.116.242.242<br>     Port {Port of Notebook1}<br>     User ma-user<br>     IdentityFile ~\.ssh\KeyPair-xxx.pem<br>     UserKnownHostsFile=/dev/null<br>     StrictHostKeyChecking no<br>Host {name of Notebook2}<br>     HostName dev-modelarts-cnnorth4.huaweicloud.com<br>     Port {Port of Notebook2}<br>     User ma-user<br>     IdentityFile ~\.ssh\KeyPair-xxx.pem<br>     UserKnownHostsFile=/dev/null<br>     StrictHostKeyChecking no<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<p><a href="/2021/09/10/hiascend/image-20210909222413407.png" data-caption="image-20210909222413407" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210909222413407.png" alt="image-20210909222413407"></a></p>
+<p>Ensure consistency between Nootbook and <code>config</code> file(Host, Port, path of key pair in particular) -&gt; make sure Remote-SSH configured -&gt; Update the whitelist of <a href="https://tool.lu/ip/" target="_blank" rel="noopener">IP</a> and open Notebook -&gt; click the button of <code>Connect to Host in New Window</code> in vscode and wait a while(download VS Code server and copy it to host with scp) -&gt; use VS Code server like a New one (install Extensions of VS code -&gt; manage Folder in Cloud(drag and drop files from PC) -&gt; Select Interpreter of Python (need to open a py file first in vscode) -&gt; open New Terminal -&gt; run and debug) -&gt; close the Romote Connection and stop Notebook:</p>
+<p><a href="/2021/09/10/hiascend/image-20210909235814519.png" data-caption="image-20210909235814519" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210909235814519.png" alt="image-20210909235814519"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210909232000263.png" data-caption="image-20210909232000263" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210909232000263.png" alt="image-20210909232000263"></a></p>
+<p>Note that you may want to disable the software update:</p>
+<p><a href="/2021/09/10/hiascend/image-20210909222324964.png" data-caption="image-20210909222324964" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210909222324964.png" alt="image-20210909222324964"></a></p>
+<h2 id="local-dataset">local dataset<a class="post-anchor" href="#local-dataset"></a></h2><p>local dataset in PC -&gt; cloud dataset in <a href="https://console.huaweicloud.com/console/?region=cn-north-4#/obs/manager/buckets" target="_blank" rel="noopener">obs</a>-&gt;</p>
+<p>use <code>OBS Browser+</code> or <code>obsutil</code> to make it easily.</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell"><br><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="local-development-with-SDK">local development with SDK<a class="post-anchor" href="#local-development-with-SDK"></a></h2><p>use ModelArts SDK, refer to <a href="https://support.huaweicloud.com/sdkreference-modelarts/modelarts_04_0002.html" target="_blank" rel="noopener">https://support.huaweicloud.com/sdkreference-modelarts/modelarts_04_0002.html</a></p>
+<p>there is only python package version.</p>
+<h3 id="python-package">python package<a class="post-anchor" href="#python-package"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> modelarts.session <span class="hljs-keyword">import</span> Session<br>session = Session(access_key=<span class="hljs-string">'***'</span>,secret_key=<span class="hljs-string">'***'</span>, project_id=<span class="hljs-string">'***'</span>, region_name=<span class="hljs-string">'cn-north-4'</span>)<br>session.obs.upload_file(src_local_file=<span class="hljs-string">'/home/ma-user/file1.txt'</span>, dst_obs_dir=<span class="hljs-string">'obs://bucket-name/dir1/'</span>)<br>session.obs.upload_dir(src_local_dir=<span class="hljs-string">'/home/ma-user/'</span>, dst_obs_dir=<span class="hljs-string">'obs://bucket-name/dir1/'</span>)<br>session.obs.download_file(src_obs_file=<span class="hljs-string">"obs://bucket-name/dir1/file1.txt"</span>, dst_local_dir=<span class="hljs-string">"/home/ma-user/"</span>)<br>session.obs.download_dir(src_obs_dir=<span class="hljs-string">"obs://bucket-name/dir1/"</span>, dst_local_dir=<span class="hljs-string">"/home/ma-user/"</span>)<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Note: it seems not to support <code>\</code> of path of Windows. and there is something wrong with <code>dir</code> operation?</p>
+<h1 id="CANN">CANN<a class="post-anchor" href="#CANN"></a></h1><p>refer to  <a href="https://support.huaweicloud.com/instg-cli-cann503-alpha002/atlasdeploy_03_0003.html" target="_blank" rel="noopener">CANN社区版安装指南(5.0.3.alpha002)</a>,</p>
+<ol>
+<li><p>Prepare your devices including both hardware and software ahead. For example, you can [rent a server and run an Image in Huawei Cloud](#Ascend in Huawei Cloud).</p>
+</li>
+<li><p>(optional)Create and substitute with a User for installation or running, or use an image with user created in the step 1.</p>
+</li>
+<li><p>Install and check dependency of <code>apt</code> and <code>pip</code> and firmware with root right, or use an image with dependency and firmware installed in the step 1. What’s more, </p>
+<p><a href="/2021/09/10/hiascend/image-20210917045150015.png" data-caption="image-20210917045150015" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917045150015.png" alt="image-20210917045150015"></a></p>
+<p>Besides, add environmental variables:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># in ~/.bashrc</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><span class="hljs-built_in">export</span> PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/bin:<span class="hljs-variable">$PATH</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>For firmware of Driver,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># dowaload before</span><br>chmod +x A*<br>su<br>./A300-3010-npu-driver_21.0.2_linux-x86_64.run --full<br><span class="hljs-comment"># install in /usr/local/Ascend</span><br>reboot<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="4">
+<li><p>Prepare the <code>.run</code> package of CANN to the device and then install it. In insider version you can use command line to download and install it. The default installation path is <code>/usr/local/Ascend</code> or <code>~/Ascend</code>.</p>
+</li>
+<li><p>validated the environmental variables of CANN</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> <span class="hljs-variable">${install_path}</span>/bin/setenv.bash<br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># farther</span><br><span class="hljs-comment"># 存在多个python版本时，需要指定为python3.7.5的安装路径，请根据实际情况修改</span><br><span class="hljs-built_in">export</span> PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># for non-root user</span><br><span class="hljs-built_in">export</span> install_path=~/Ascend<br><span class="hljs-comment"># for root user</span><br><span class="hljs-built_in">export</span> install_path=/usr/<span class="hljs-built_in">local</span>/Ascend<br><span class="hljs-comment"># ascend driver</span><br><span class="hljs-built_in">export</span> a_driver_path=/usr/<span class="hljs-built_in">local</span>/Ascend/driver<br><span class="hljs-comment"># 加载Driver的so文件存在路径</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="hljs-built_in">local</span>/Ascend/driver/lib64/common/:/usr/<span class="hljs-built_in">local</span>/Ascend/driver/lib64/driver:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><span class="hljs-comment"># Runtime使用到的so文件存在路径</span><br><span class="hljs-comment"># 如环境中存在Driver，则配置如下。</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">${install_path}</span>/runtime/lib64:<span class="hljs-variable">$LD_LIBRARY_PATH</span><br><span class="hljs-comment"># 如环境中不存在Driver，则配置如下。</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">${install_path}</span>/runtime/lib64:<span class="hljs-variable">$LD_LIBRARY_PATH</span>:<span class="hljs-variable">${install_path}</span>/runtime/lib64/stub<br><span class="hljs-comment"># Compiler使用的python路径</span><br><span class="hljs-built_in">export</span> PYTHONPATH=<span class="hljs-variable">${install_path}</span>/compiler/python/site-packages:<span class="hljs-variable">$PYTHONPATH</span><br><span class="hljs-comment"># 如果用户环境存在多个python3版本，则指定使用python3.7.5版本，python3.7.5安装路径请根据实际情况进行替换；同时设置ATC工具可执行文件所在路径</span><br><span class="hljs-built_in">export</span> PATH=/usr/<span class="hljs-built_in">local</span>/python3.7.5/bin:<span class="hljs-variable">${install_path}</span>/compiler/ccec_compiler/bin:<span class="hljs-variable">${install_path}</span>/compiler/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># Compiler的库文件存在路径</span><br><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=<span class="hljs-variable">${install_path}</span>/compiler/lib64:<span class="hljs-variable">${install_path}</span>/compiler/lib64/plugin/opskernel:<span class="hljs-variable">${install_path}</span>/compiler/lib64/plugin/nnengine:<span class="hljs-variable">${install_path}</span>/compiler/lib64/stub<br><span class="hljs-comment"># FwkPlugin使用的python路径</span><br><span class="hljs-built_in">export</span> PYTHONPATH=<span class="hljs-variable">${install_path}</span>/fwkplugin/python/site-packages:<span class="hljs-variable">$PYTHONPATH</span><br><span class="hljs-comment"># Toolkit使用的python路径</span><br><span class="hljs-built_in">export</span> PYTHONPATH=<span class="hljs-variable">${install_path}</span>/toolkit/python/site-packages:<span class="hljs-variable">$PYTHONPATH</span><br><span class="hljs-built_in">export</span> TOOLCHAIN_HOME=<span class="hljs-variable">${install_path}</span>/toolkit<br><span class="hljs-comment"># 算子库根目录</span><br><span class="hljs-built_in">export</span> ASCEND_OPP_PATH=<span class="hljs-variable">${install_path}</span>/opp<br><span class="hljs-comment">#AI CPU组件的安装路径</span><br><span class="hljs-built_in">export</span> ASCEND_AICPU_PATH=<span class="hljs-variable">${install_path}</span>/<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<h1 id="Ascend-in-Huawei-Cloud">Ascend in Huawei Cloud<a class="post-anchor" href="#Ascend-in-Huawei-Cloud"></a></h1><p>refer to <a href="https://support.huaweicloud.com/ecs/index.html" target="_blank" rel="noopener">https://support.huaweicloud.com/ecs/index.html</a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917010717644.png" data-caption="image-20210917010717644" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917010717644.png" alt="image-20210917010717644"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917010810298.png" data-caption="image-20210917010810298" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917010810298.png" alt="image-20210917010810298"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917011100973.png" data-caption="image-20210917011100973" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917011100973.png" alt="image-20210917011100973"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917011014249.png" data-caption="image-20210917011014249" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917011014249.png" alt="image-20210917011014249"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917011256290.png" data-caption="image-20210917011256290" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917011256290.png" alt="image-20210917011256290"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917011900989.png" data-caption="image-20210917011900989" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917011900989.png" alt="image-20210917011900989"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210917012005473.png" data-caption="image-20210917012005473" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917012005473.png" alt="image-20210917012005473"></a></p>
+<p>remote login with a software in PC, like <code>Termius</code> in Mac OS, <code>MobaXterm</code> in Windows, </p>
+<p>articles about MobaXterm: <a href="https://webcache.googleusercontent.com/search?q=cache:Ay3YKLf-pxgJ:https://www.huaweicloud.com/articles/bc1baba84f0ee5578f417003c1f1c811.html+&amp;cd=7&amp;hl=zh-CN&amp;ct=clnk&amp;gl=id" target="_blank" rel="noopener">MobaXterm技巧</a>, </p>
+<p><a href="/2021/09/10/hiascend/image-20210917015223036.png" data-caption="image-20210917015223036" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210917015223036.png" alt="image-20210917015223036"></a></p>
+<p>Note that it is supported to drag and drop files from PC.</p>
+<h1 id="MindSpore-installation">MindSpore installation<a class="post-anchor" href="#MindSpore-installation"></a></h1><p>Make sure dependency installed first, refer to <a href="https://www.mindspore.cn/install" target="_blank" rel="noopener">MindSpore安装指南</a>, <a href="http://mingg2333.top/2021/07/04/ai-env/">ML environment</a>.</p>
+<p>Taking the installation of  <code>MindSpore 1.2</code> on Ubuntu-x86(GPU CUDA 10.1) for example, only one line refer to <a href="https://www.mindspore.cn/install" target="_blank" rel="noopener">MindSpore安装指南</a>:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip install https://ms-release.obs.cn-north-4.myhuaweicloud.com/1.2.1/MindSpore/gpu/ubuntu_x86/cuda-10.1/mindspore_gpu-1.2.1-cp37-cp37m-linux_x86_64.whl --trusted-host ms-release.obs.cn-north-4.myhuaweicloud.com -i https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-meta">#</span><span class="bash"> Successfully installed asttokens-2.0.5 astunparse-1.6.3 cffi-1.14.5 decorator-5.0.9 easydict-1.9 mindspore-gpu-1.2.1 mpmath-1.2.1 numpy-1.21.0 packaging-20.9 pillow-8.2.0 protobuf-3.17.3 psutil-5.8.0 pycparser-2.20 pyparsing-2.4.7 scipy-1.7.0 six-1.16.0 sympy-1.8</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Check your installation:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">pip show mindspore-gpu<br><span class="hljs-meta">#</span><span class="bash"> Name: mindspore-gpu</span><br><span class="hljs-meta">#</span><span class="bash"> Version: 1.2.1</span><br><span class="hljs-meta">#</span><span class="bash"> Summary: MindSpore is a new open <span class="hljs-built_in">source</span> deep learning training/inference framework that could be used <span class="hljs-keyword">for</span> mobile, edge and cloud scenarios.</span><br><span class="hljs-meta">#</span><span class="bash"> Home-page: https://www.mindspore.cn</span><br><span class="hljs-meta">#</span><span class="bash"> Author: The MindSpore Authors</span><br><span class="hljs-meta">#</span><span class="bash"> Author-email: contact@mindspore.cn</span><br><span class="hljs-meta">#</span><span class="bash"> License: Apache 2.0</span><br><span class="hljs-meta">#</span><span class="bash"> Location:</span><br><span class="hljs-meta">#</span><span class="bash"> Requires: cffi, sympy, protobuf, scipy, setuptools, astunparse, easydict, wheel, psutil, packaging, numpy, decorator, asttokens, pillow</span><br><span class="hljs-meta">#</span><span class="bash"> Required-by: </span><br>python -c "import mindspore;print(mindspore.__version__)"<br><span class="hljs-meta">#</span><span class="bash"> 1.2.1</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Test 1:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> mindspore.context <span class="hljs-keyword">as</span> context<br><span class="hljs-keyword">import</span> mindspore.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">from</span> mindspore <span class="hljs-keyword">import</span> Tensor<br><span class="hljs-keyword">from</span> mindspore.ops <span class="hljs-keyword">import</span> operations <span class="hljs-keyword">as</span> P<br><br>context.set_context(mode=context.GRAPH_MODE, device_target=<span class="hljs-string">"GPU"</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mul</span><span class="hljs-params">(nn.Cell)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span><br>        super(Mul, self).__init__()<br>        self.mul = P.Mul()<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">construct</span><span class="hljs-params">(self, x, y)</span>:</span><br>        <span class="hljs-keyword">return</span> self.mul(x, y)<br><br>x = Tensor(np.array([<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>]).astype(np.float32))<br>y = Tensor(np.array([<span class="hljs-number">4.0</span>, <span class="hljs-number">5.0</span>, <span class="hljs-number">6.0</span>]).astype(np.float32))<br><br>mul = Mul()<br>print(mul(x, y))<br><span class="hljs-comment"># [4.0, 10.0, 18.0]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Test 2:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">from</span> mindspore <span class="hljs-keyword">import</span> Tensor<br><span class="hljs-keyword">import</span> mindspore.ops <span class="hljs-keyword">as</span> ops<br><span class="hljs-keyword">import</span> mindspore.context <span class="hljs-keyword">as</span> context<br><br>context.set_context(device_target=<span class="hljs-string">"GPU"</span>)<br>x = Tensor(np.ones([<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]).astype(np.float32))<br>y = Tensor(np.ones([<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]).astype(np.float32))<br>print(ops.add(x, y))<br><span class="hljs-comment"># [[[ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.]],</span><br><br><span class="hljs-comment">#     [[ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.]],</span><br><br><span class="hljs-comment">#     [[ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.],</span><br><span class="hljs-comment">#     [ 2.  2.  2.  2.]]]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>Test 3:</p>
+<p>refer to <a href="https://www.mindspore.cn/tutorial/training/zh-CN/r1.2/quick_start/quick_video/quick_start_video.html" target="_blank" rel="noopener">体验快速入门</a>,</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://gitee.com/mindspore/docs.git<br><span class="hljs-built_in">cd</span> docs<br>git checkout r1.2<br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="Euler-OS">Euler OS<a class="post-anchor" href="#Euler-OS"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># check your system</span><br>uname -a<br><span class="hljs-comment"># Linux notebook-c4f2050c-c720-44cd-a6bc-ca40ad2e7bfd 3.10.0-862.14.1.5.h328.eulerosv2r7.x86_64 #1 SMP Mon Jul 22 00:00:00 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br><br><span class="hljs-comment"># or</span><br>uname -r<br><span class="hljs-comment"># 3.10.0-862.14.1.5.h328.eulerosv2r7.x86_64</span><br><br><span class="hljs-comment"># unavailable</span><br><span class="hljs-built_in">export</span> HELLO=<span class="hljs-string">"Hello!"</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="Mind-Studio">Mind Studio<a class="post-anchor" href="#Mind-Studio"></a></h1><p>refer to <a href="https://www.bilibili.com/video/BV1m64y1D7Q1" target="_blank" rel="noopener">昇腾CANN训练营-应用营第一讲——开发&amp;运行环境部署</a> (0:46:36).</p>
+<h1 id="MindX-SDK">MindX SDK<a class="post-anchor" href="#MindX-SDK"></a></h1><p><a href="https://education.huaweicloud.com/courses/course-v1:HuaweiX+CBUCNXA042+Self-paced/about?isAuth=0&amp;cfrom=hwc" target="_blank" rel="noopener">https://education.huaweicloud.com/courses/course-v1:HuaweiX+CBUCNXA042+Self-paced/about?isAuth=0&amp;cfrom=hwc</a></p>
+<p><a href="/2021/09/10/hiascend/image-20210916225911222.png" data-caption="image-20210916225911222" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210916225911222.png" alt="image-20210916225911222"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210916230133104.png" data-caption="image-20210916230133104" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210916230133104.png" alt="image-20210916230133104"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210916230226497.png" data-caption="image-20210916230226497" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210916230226497.png" alt="image-20210916230226497"></a></p>
+<p><a href="/2021/09/10/hiascend/image-20210916230406927.png" data-caption="image-20210916230406927" data-fancybox="images"><img src="/2021/09/10/hiascend/image-20210916230406927.png" alt="image-20210916230406927"></a></p>
+<p>7个API</p>
+<p><a href="https://r.huaweistatic.com/s/ascendstatic/lst/computing/computing-right.svg" target="_blank" rel="noopener" data-caption="img" data-fancybox="images"><img src="https://r.huaweistatic.com/s/ascendstatic/lst/computing/computing-right.svg" alt="img"></a></p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/09/17/shared-documents/">shared documents</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/08/26/ubuntu/">ubuntu</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/09/10/hiascend/">http://mingg2333.top/2021/09/10/hiascend/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

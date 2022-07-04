@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      Fuzzing - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AFL"><span class="toc-text">AFL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quick-use"><span class="toc-text">quick use</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Concept"><span class="toc-text">Concept</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CFG"><span class="toc-text">CFG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Coverage"><span class="toc-text">Code Coverage</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Appendix"><span class="toc-text">Appendix</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-targeted-file"><span class="toc-text">A. targeted file</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-troubleshooting"><span class="toc-text">B. troubleshooting</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Fuzzing</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/11/15</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/11/15/Fuzz/" data-flag-title="Fuzzing">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/software">software</a>
+                  
+                
+                  
+                    <a href="/tags/afl">afl</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-05-28 09:09:58</p>
+<p>Modified: 2021-11-15 19:17:10</p>
+<a id="more"></a>
+
+<h1 id="AFL">AFL<a class="post-anchor" href="#AFL"></a></h1><p><a href="https://lcamtuf.coredump.cx/afl/technical_details.txt" target="_blank" rel="noopener">Technical “whitepaper” for afl-fuzz</a>.</p>
+<h2 id="quick-use">quick use<a class="post-anchor" href="#quick-use"></a></h2><ol>
+<li><p>installation.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> git@github.com:google/AFL.git<br><span class="hljs-built_in">cd</span> AFL<br>make<br>sudo make install<br><span class="hljs-comment"># check installation</span><br>afl-gcc<br></code></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>fuzzing test.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/Documents<br>mkdir <span class="hljs-built_in">test</span><br><span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span><br>mkdir ipnut output<br><span class="hljs-comment"># prepare targeted file imgRead.c, refer to Appendix A</span><br>touch imgRead.c<br><span class="hljs-comment"># after writing  imgRead.c, compile the program using afl-gcc</span><br>afl-gcc -fsanitize=address -fsanitize=undefined imgRead.c -o imgRed<br><span class="hljs-comment"># prepare input, refer to https://www.youtube.com/watch?v=NiGC1jxFx78&amp;list=PLHGgqcJIME5koI76OlBdBj7sCid1hbjf-&amp;index=3</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"aaaa"</span> &gt; input/image.img<br><span class="hljs-built_in">echo</span> <span class="hljs-string">"IMG"</span> &gt; input/image.img<br>xxd input/image.img<br>afl-fuzz -i input/ -o output -m none -- ./imgRed @@<br><span class="hljs-comment"># for troubleshooting refer to Appendix B</span><br><span class="hljs-comment"># press Ctrl + C to exit from afl-fuzz</span><br></code></pre></td></tr></tbody></table></figure>
+
+</li>
+</ol>
+<p><a href="/2021/11/15/Fuzz/fuzzing2.png" data-caption="fuzzing2" data-fancybox="images"><img src="/2021/11/15/Fuzz/fuzzing2.png" alt="fuzzing2"></a></p>
+<ol start="3">
+<li><p>analysis.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">xxd id:000000,sig:06,src:000000,op:havoc,rep:64<br><span class="hljs-comment"># or use crashwalk, refer to https://www.freebuf.com/articles/system/197678.html</span><br>sudo apt-get install gdb golang<br><span class="hljs-built_in">cd</span> ~<br>mkdir tools<br><span class="hljs-built_in">cd</span> tools<br>git <span class="hljs-built_in">clone</span> https://github.com/jfoote/exploitable.git<br>mkdir go<br><span class="hljs-built_in">export</span> GOPATH=~/tools/go<br><span class="hljs-built_in">export</span> CW_EXPLOITABLE=~/tools/exploitable/exploitable/exploitable.py<br>go get -u github.com/bnagy/crashwalk/cmd/...<br><span class="hljs-comment"># wait for downloading, then use cwtriage</span><br>~/tools/go/bin/cwtriage -root ~/Documents/mycode/<span class="hljs-built_in">test</span>/ -afl<br></code></pre></td></tr></tbody></table></figure>
+
+<p>Code Coverage.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># use afl-cov, refer to https://www.freebuf.com/articles/system/197678.html</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+<h1 id="Concept">Concept<a class="post-anchor" href="#Concept"></a></h1><h2 id="CFG">CFG<a class="post-anchor" href="#CFG"></a></h2><p>CFG, <a href="https://en.wikipedia.org/wiki/Control-flow_graph" target="_blank" rel="noopener">control flow graph</a>, consists of node(block) and edge.</p>
+<h2 id="Code-Coverage">Code Coverage<a class="post-anchor" href="#Code-Coverage"></a></h2><p>refer to <a href="https://clang.llvm.org/docs/SanitizerCoverage.html" target="_blank" rel="noopener">SanitizerCoverage</a>.</p>
+<h1 id="Appendix">Appendix<a class="post-anchor" href="#Appendix"></a></h1><h2 id="A-targeted-file">A. targeted file<a class="post-anchor" href="#A-targeted-file"></a></h2>   <figure class="highlight c"><table><tbody><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// imgRead.c</span><br><span class="hljs-comment">// refer to https://www.youtube.com/watch?v=NiGC1jxFx78&amp;list=PLHGgqcJIME5koI76OlBdBj7sCid1hbjf-&amp;index=3</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Image</span></span><br><span class="hljs-class">{</span><br>    <span class="hljs-keyword">char</span> header[<span class="hljs-number">4</span>];<br>    <span class="hljs-keyword">int</span>     <span class="hljs-built_in">width</span>;<br>    <span class="hljs-keyword">int</span>     <span class="hljs-built_in">height</span>;<br>    <span class="hljs-keyword">char</span>  data[<span class="hljs-number">10</span>];<br>};<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ProcessImage</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* filename)</span></span>{<br>    FILE *fp;<br>    <span class="hljs-keyword">char</span> ch;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Image</span> <span class="hljs-title">img</span>;</span><br><br>    fp = fopen(filename, <span class="hljs-string">"r"</span>);<br>    <br>    <span class="hljs-keyword">if</span> (fp == <span class="hljs-literal">NULL</span>)<br>    {<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"fp == NULL"</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);<br>    }<br>    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n\tHeader\twidth\theight\tdata\t\r\n"</span>);<br><br>    <span class="hljs-keyword">while</span> (fread(&amp;img, <span class="hljs-keyword">sizeof</span>(img), <span class="hljs-number">1</span>, fp) &gt; <span class="hljs-number">0</span>)<br>    {<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n\t%s\t%d\t%d\t%s\r\n"</span>, img.header, img.<span class="hljs-built_in">width</span>, img.<span class="hljs-built_in">height</span>, img.data);<br>        <span class="hljs-keyword">int</span> size1 = img.<span class="hljs-built_in">width</span> * img.<span class="hljs-built_in">height</span>;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"size1: %d "</span>, size1);<br>        <span class="hljs-keyword">char</span>* buff  = (<span class="hljs-keyword">char</span>*)<span class="hljs-built_in">malloc</span>(size1);<br>        <span class="hljs-built_in">memcpy</span>(buff, img.data, <span class="hljs-keyword">sizeof</span>(img.data));<br>        <span class="hljs-keyword">int</span> size2 = img.<span class="hljs-built_in">width</span> / img.<span class="hljs-built_in">height</span>;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"size2: %d"</span>, size2);<br>        <span class="hljs-built_in">free</span>(buff);<br>        <span class="hljs-keyword">if</span> (size1 / <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)<br>        {<br>            <span class="hljs-built_in">free</span>(buff);<br>        }<br>        <br>    }<br>    fclose(fp);<br>}<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span></span>{<br>    ProcessImage(argv[<span class="hljs-number">1</span>]);<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="B-troubleshooting">B. troubleshooting<a class="post-anchor" href="#B-troubleshooting"></a></h2><ol>
+<li>for the first time</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo su root<br><br><span class="hljs-built_in">echo</span> core &gt;/proc/sys/kernel/core_pattern<br><br><span class="hljs-built_in">cd</span> /sys/devices/system/cpu<br><span class="hljs-built_in">echo</span> performance | tee cpu*/cpufreq/scaling_governor<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*<code>Ctrl + D</code>: exit from root</p>
+<p>or refer to <a href="https://i-m.dev/posts/20191001-225746.html" target="_blank" rel="noopener">https://i-m.dev/posts/20191001-225746.html</a>, <a href="https://blog.csdn.net/qysh123/article/details/114794833" target="_blank" rel="noopener">https://blog.csdn.net/qysh123/article/details/114794833</a></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> AFL_SKIP_CPUFREQ=1<br><span class="hljs-comment"># or </span><br><span class="hljs-built_in">export</span> AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1<br><span class="hljs-comment"># or </span><br><span class="hljs-built_in">echo</span> core | sudo tee /proc/sys/kernel/core_pattern<br><span class="hljs-built_in">echo</span> performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor<br></code></pre></td></tr></tbody></table></figure>
+
+
+
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/11/16/paradigm/">copywriting paradigm</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/11/04/Zotero/">Zotero</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/11/15/Fuzz/">http://mingg2333.top/2021/11/15/Fuzz/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

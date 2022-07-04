@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      感应电机电磁设计计算机核算程序实验 - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#qbasic"><span class="toc-text">qbasic</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行环境搭建"><span class="toc-text">运行环境搭建</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#电机核算程序"><span class="toc-text">电机核算程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#qbasic-1"><span class="toc-text">qbasic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c"><span class="toc-text">c</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">感应电机电磁设计计算机核算程序实验</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/05/01</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2020/05/01/djsj/" data-flag-title="感应电机电磁设计计算机核算程序实验">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/课设">课设</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/qbasic">qbasic</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>本文介绍QBASIC运行环境的搭建，以及电机核算程序的修改、运行与error处理。</p>
+<a id="more"></a>
+
+<ul>
+<li><a href="#qbasic">qbasic</a><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#运行环境搭建">运行环境搭建</a></li>
+</ul>
+</li>
+<li><a href="#电机核算程序">电机核算程序</a><ul>
+<li><a href="#qbasic-1">qbasic</a></li>
+<li><a href="#c">c</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="qbasic">qbasic<a class="post-anchor" href="#qbasic"></a></h1><h2 id="简介">简介<a class="post-anchor" href="#简介"></a></h2><p>BASIC语言原本是方便大学生学习计算机创造的高级语言，Quick BASIC、QBASIC、Visual Basic等都是从BASIC发展而来的，或者说是BASIC的变种，QBASIC在语法与功能上与其他两者相近，稍有不同的是它是一种解释型的语言。</p>
+<h2 id="运行环境搭建">运行环境搭建<a class="post-anchor" href="#运行环境搭建"></a></h2><p>参考<a href="https://www.qbasic.net/" target="_blank" rel="noopener">QBasic: Compiler, Interpreter, Software download, Articles…</a>,使用仿真器的方法,比较便捷:</p>
+<p>2.1 在当前Windows上需要借助DOS模拟器,请先下载模拟器比如<a href="https://www.dosbox.com/download.php?main=1" target="_blank" rel="noopener">DOSBox</a>,下载后请自行安装,记住<code>DOSBox安装目录</code>;</p>
+<p>2.2 下载DOS仿真器<a href="https://www.qbasic.net/dl.php?id=SGXCC96dXclk.&amp;file=qbdbox" target="_blank" rel="noopener">Basic 2 DOSBox</a>(点击即下载),得到压缩包BASIC2DOSBox.zip,解压得同名文件夹;</p>
+<p>2.3 安装DOS仿真器,参考<code>BASIC2DOSBox\docs\README.pdf</code>,</p>
+<p>?        运行<code>BASIC2DOSBox\basic2dos.exe</code>,界面如图,</p>
+<p>?        <a href="/2020/05/01/djsj/1.png" data-caption="1" data-fancybox="images"><img src="/2020/05/01/djsj/1.png" alt="1"></a></p>
+<p>?        (1)第一个空白框里选择<code>DOSBox安装目录</code>下的DOSBox.exe,即填写DOSBox.exe的全路径,</p>
+<p>?        (2)第二个空白框里选择DOS仿真器将要安装存放的目录,</p>
+<p>?        (3)Installation选项卡里选择将要安装的BASIC版本,这里仅选择了QBASIC 1.1,</p>
+<p>?        (4)Options选项卡里选择安装配置,</p>
+<p>?            Shut down DOSBox when exiting指退出QBASIC 1.1后自动退出DOSBox.exe,</p>
+<p>?            Full Screen Mode指打开QBASIC 1.1后全屏(全屏后<code>Alt + Tab</code>可切换界面),</p>
+<p>?            Copy Example Files指在DOS仿真器安装目录下<code>_source\EXAMPLES</code>提供例程,</p>
+<p>?        (5)点击Next进入下一步,之后很快安装完成,点击Yes退出;</p>
+<p>2.4 运行DOS仿真器,找到并运行DOS仿真器安装目录下<code>_shorcut\qb11</code>快捷方式,界面如图,</p>
+<p>?        <a href="/2020/05/01/djsj/2.png" data-caption="2" data-fancybox="images"><img src="/2020/05/01/djsj/2.png" alt="2"></a></p>
+<p>?        界面包括菜单栏、提示框、快捷键提醒等,这里强调两个快捷键：<code>Esc</code>,相当于返回,几乎在任何提示框都可以使用;<code>F5</code>,在程序界面运行程序,下面即将介绍;</p>
+<p>2.5 按<code>Esc</code>退出提示框,开始编辑程序,按<code>F5</code>运行,效果如下图(在菜单栏<code>Option-Display</code>中可以设置背景颜色);</p>
+<figure class="highlight"><table><tbody><tr><td class="code"><pre><code class="hljs basic">CLS : PRINT "HELLO WORLD!"<br></code></pre></td></tr></tbody></table></figure>
+
+<p><a href="/2020/05/01/djsj/3_1.png" data-caption="3_1" data-fancybox="images"><img src="/2020/05/01/djsj/3_1.png" alt="3_1"></a>    <a href="/2020/05/01/djsj/3_2.png" data-caption="3_2" data-fancybox="images"><img src="/2020/05/01/djsj/3_2.png" alt="3_2"></a></p>
+<p>2.6 在菜单栏<code>File</code>中存取文件,以存文件为例,点击<code>File-Save</code>,如图,</p>
+<p><a href="/2020/05/01/djsj/4.png" data-caption="4" data-fancybox="images"><img src="/2020/05/01/djsj/4.png" alt="4"></a>    <a href="/2020/05/01/djsj/4_2.png" data-caption="4_2" data-fancybox="images"><img src="/2020/05/01/djsj/4_2.png" alt="4_2"></a></p>
+<p>选择D盘,它代表DOS仿真器安装目录下的<code>_source</code>文件夹(取文件也是在预先把文件放在<code>_source</code>里,打开<code>_shorcut\qb11</code>后在D盘读取),点击OK;重命名后点击OK即保存;</p>
+<p>2.7 一种退出qb11的方法:<code>File-Exit</code>.</p>
+<h1 id="电机核算程序">电机核算程序<a class="post-anchor" href="#电机核算程序"></a></h1><h2 id="qbasic-1">qbasic<a class="post-anchor" href="#qbasic-1"></a></h2><p>本实验根据陈世坤老师主编的《电机设计》一书，源程序来自书P300-304,根据DOS仿真器提示与课程知识,程序修改为,</p>
+<details>
+  <summary>点击展开QBASIC程序(165行)</summary>
+
+<figure class="highlight basic"><table><tbody><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span>: <span class="hljs-keyword">CLS</span> : <span class="hljs-keyword">LET</span> SPCLEN = <span class="hljs-number">8</span><span class="hljs-comment">'RAD'rad</span><br><span class="hljs-symbol">20 </span>: <span class="hljs-keyword">READ</span> PN, P, X, C, A, DW, D, G, DK, L, Z, BK, HK, B, R, H<br><span class="hljs-symbol">30 </span>: <span class="hljs-keyword">READ</span> N, U, V, W, Y, ZZ, DR, SR, PW<br><span class="hljs-symbol">40 </span>: <span class="hljs-keyword">DATA</span> <span class="hljs-number">55</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">400</span>, <span class="hljs-number">260</span>, .<span class="hljs-number">8</span>, <span class="hljs-number">85</span>, <span class="hljs-number">240</span>, <span class="hljs-number">48</span>, <span class="hljs-number">4</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">8</span>, <span class="hljs-number">5.7</span>, <span class="hljs-number">26.5</span><br><span class="hljs-symbol">50 </span>: <span class="hljs-keyword">DATA</span> <span class="hljs-number">36</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1.3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">44</span>, <span class="hljs-number">184.2</span>, <span class="hljs-number">14</span>, <span class="hljs-number">1100</span><br><span class="hljs-symbol">60 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">READ</span> BU, BL, HH<br><span class="hljs-symbol">70 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">READ</span> BU, BV, BL, HG, HH<br><span class="hljs-symbol">80 </span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> M = <span class="hljs-number">11</span><span class="hljs-comment">'READ M 'no value?</span><br><span class="hljs-symbol">90 </span>: <span class="hljs-keyword">DATA</span> <span class="hljs-number">3.5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">14</span>, <span class="hljs-number">28</span><br><span class="hljs-symbol">100 </span>: <span class="hljs-keyword">PRINT</span> PN; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); P; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">4</span>); X; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); C; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">4</span>); A; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); M<br><span class="hljs-symbol">110 </span>: <span class="hljs-keyword">IF</span> DW &lt;= <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">PRINT</span> <span class="hljs-string">"IGNORE THE LAST 1"</span><br><span class="hljs-symbol">120 </span>: <span class="hljs-keyword">PRINT</span> DW; <span class="hljs-keyword">SPC</span>(SPCLEN); D; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); G; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); DK; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); L; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); Z<br><span class="hljs-symbol">130 </span>: <span class="hljs-keyword">PRINT</span> BK; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); HK; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">4</span>); B; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); R; <span class="hljs-keyword">SPC</span>(SPCLE + <span class="hljs-number">8</span>); H; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); N<br><span class="hljs-symbol">140 </span>: <span class="hljs-keyword">PRINT</span> U; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); V; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">2</span>); W; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); Y; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); DR; <span class="hljs-keyword">SPC</span>(SPCLEN); SR<br><span class="hljs-symbol">150 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">PRINT</span> ZZ; <span class="hljs-keyword">SPC</span>(SPCLEN); BU; <span class="hljs-keyword">SPC</span>(SPCLEN); BL; <span class="hljs-keyword">SPC</span>(SPCLEN); HH<br><span class="hljs-symbol">160 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">PRINT</span> ZZ; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); BU; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); BV; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); BL; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); HG; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">3</span>); HH<br><span class="hljs-symbol">170 </span>: J = PN / <span class="hljs-number">1.14</span> * <span class="hljs-keyword">SQR</span>(C): <span class="hljs-keyword">LET</span> PI = <span class="hljs-number">3.1415926#</span><span class="hljs-comment">'calcu1</span><br><span class="hljs-symbol">180 </span>: LD = <span class="hljs-number">25</span>: <span class="hljs-keyword">IF</span> DW &lt; <span class="hljs-number">390</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LD = <span class="hljs-number">20</span>: <span class="hljs-keyword">IF</span> DW &lt; <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LD = <span class="hljs-number">15</span>: <span class="hljs-keyword">IF</span> DW &lt; <span class="hljs-number">125</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LD = <span class="hljs-number">10</span><br><span class="hljs-symbol">190 </span>: TY = PI / <span class="hljs-number">2</span> / P * (D + <span class="hljs-number">2</span> * HK + <span class="hljs-number">2</span> + H + R)<span class="hljs-comment">'PI=3.1415926...</span><br><span class="hljs-symbol">200 </span>: BB = <span class="hljs-number">1</span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BB = <span class="hljs-number">2</span> * M * P / Z<br><span class="hljs-symbol">210 </span>: BC = PI / Z * (D + <span class="hljs-number">2</span> * HK + (B - BK) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>)) - B<br><span class="hljs-symbol">220 </span>: BD = PI / Z * (D + <span class="hljs-number">2</span> * HK + <span class="hljs-number">2</span> * H) - <span class="hljs-number">2</span> * R<br><span class="hljs-symbol">230 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BE = PI / ZZ * (D - <span class="hljs-number">2</span> * G - <span class="hljs-number">1</span> - (BU - <span class="hljs-number">1</span>) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>)) - BU: BF = PI / ZZ * (D - <span class="hljs-number">2</span> * G - <span class="hljs-number">1</span> - <span class="hljs-number">2</span> * HH) - BL<span class="hljs-comment">'zhuanzichi</span><br><span class="hljs-symbol">240 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">2</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BE = PI / ZZ * (D - <span class="hljs-number">2</span> * G - <span class="hljs-number">2</span> * HG) - BU<br><span class="hljs-symbol">250 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BE = PI / ZZ * (D - <span class="hljs-number">2</span> * G - <span class="hljs-number">1.6</span> - <span class="hljs-number">2</span> * HG) - BU<br><span class="hljs-symbol">260 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BF = PI / ZZ * (D - <span class="hljs-number">2</span> * G - <span class="hljs-number">2</span> * HG - <span class="hljs-number">4</span> / <span class="hljs-number">3</span> * HH) - (<span class="hljs-number">2</span> * BL + BV) / <span class="hljs-number">3</span><br><span class="hljs-symbol">270 </span>: <span class="hljs-keyword">IF</span> DW &lt;= <span class="hljs-number">270</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">310</span><br><span class="hljs-symbol">280 </span>: M = (B + <span class="hljs-number">2</span> * R) / (B + <span class="hljs-number">2</span> * R + BC + BD) <span class="hljs-comment">'DW&gt;270</span><br><span class="hljs-symbol">290 </span>: CS = TY * BB / <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">1</span> - M * M)<br><span class="hljs-symbol">300 </span>: LS = <span class="hljs-number">2</span> * (LD + CS): <span class="hljs-keyword">GOTO</span> <span class="hljs-number">340</span> <span class="hljs-comment">'DW&gt;270 END LD=25 RIGHT CS SHOULD=124</span><br><span class="hljs-symbol">310 </span>: LS = <span class="hljs-number">2</span> * LD + TY<span class="hljs-comment">'zhuanzichi end 'DW&lt;270</span><br><span class="hljs-symbol">320 </span>: <span class="hljs-keyword">IF</span> P = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LS = <span class="hljs-number">2</span> * LD + <span class="hljs-number">2.9</span> / <span class="hljs-number">3</span> * TY<br><span class="hljs-symbol">330 </span>: <span class="hljs-keyword">IF</span> P &gt; <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LS = <span class="hljs-number">2</span> * LD + <span class="hljs-number">25</span> / <span class="hljs-number">24</span> * TY <span class="hljs-comment">'DW&lt;270 END</span><br><span class="hljs-symbol">340 </span>: LZ = L + LS: ZF = N * Z / <span class="hljs-number">3</span> / A <span class="hljs-comment">'L=240</span><br><span class="hljs-symbol">350 </span>: E = .<span class="hljs-number">25</span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">200</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> E = .<span class="hljs-number">3</span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">280</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> E = .<span class="hljs-number">35</span><br><span class="hljs-symbol">360 </span>: KW = .<span class="hljs-number">08</span>: <span class="hljs-keyword">IF</span> W &lt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> KW = .<span class="hljs-number">06</span><br><span class="hljs-symbol">370 </span>: K = (H - <span class="hljs-number">2</span>) * (B / <span class="hljs-number">2</span> + R) + PI / <span class="hljs-number">2</span> * R * R - E * (<span class="hljs-number">2</span> * H + B + PI * R)<br><span class="hljs-symbol">380 </span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> K = K - E * (B + <span class="hljs-number">2</span> * R) <span class="hljs-comment">'differ</span><br><span class="hljs-symbol">390 </span>: K = (U * (W + KW) * (W + KW) + V * (Y + KW) * (Y + KW)) * N / K * <span class="hljs-number">100</span><br><span class="hljs-symbol">400 </span>: SC = PI / <span class="hljs-number">4</span> * (U * W * W + V * Y * Y)<br><span class="hljs-symbol">410 </span>: U = ZF * LZ / A / <span class="hljs-number">46000!</span> / SC: V = U * J / <span class="hljs-number">380</span> / <span class="hljs-keyword">SQR</span>(C)<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">420 </span>: W = .<span class="hljs-number">0000095</span> * Z * N * LZ * SC<span class="hljs-comment">'calcu1 end</span><br><span class="hljs-symbol">430 </span>: <span class="hljs-keyword">PRINT</span> LD; <span class="hljs-keyword">SPC</span>(SPCLEN); LZ; <span class="hljs-keyword">USING</span> <span class="hljs-string">"##.###"</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">3</span>); U; <span class="hljs-keyword">SPC</span>(SPCLEN); W; <span class="hljs-keyword">SPC</span>(SPCLEN); K<br><span class="hljs-symbol">440 </span>: <span class="hljs-comment">'</span><br><span class="hljs-symbol">450 </span>: Q = Z / <span class="hljs-number">6</span> / P: XB = Z / <span class="hljs-number">2</span> / P * (<span class="hljs-number">1</span> - BB)<span class="hljs-comment">'calcu2</span><br><span class="hljs-symbol">460 </span>: <span class="hljs-keyword">IF</span> Q - <span class="hljs-keyword">INT</span>(Q) <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> Q = <span class="hljs-number">2</span> * Q: <span class="hljs-keyword">IF</span> Q - <span class="hljs-keyword">INT</span>(Q) <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> Q = <span class="hljs-number">2</span> * Q<br><span class="hljs-symbol">470 </span>: KQ = .<span class="hljs-number">5</span> / Q / <span class="hljs-keyword">SIN</span>(PI / <span class="hljs-number">6</span> / Q): E = <span class="hljs-keyword">SIN</span>(BB * PI / <span class="hljs-number">2</span>): KW = KQ * E<br><span class="hljs-symbol">480 </span>: Q = Z / <span class="hljs-number">6</span> / P: S = PI * PI / <span class="hljs-number">54</span> / Q / Q * ((<span class="hljs-number">5</span> * Q * Q + <span class="hljs-number">1</span>) + XB / <span class="hljs-number">4</span> / Q * (XB * XB - <span class="hljs-number">1</span>) - <span class="hljs-number">3</span> * XB * XB / <span class="hljs-number">2</span>) - KW * KW<br><span class="hljs-symbol">490 </span>: K = <span class="hljs-number">3</span> * ZF * ZF * KW * KW<br><span class="hljs-symbol">500 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SB = (BU * BU - <span class="hljs-number">1</span>) / <span class="hljs-number">4</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) + (BU + BL) / <span class="hljs-number">2</span> * (HH - (BU - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>))<br><span class="hljs-symbol">510 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">2</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SD = (BV + BL) / <span class="hljs-number">2</span> * HH: SB = (BU + <span class="hljs-number">1.5</span>) / <span class="hljs-number">2</span> * HG + SD<br><span class="hljs-symbol">520 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SD = (BV + BL) / <span class="hljs-number">2</span> * HH: SB = (BU * BU - <span class="hljs-number">2.25</span>) / <span class="hljs-number">4</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) + BU * (HG - (BU - <span class="hljs-number">1.5</span>) / <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>)) + SD  <span class="hljs-comment">'differ</span><br><span class="hljs-symbol">530 </span>: Y = <span class="hljs-number">1.19E</span>-<span class="hljs-number">07</span> * K * L / SB / ZZ * J * <span class="hljs-keyword">SQR</span>(C)<br><span class="hljs-symbol">540 </span>: KK = <span class="hljs-number">1.821E</span>-<span class="hljs-number">10</span> * K * DR / P / P / SR * J * <span class="hljs-keyword">SQR</span>(C)<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">550 </span>: K = Y + KK: LE = L + <span class="hljs-number">2</span> * G: U = PI * D / Z: W = PI * (D - <span class="hljs-number">2</span> * G) / ZZ  <span class="hljs-comment">'differ</span><br><span class="hljs-symbol">560 </span>: CX = <span class="hljs-number">1</span> + BK * BK / (U * (<span class="hljs-number">4.4</span> * G + .<span class="hljs-number">75</span> * BK) - BK * BK)<br><span class="hljs-symbol">570 </span>: E = <span class="hljs-number">1</span> + .<span class="hljs-number">5</span> * <span class="hljs-keyword">INT</span>(X / <span class="hljs-number">2</span>): E = <span class="hljs-number">1</span> + E * E / (W * (<span class="hljs-number">4.4</span> * G + .<span class="hljs-number">75</span> * E) - E * E): GE = CX * E * G<br><span class="hljs-symbol">580 </span>: CX = <span class="hljs-number">4.5533E</span>-<span class="hljs-number">10</span> * PN * LE * ZF * ZF * KW * KW * C / P<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">590 </span>: Q = <span class="hljs-number">1.5</span> / PI * D / P / GE * CX<br><span class="hljs-symbol">600 </span>: RS = PI * PI / <span class="hljs-number">3</span> * P * P / ZZ / ZZ * (<span class="hljs-number">1</span> + ZZ * ZZ / Z / Z / <span class="hljs-number">2</span>)<br><span class="hljs-symbol">610 </span>: KU = (<span class="hljs-number">3</span> * BB + <span class="hljs-number">1</span>) / <span class="hljs-number">4</span>: KL = (<span class="hljs-number">9</span> * BB + <span class="hljs-number">7</span>) / <span class="hljs-number">16</span><br><span class="hljs-symbol">620 </span>: LB = HK / BK + (B - BK) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) / (B + BK)<br><span class="hljs-symbol">630 </span>: LC = (H - C * B - BK / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) / <span class="hljs-number">2</span>) / <span class="hljs-number">3</span> / B + .<span class="hljs-number">135</span> / <span class="hljs-keyword">SQR</span>(B / <span class="hljs-number">2</span> / R)<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">640 </span>: LA = KU * LB + KL * LC<br><span class="hljs-symbol">650 </span>: XA = <span class="hljs-number">6</span> * P * L * LA / LE / KW / KW / Z * CX<br><span class="hljs-symbol">660 </span>: XC = (<span class="hljs-number">1.2</span> * LD + .<span class="hljs-number">6</span> * CS * M) / LE * CX<br><span class="hljs-symbol">670 </span>: <span class="hljs-keyword">IF</span> DW &lt;= <span class="hljs-number">270</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> XC = .<span class="hljs-number">47</span> * (LS - <span class="hljs-number">1.6</span> / <span class="hljs-number">3</span> * TY) / LE / KW / KW * CX<br><span class="hljs-symbol">680 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> LD = .<span class="hljs-number">5</span> + (BU - <span class="hljs-number">1</span>) / (<span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) * BU + <span class="hljs-number">1</span>) + (HH - (BU - <span class="hljs-number">1</span>) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) / <span class="hljs-number">2</span>) / <span class="hljs-number">3</span> / BL / (BU + BL) ^ (<span class="hljs-number">16</span> / <span class="hljs-number">15</span>): <span class="hljs-keyword">GOTO</span> <span class="hljs-number">790</span><span class="hljs-comment">'differ</span><br><span class="hljs-symbol">690 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">3</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">750</span><br><span class="hljs-symbol">700 </span>: U = BU / <span class="hljs-number">1.5</span>: T = BL / BV<span class="hljs-comment">'X &lt;&gt; 3</span><br><span class="hljs-symbol">710 </span>: KP = .<span class="hljs-number">009</span> + .<span class="hljs-number">324</span> * U + .<span class="hljs-number">053</span> * (U - <span class="hljs-number">1</span>) * (U - <span class="hljs-number">1</span>)<br><span class="hljs-symbol">720 </span>: KR = .<span class="hljs-number">5</span> + (U / (<span class="hljs-number">1</span> - U)) ^ <span class="hljs-number">2</span> * (<span class="hljs-number">1</span> / U - <span class="hljs-keyword">LOG</span>(<span class="hljs-number">1</span> / U) - <span class="hljs-number">1</span>): KS = U / (<span class="hljs-number">1</span> - U) * <span class="hljs-keyword">LOG</span>(<span class="hljs-number">1</span> / U)<br><span class="hljs-symbol">730 </span>: KT = .<span class="hljs-number">009</span> + .<span class="hljs-number">324</span> * T + .<span class="hljs-number">053</span> * (T - <span class="hljs-number">1</span>) * (T - <span class="hljs-number">1</span>)<br><span class="hljs-symbol">740 </span>: LD = (<span class="hljs-number">1.5</span> * HG ^ <span class="hljs-number">3</span> * KP + SD * HG * HG * KR + SD * SD * HG / BU * KS + BV * HH ^ <span class="hljs-number">3</span> * KT) / SB / SB: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">790</span><span class="hljs-comment">'X &lt;&gt; 3 end</span><br><span class="hljs-symbol">750 </span>: U = HG - (BU - <span class="hljs-number">1.5</span>) / <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>): T = BL / BV<span class="hljs-comment">'X = 3</span><br><span class="hljs-symbol">760 </span>: KT = .<span class="hljs-number">009</span> + .<span class="hljs-number">324</span> * T + .<span class="hljs-number">053</span> * (T - <span class="hljs-number">1</span>) * (T - <span class="hljs-number">1</span>)<br><span class="hljs-symbol">770 </span>: LD = .<span class="hljs-number">8</span> / <span class="hljs-number">1.5</span> + (BU - <span class="hljs-number">1.5</span>) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) / (BU + <span class="hljs-number">1.5</span>)<br><span class="hljs-symbol">780 </span>: LD = LD + (BU * U ^ <span class="hljs-number">3</span> / <span class="hljs-number">3</span> + SD * U * U + SD * SD * U / BU + BV * HH ^ <span class="hljs-number">3</span> * KT) / SB / SB<span class="hljs-comment">'X = 3 end</span><br><span class="hljs-symbol">790 </span>: XD = <span class="hljs-number">6</span> * P * L * LD / LE / ZZ * CX<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">800 </span>: XF = .<span class="hljs-number">3785</span> / LE * DR / P * CX<span class="hljs-comment">'differ</span><br><span class="hljs-symbol">810 </span>: SG = PI * D / <span class="hljs-number">2</span> / P * LE: SZ = .<span class="hljs-number">2375</span> * (BC + BD) * L * Z / P: SY = .<span class="hljs-number">95</span> * (DW - D - <span class="hljs-number">2</span> * (HK + H) - <span class="hljs-number">4</span> / <span class="hljs-number">3</span> * R) * L<br><span class="hljs-symbol">820 </span>: M = <span class="hljs-number">1</span>: <span class="hljs-keyword">IF</span> P = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> M = <span class="hljs-number">1</span> / <span class="hljs-number">3</span><br><span class="hljs-symbol">830 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SX = .<span class="hljs-number">15833</span> * (BE + <span class="hljs-number">2</span> * BF) * L * ZZ / P: SJ = .<span class="hljs-number">95</span> * (D - <span class="hljs-number">1</span> - <span class="hljs-number">2</span> * G - M * DK - <span class="hljs-number">2</span> * HH) * L<br><span class="hljs-symbol">840 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SW = .<span class="hljs-number">475</span> * BE * L * ZZ / P: SX = .<span class="hljs-number">475</span> * BF * L * ZZ / P<br><span class="hljs-symbol">850 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SJ = .<span class="hljs-number">95</span> * (D - <span class="hljs-number">2</span> * G - M * DK - <span class="hljs-number">2</span> * HG - <span class="hljs-number">2</span> * HH) * L: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SJ = SJ - <span class="hljs-number">1.52</span> * L<br><span class="hljs-symbol">860 </span>: <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">280</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> SZ = SZ * <span class="hljs-number">92</span> / <span class="hljs-number">95</span>: SY = SY * <span class="hljs-number">92</span> / <span class="hljs-number">95</span>: SX = SX * <span class="hljs-number">92</span> / <span class="hljs-number">95</span>: SJ = SJ * <span class="hljs-number">92</span> / <span class="hljs-number">95</span>: SW = SW * <span class="hljs-number">92</span> / <span class="hljs-number">95</span><br><span class="hljs-symbol">870 </span>: T = PI / <span class="hljs-number">4</span> / P * (DW - SY / <span class="hljs-number">1.9</span> / L): <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">280</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> T = PI / <span class="hljs-number">4</span> / P * (DW - SY / <span class="hljs-number">1.84</span> / L)<span class="hljs-comment">'homework</span><br><span class="hljs-symbol">880 </span>: L = PI / <span class="hljs-number">4</span> / P * (M * DK + SJ / <span class="hljs-number">1.9</span> / L): <span class="hljs-keyword">IF</span> DW &gt; <span class="hljs-number">280</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> L = PI / <span class="hljs-number">4</span> / P * (M * DK + SJ / <span class="hljs-number">1.84</span> / L)<br><span class="hljs-symbol">890 </span>: LS = <span class="hljs-number">2</span> * P * SZ * (H + R / <span class="hljs-number">3</span>): LZ = <span class="hljs-number">2</span> * P * SY * T<br><span class="hljs-symbol">900 </span>: PW = PW / PN / <span class="hljs-number">1000!</span><br><span class="hljs-symbol">910 </span>: PS = (<span class="hljs-number">3</span> - P / <span class="hljs-number">2</span>) / <span class="hljs-number">100</span>: <span class="hljs-keyword">IF</span> P &gt; <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> PS = .<span class="hljs-number">015</span><br><span class="hljs-symbol">920 </span>: DK = .<span class="hljs-number">931</span> + .<span class="hljs-number">011</span> * <span class="hljs-keyword">LOG</span>(PN) - .<span class="hljs-number">013</span> * P: <span class="hljs-keyword">IF</span> P = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> DK = .<span class="hljs-number">92</span> + .<span class="hljs-number">00866</span> * <span class="hljs-keyword">LOG</span>(PN)<span class="hljs-comment">'calcu2 end P=2 LN？？？</span><br><span class="hljs-symbol">930 </span>: F = DK * <span class="hljs-number">3.8E</span>+<span class="hljs-number">08</span> / <span class="hljs-keyword">SQR</span>(C) / <span class="hljs-number">111</span> / ZF / KW: M = <span class="hljs-number">1.46</span><span class="hljs-comment">'总磁通量 F:每极磁通 M:波幅系数假设值</span><br><span class="hljs-symbol">940 </span>: BG = M * F / SG: AG = <span class="hljs-number">800</span> * BG * GE<span class="hljs-comment">'气隙及齿磁路 BG:气隙磁密 AG:及所需磁势</span><br><span class="hljs-symbol">950 </span>: BZ = M * F / SZ: AZ = .<span class="hljs-number">3472</span> * BZ / (<span class="hljs-number">1.754</span> - BZ) * (H + R / <span class="hljs-number">3</span>)<span class="hljs-comment">'齿</span><br><span class="hljs-symbol">960 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BX = M * F / SX: AX = .<span class="hljs-number">3472</span> * BX / (<span class="hljs-number">1.754</span> - BX) * HH<span class="hljs-comment">'齿下部</span><br><span class="hljs-symbol">970 </span>: <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> BW = M * F / SW: BX = M * F / SX: AX = .<span class="hljs-number">3472</span> * (BW / (<span class="hljs-number">1.754</span> - BW) * HG + BX / (<span class="hljs-number">1.754</span> - BX) * HH)<span class="hljs-comment">'气隙及齿磁路 end</span><br><span class="hljs-symbol">980 </span>: E = <span class="hljs-number">1</span> + (AZ + AX) / AG: W = <span class="hljs-number">1.971</span> - .<span class="hljs-number">4</span> * E<span class="hljs-comment">'波幅系数比较</span><br><span class="hljs-symbol">990 </span>: <span class="hljs-keyword">IF</span> E &gt; <span class="hljs-number">1.25</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> W = W + .<span class="hljs-number">42</span> * (E - <span class="hljs-number">1.25</span>) ^ <span class="hljs-number">2</span><br><span class="hljs-symbol">1000 </span>: <span class="hljs-keyword">IF</span> <span class="hljs-keyword">ABS</span>(W - M) &lt; .<span class="hljs-number">0005</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1020</span><br><span class="hljs-symbol">1010 </span>: M = W - (W - M) / <span class="hljs-number">3</span>: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">940</span><span class="hljs-comment">'波幅系数 end</span><br><span class="hljs-symbol">1020 </span>: BY = F / SY: AY = .<span class="hljs-number">3472</span> * BY / (<span class="hljs-number">1.754</span> - BY) * T * (<span class="hljs-number">1.1</span> - .<span class="hljs-number">5</span> * BY)<span class="hljs-comment">'总磁化电流与漏抗</span><br><span class="hljs-symbol">1030 </span>: BJ = F / SJ: AJ = .<span class="hljs-number">3472</span> * BJ / (<span class="hljs-number">1.754</span> - BJ) * L * (<span class="hljs-number">1.1</span> - .<span class="hljs-number">5</span> * BJ)<br><span class="hljs-symbol">1040 </span>: JM = <span class="hljs-number">1.48</span> * (AG + AZ + AX + AY + AJ) * P / ZF / KW / J<span class="hljs-comment">'总磁化电流与漏抗 end</span><br><span class="hljs-symbol">1050 </span>: XB = Q * S / KW / KW / E: XE = Q * RS / E<span class="hljs-comment">'有功 无功电流 损耗</span><br><span class="hljs-symbol">1060 </span>: XS = XA + XB + XC: XR = XD + XE + XF: XX = XS + XR<br><span class="hljs-symbol">1070 </span>: E = <span class="hljs-number">1</span> + JM * XS<br><span class="hljs-symbol">1080 </span>: BE = (<span class="hljs-number">2</span> - E) / DK * BZ: BF = .<span class="hljs-number">00005</span> * (BE - .<span class="hljs-number">7</span>) * LS<br><span class="hljs-symbol">1090 </span>: BC = (<span class="hljs-number">2</span> - E) / DK * BY: BD = .<span class="hljs-number">00005</span> * (BC - .<span class="hljs-number">7</span>) * LZ<br><span class="hljs-symbol">1100 </span>: PF = (<span class="hljs-number">2.5</span> * BF + <span class="hljs-number">2</span> * BD) / PN / <span class="hljs-number">1000!</span><br><span class="hljs-symbol">1110 </span>: M = <span class="hljs-number">1</span> / E / XX: F = M * (V + K) + <span class="hljs-number">2</span> * JM * V<br><span class="hljs-symbol">1120 </span>: BB = <span class="hljs-number">1</span> + PF + PW + PS + JM * JM * V: M = (M - <span class="hljs-number">2</span> * F * BB) / <span class="hljs-number">2</span>: F = <span class="hljs-number">1</span> + F * F<br><span class="hljs-symbol">1130 </span>: JX = (M - <span class="hljs-keyword">SQR</span>(M * M - F * BB * BB)) / F: JR = JX + JM<br><span class="hljs-symbol">1140 </span>: JP = <span class="hljs-keyword">SQR</span>((<span class="hljs-number">1</span> / E / XX - JX) * JX)<span class="hljs-comment">'有功 无功电流 损耗 end</span><br><span class="hljs-symbol">1150 </span>: DW = <span class="hljs-number">1</span> - JP * V - JR * XS <span class="hljs-comment">'电压（电势）系数比较</span><br><span class="hljs-symbol">1160 </span>: <span class="hljs-keyword">IF</span> <span class="hljs-keyword">ABS</span>(DW - DK) &lt; .<span class="hljs-number">0005</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1180</span><br><span class="hljs-symbol">1170 </span>: DK = DW - (DW - DK) / <span class="hljs-number">8</span>: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">930</span><span class="hljs-comment">'电压系数 end</span><br><span class="hljs-symbol">1180 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-keyword">USING</span> <span class="hljs-string">"##.###"</span>; BG; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">2</span>); BZ; <span class="hljs-keyword">SPC</span>(SPCLEN); BY; <span class="hljs-keyword">SPC</span>(SPCLEN); BW; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); BX; <span class="hljs-keyword">SPC</span>(SPCLEN); BJ         <span class="hljs-comment">'运行性能</span><br><span class="hljs-symbol">1190 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">PRINT</span> <span class="hljs-string">"REPLACE THE LAST 3:"</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); BX; <span class="hljs-keyword">SPC</span>(SPCLEN); BJ<br><span class="hljs-symbol">1200 </span>: PC = (JP * JP + JR * JR) * V: PA = (JP * JP + JX * JX) * K<br><span class="hljs-symbol">1210 </span>: JC = <span class="hljs-keyword">SQR</span>(JP * JP + JR * JR): JN = <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span> / C) * JC * J<br><span class="hljs-symbol">1220 </span>: S = <span class="hljs-number">30</span> * ZF * JC * J / PI / D: DW = JC * J / A / SC: DK = S * DW<br><span class="hljs-symbol">1230 </span>: <span class="hljs-comment">'</span><br><span class="hljs-symbol">1240 </span>: DR = <span class="hljs-number">3</span> * <span class="hljs-keyword">SQR</span>(JP * JP + JX * JX) * J * ZF * KW / ZZ / SB <span class="hljs-comment">'导条电流密度</span><br><span class="hljs-symbol">1250 </span>: SR = DR * SB * ZZ / PI / <span class="hljs-number">2</span> / P / SR / <span class="hljs-number">100</span> <span class="hljs-comment">'段环电流密度</span><br><span class="hljs-symbol">1260 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-keyword">USING</span> <span class="hljs-string">"####.##"</span>; JN; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">3</span>); S; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">2</span>); DW; <span class="hljs-keyword">SPC</span>(SPCLEN + <span class="hljs-number">1</span>); DK; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">2</span>); DR; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">2</span>); SR<br><span class="hljs-symbol">1270 </span>: C = <span class="hljs-number">1</span> / JC * JP<br><span class="hljs-symbol">1280 </span>: S = PA / (<span class="hljs-number">1</span> + PA + PF + PS + PW - (BD + BF) / PN / <span class="hljs-number">1000!</span>)<br><span class="hljs-symbol">1290 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-keyword">USING</span> <span class="hljs-string">"#####.#"</span>; PC * PN * <span class="hljs-number">1000!</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">4</span>); PA * PN * <span class="hljs-number">1000!</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); PF * PN * <span class="hljs-number">1000!</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">1</span>); PW * PN * <span class="hljs-number">1000!</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); PS * PN * <span class="hljs-number">1000!</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">3</span>); <span class="hljs-number">100</span> / JP<br><span class="hljs-symbol">1300 </span>: <span class="hljs-comment">'PRINT  USING "###.##" PC(JX JM V) PA(JX K) PF(BF BD) WRONG; JP(JX E XX) LW;  PW PS(P) RIGHT</span><br><span class="hljs-symbol">1310 </span>: T = (<span class="hljs-number">1</span> - S) / <span class="hljs-number">2</span> / (V + <span class="hljs-keyword">SQR</span>(V * V + XX * XX))<br><span class="hljs-symbol">1320 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-keyword">USING</span> <span class="hljs-string">"##.###"</span>; XS * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">1</span>); XR * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); XX * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); C * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); S * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); T<br><span class="hljs-symbol">1330 </span>: <span class="hljs-comment">'PRINT '运行性能 end</span><br><span class="hljs-symbol">1340 </span>: U = PI * D / Z: W = PI * (D - <span class="hljs-number">2</span> * G) / ZZ<span class="hljs-comment">'启动性能数据 启动电流</span><br><span class="hljs-symbol">1350 </span>: M = .<span class="hljs-number">707</span> * <span class="hljs-keyword">SQR</span>(<span class="hljs-number">2</span> - E) * N / A * (KU + KW * KQ * Z / ZZ) / (.<span class="hljs-number">64</span> + <span class="hljs-number">2.5</span> * <span class="hljs-keyword">SQR</span>(G / (U + W))) / .<span class="hljs-number">16</span> / G<br><span class="hljs-symbol">1360 </span>: Q = (HK + (B - BK) / <span class="hljs-number">6</span>) / BK<br><span class="hljs-symbol">1370 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">1</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1500</span><br><span class="hljs-symbol">1380 </span>: BB = <span class="hljs-number">1</span> - .<span class="hljs-number">06</span> * (BV / BU - <span class="hljs-number">1</span>) + .<span class="hljs-number">012</span> * (BV / BU - <span class="hljs-number">1</span>) * (BV / BU - <span class="hljs-number">1</span>)<span class="hljs-comment">'x = 2, 3</span><br><span class="hljs-symbol">1390 </span>: B = BB / .<span class="hljs-number">0675</span>: A = <span class="hljs-number">1.5</span> * B<br><span class="hljs-symbol">1400 </span>: DR = BL + (BV - BL) * (HG + HH - B) / HH: RS = B - HG<br><span class="hljs-symbol">1410 </span>: R = V + SB / (SB - SD + (DR + BV) / <span class="hljs-number">2</span> * RS) * Y + KK<br><span class="hljs-symbol">1420 </span>: DR = BL + (BV - BL) * (HG + HH - A) / HH: RS = A - HG: SB = SB - SD + (DR + BV) / <span class="hljs-number">2</span> * RS<br><span class="hljs-symbol">1430 </span>: <span class="hljs-keyword">IF</span> X = <span class="hljs-number">3</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1460</span><br><span class="hljs-symbol">1440 </span>: H = DR / BV: KT = .<span class="hljs-number">009</span> + .<span class="hljs-number">324</span> * H + .<span class="hljs-number">053</span> * (H - <span class="hljs-number">1</span>) * (H - <span class="hljs-number">1</span>): SD = (BV + DR) / <span class="hljs-number">2</span> * RS<span class="hljs-comment">'x=2</span><br><span class="hljs-symbol">1450 </span>: LE = (<span class="hljs-number">1.5</span> * HG ^ <span class="hljs-number">3</span> * KP + SD * HG * HG * HR + SD * SD * HG / BU * KS + BV * RS ^ <span class="hljs-number">3</span> * KT) / SB / SB: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1520</span><span class="hljs-comment">'x=2</span><br><span class="hljs-symbol">1460 </span>: A = HG - (BU - <span class="hljs-number">1.5</span>) / <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>): H = DR / BV<span class="hljs-comment">'x=3</span><br><span class="hljs-symbol">1470 </span>: KT = .<span class="hljs-number">009</span> + .<span class="hljs-number">324</span> * H + .<span class="hljs-number">053</span> * (H - <span class="hljs-number">1</span>) * (H - <span class="hljs-number">1</span>): SD = (BV + DR) / <span class="hljs-number">2</span> * RS<span class="hljs-comment">'x=3</span><br><span class="hljs-symbol">1480 </span>: LE = (BU - <span class="hljs-number">1.5</span>) / <span class="hljs-keyword">SQR</span>(<span class="hljs-number">3</span>) / (BU + <span class="hljs-number">1.5</span>) + (BU * A ^ <span class="hljs-number">3</span> / <span class="hljs-number">3</span> + SD * A * A + SD * SD * A / BU + BV * RS ^ <span class="hljs-number">3</span> * KT) / SB / SB<span class="hljs-comment">'x=3</span><br><span class="hljs-symbol">1490 </span>: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1520</span><span class="hljs-comment">'x&lt;&gt;1 end</span><br><span class="hljs-symbol">1500 </span>: H = .<span class="hljs-number">0675</span> * HH: R = V + (<span class="hljs-number">1</span> + .<span class="hljs-number">4</span> * (H - .<span class="hljs-number">5</span>) ^ <span class="hljs-number">2</span> / <span class="hljs-keyword">SQR</span>(BU / BL)) * Y + KK<span class="hljs-comment">' x=1</span><br><span class="hljs-symbol">1510 </span>: LE = (LD - .<span class="hljs-number">5</span>) * (<span class="hljs-number">1</span> - .<span class="hljs-number">11</span> * (H - .<span class="hljs-number">5</span>) * (H - .<span class="hljs-number">5</span>) / (BU / BL) ^ .<span class="hljs-number">16</span>)<span class="hljs-comment">'x=1</span><br><span class="hljs-symbol">1520 </span>: P = <span class="hljs-number">2.7</span> * T * J<span class="hljs-comment">'启动性能数据 启动电流 end</span><br><span class="hljs-symbol">1530 </span>: K = .<span class="hljs-number">234</span> / (M * P / <span class="hljs-number">100000!</span>) ^ .<span class="hljs-number">86</span>: <span class="hljs-keyword">IF</span> K &lt; .<span class="hljs-number">85</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> K = .<span class="hljs-number">85</span><span class="hljs-comment">'启动性能</span><br><span class="hljs-symbol">1540 </span>: CS = (U - BK) * (<span class="hljs-number">1</span> - K): C = (W - <span class="hljs-number">1</span>) * (<span class="hljs-number">1</span> - K): <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> C = (W - <span class="hljs-number">1.5</span>) * (<span class="hljs-number">1</span> - K)<br><span class="hljs-symbol">1550 </span>: L = KU * (LB - Q * (CS / (CS + <span class="hljs-number">1.5</span> * BK))) + KL * LC<br><span class="hljs-symbol">1560 </span>: D = L / LA * XA: H = K * XB: XS = D + H + XC<br><span class="hljs-symbol">1570 </span>: N = LE + .<span class="hljs-number">5</span> / (C + <span class="hljs-number">1</span>): <span class="hljs-keyword">IF</span> X &gt; <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> N = LE + <span class="hljs-number">1.5</span> / .<span class="hljs-number">8</span> / (C + <span class="hljs-number">1.5</span>): <span class="hljs-keyword">IF</span> X = <span class="hljs-number">2</span> <span class="hljs-keyword">THEN</span> <span class="hljs-keyword">LET</span> N = LE<br><span class="hljs-symbol">1580 </span>: F = N / LD * XD: G = K * XE: XR = F + G + XF: XX = XS + XR<br><span class="hljs-symbol">1590 </span>: Z = <span class="hljs-keyword">SQR</span>(R * R + XX * XX): B = J / Z<span class="hljs-comment">'启动性能 end</span><br><span class="hljs-symbol">1600 </span>: <span class="hljs-keyword">IF</span> <span class="hljs-keyword">ABS</span>((B - P) / B) &lt; .<span class="hljs-number">001</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1630</span><span class="hljs-comment">'启动电流比较</span><br><span class="hljs-symbol">1610 </span>: <span class="hljs-keyword">IF</span> K = .<span class="hljs-number">85</span> <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1630</span><br><span class="hljs-symbol">1620 </span>: P = B + (B - P) / <span class="hljs-number">8</span>: <span class="hljs-keyword">GOTO</span> <span class="hljs-number">1530</span><span class="hljs-comment">'启动电流比较 end</span><br><span class="hljs-symbol">1630 </span>: T = (R - V) / Z / Z * (<span class="hljs-number">1</span> - S)<br><span class="hljs-symbol">1640 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-keyword">USING</span> <span class="hljs-string">"##.###"</span>; XS * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN - <span class="hljs-number">1</span>); XR * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); XX * <span class="hljs-number">100</span>; <span class="hljs-keyword">SPC</span>(SPCLEN); <span class="hljs-number">1</span> / JC / Z; <span class="hljs-keyword">SPC</span>(SPCLEN); T<br><span class="hljs-symbol">1650 </span>: <span class="hljs-keyword">PRINT</span> <span class="hljs-string">"END"</span><br></code></pre></td></tr></tbody></table></figure>
+</details>
+
+<p>程序运行结果如图,</p>
+<a href="/2020/05/01/djsj/image-20200504115536763.png" data-caption="image-20200504115536763" data-fancybox="images"><img src="/2020/05/01/djsj/image-20200504115536763.png" alt="image-20200504115536763"></a>
+
+<p>结果与书上一致.</p>
+<h2 id="c">c<a class="post-anchor" href="#c"></a></h2><p>解决错误：</p>
+<p>C语言语法问题：1.int/int 2.sqrs(-)[^注释]</p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/05/25/wjsj/">简单复数计算器设计</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/04/22/test2/">test2</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2020/05/01/djsj/">http://mingg2333.top/2020/05/01/djsj/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

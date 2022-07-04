@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>明明的博客</title>
+  <icon>http://mingg2333.top/icon.png</icon>
+  <subtitle>学与做</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mingg2333.top/"/>
+  <updated>2022-01-21T07:23:02.000Z</updated>
+  <id>http://mingg2333.top/</id>
+  
+  <author>
+    <name>MINGG</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ADS</title>
+    <link href="http://mingg2333.top/2022/01/21/ADS/"/>
+    <id>http://mingg2333.top/2022/01/21/ADS/</id>
+    <published>2022-01-21T07:23:02.000Z</published>
+    <updated>2022-01-21T07:23:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2022-1-6 20:05:09&lt;/p&gt;
+&lt;p&gt;Modified: 2022-1-21 15:23:02&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>experiment</title>
+    <link href="http://mingg2333.top/2022/01/21/experiment/"/>
+    <id>http://mingg2333.top/2022/01/21/experiment/</id>
+    <published>2022-01-21T06:11:53.000Z</published>
+    <updated>2022-01-21T06:11:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2022-1-21 14:11:53&lt;/p&gt;
+&lt;p&gt;Modified: 2022-1-21 14:11:53&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="experiment" scheme="http://mingg2333.top/tags/experiment/"/>
+    
+      <category term="methodology" scheme="http://mingg2333.top/tags/methodology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="http://mingg2333.top/2022/01/15/Docker/"/>
+    <id>http://mingg2333.top/2022/01/15/Docker/</id>
+    <published>2022-01-15T17:12:24.000Z</published>
+    <updated>2022-01-15T17:12:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2022-1-16 01:12:24&lt;/p&gt;
+&lt;p&gt;Modified: 2022-1-16 01:12:24&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Docker" scheme="http://mingg2333.top/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML test case evaluation</title>
+    <link href="http://mingg2333.top/2022/01/04/AV-test-evaluation/"/>
+    <id>http://mingg2333.top/2022/01/04/AV-test-evaluation/</id>
+    <published>2022-01-04T13:11:13.000Z</published>
+    <updated>2022-01-04T13:11:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2022-1-4 21:11:13&lt;/p&gt;
+&lt;p&gt;Modified: 2022-1-4 21:11:13&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+      <category term="test case evaluation" scheme="http://mingg2333.top/tags/test-case-evaluation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C</title>
+    <link href="http://mingg2333.top/2021/12/31/languageC/"/>
+    <id>http://mingg2333.top/2021/12/31/languageC/</id>
+    <published>2021-12-31T15:41:36.000Z</published>
+    <updated>2021-12-31T15:41:36.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-12-31 23:41:36&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-31 23:41:36&lt;/p&gt;
+&lt;p&gt;programming language C&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="programming language" scheme="http://mingg2333.top/tags/programming-language/"/>
+    
+      <category term="C" scheme="http://mingg2333.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java</title>
+    <link href="http://mingg2333.top/2021/12/15/Java/"/>
+    <id>http://mingg2333.top/2021/12/15/Java/</id>
+    <published>2021-12-15T15:58:01.000Z</published>
+    <updated>2021-12-15T15:58:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-12-15 23:58:01&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-15 23:58:01&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Java" scheme="http://mingg2333.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Controller Area Network</title>
+    <link href="http://mingg2333.top/2021/12/12/can/"/>
+    <id>http://mingg2333.top/2021/12/12/can/</id>
+    <published>2021-12-12T12:51:29.000Z</published>
+    <updated>2021-12-12T12:51:29.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-12-11 22:56:28&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-12 20:51:29&lt;/p&gt;
+&lt;p&gt;CAN Bus&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="CAN" scheme="http://mingg2333.top/tags/CAN/"/>
+    
+      <category term="bus" scheme="http://mingg2333.top/tags/bus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python</title>
+    <link href="http://mingg2333.top/2021/12/09/py-libs/"/>
+    <id>http://mingg2333.top/2021/12/09/py-libs/</id>
+    <published>2021-12-09T14:19:45.000Z</published>
+    <updated>2021-12-09T14:19:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-05-28 08:32:57&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-09 22:19:45&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="http://mingg2333.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>colab</title>
+    <link href="http://mingg2333.top/2021/12/08/colab/"/>
+    <id>http://mingg2333.top/2021/12/08/colab/</id>
+    <published>2021-12-08T10:37:30.000Z</published>
+    <updated>2021-12-08T10:37:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-12-08 18:37:30&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-08 18:37:30&lt;/p&gt;
+&lt;p&gt;Google Colab is a free platform to use GPUs and TPUs, different from Google Cloud.&lt;/p&gt;
+&lt;p&gt;It is based on &lt;code&gt;driver.google&lt;/code&gt; to store jupyter notebook and your own data, though some public ram and rom delivered by colab.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="deep learning" scheme="http://mingg2333.top/tags/deep-learning/"/>
+    
+      <category term="Colab" scheme="http://mingg2333.top/tags/Colab/"/>
+    
+      <category term="Jupyter" scheme="http://mingg2333.top/tags/Jupyter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>multi-device learning</title>
+    <link href="http://mingg2333.top/2021/12/07/multi-device-learning/"/>
+    <id>http://mingg2333.top/2021/12/07/multi-device-learning/</id>
+    <published>2021-12-07T03:55:30.000Z</published>
+    <updated>2021-12-07T03:55:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-12-7 11:55:30&lt;/p&gt;
+&lt;p&gt;Modified: 2021-12-7 11:55:30&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+      <category term="deep learning" scheme="http://mingg2333.top/tags/deep-learning/"/>
+    
+      <category term="multi-device" scheme="http://mingg2333.top/tags/multi-device/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Adversarial examples</title>
+    <link href="http://mingg2333.top/2021/11/26/Adversarial-examples/"/>
+    <id>http://mingg2333.top/2021/11/26/Adversarial-examples/</id>
+    <published>2021-11-26T11:43:58.000Z</published>
+    <updated>2021-11-26T11:43:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-11-26 19:43:58&lt;/p&gt;
+&lt;p&gt;Modified: 2021-11-26 19:43:58&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+      <category term="adversarial examples" scheme="http://mingg2333.top/tags/adversarial-examples/"/>
+    
+      <category term="deep learning" scheme="http://mingg2333.top/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>copywriting paradigm</title>
+    <link href="http://mingg2333.top/2021/11/16/paradigm/"/>
+    <id>http://mingg2333.top/2021/11/16/paradigm/</id>
+    <published>2021-11-16T15:39:58.000Z</published>
+    <updated>2021-11-16T15:39:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-11-16 23:39:58&lt;/p&gt;
+&lt;p&gt;Modified: 2021-11-16 23:39:58&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="paradigm" scheme="http://mingg2333.top/tags/paradigm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fuzzing</title>
+    <link href="http://mingg2333.top/2021/11/15/Fuzz/"/>
+    <id>http://mingg2333.top/2021/11/15/Fuzz/</id>
+    <published>2021-11-15T11:17:10.000Z</published>
+    <updated>2021-11-15T11:17:10.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-05-28 09:09:58&lt;/p&gt;
+&lt;p&gt;Modified: 2021-11-15 19:17:10&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="software" scheme="http://mingg2333.top/tags/software/"/>
+    
+      <category term="afl" scheme="http://mingg2333.top/tags/afl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zotero</title>
+    <link href="http://mingg2333.top/2021/11/04/Zotero/"/>
+    <id>http://mingg2333.top/2021/11/04/Zotero/</id>
+    <published>2021-11-04T14:49:12.000Z</published>
+    <updated>2021-11-04T14:49:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: Mon Jul 12 10:19:53 CST 2021&lt;/p&gt;
+&lt;p&gt;Modified: 2021-11-4 22:49:06&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="tool" scheme="http://mingg2333.top/tags/tool/"/>
+    
+      <category term="Zotero" scheme="http://mingg2333.top/tags/Zotero/"/>
+    
+      <category term="bibliography management" scheme="http://mingg2333.top/tags/bibliography-management/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IoT</title>
+    <link href="http://mingg2333.top/2021/10/26/IoT/"/>
+    <id>http://mingg2333.top/2021/10/26/IoT/</id>
+    <published>2021-10-26T06:31:10.000Z</published>
+    <updated>2021-10-26T06:31:10.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-10-26 14:31:10&lt;/p&gt;
+&lt;p&gt;Modified: 2021-10-26 14:31:10&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>regular expression</title>
+    <link href="http://mingg2333.top/2021/10/21/regular-expression/"/>
+    <id>http://mingg2333.top/2021/10/21/regular-expression/</id>
+    <published>2021-10-21T07:11:41.000Z</published>
+    <updated>2021-10-21T07:11:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-10-21 15:11:41&lt;/p&gt;
+&lt;p&gt;Modified: 2021-10-21 15:11:41&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linear algebra</title>
+    <link href="http://mingg2333.top/2021/10/07/linear-algebra/"/>
+    <id>http://mingg2333.top/2021/10/07/linear-algebra/</id>
+    <published>2021-10-07T08:45:00.000Z</published>
+    <updated>2021-10-07T08:45:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-10-7 16:45&lt;/p&gt;
+&lt;p&gt;Modified: 2021-10-7 16:45&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="software" scheme="http://mingg2333.top/tags/software/"/>
+    
+      <category term="tool" scheme="http://mingg2333.top/tags/tool/"/>
+    
+      <category term="Perl" scheme="http://mingg2333.top/tags/Perl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Perl</title>
+    <link href="http://mingg2333.top/2021/10/04/Perl/"/>
+    <id>http://mingg2333.top/2021/10/04/Perl/</id>
+    <published>2021-10-04T08:45:00.000Z</published>
+    <updated>2021-10-04T08:45:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-10-04 16:45&lt;/p&gt;
+&lt;p&gt;Modified: 2021-10-04 16:45&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="software" scheme="http://mingg2333.top/tags/software/"/>
+    
+      <category term="tool" scheme="http://mingg2333.top/tags/tool/"/>
+    
+      <category term="Perl" scheme="http://mingg2333.top/tags/Perl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML Environment</title>
+    <link href="http://mingg2333.top/2021/09/17/ai-env/"/>
+    <id>http://mingg2333.top/2021/09/17/ai-env/</id>
+    <published>2021-09-17T16:39:12.000Z</published>
+    <updated>2021-09-17T16:39:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-07-04 11:18:30&lt;/p&gt;
+&lt;p&gt;Modified: Fri Sep 17 18:39:12 CST 2021&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shared documents</title>
+    <link href="http://mingg2333.top/2021/09/17/shared-documents/"/>
+    <id>http://mingg2333.top/2021/09/17/shared-documents/</id>
+    <published>2021-09-17T16:39:12.000Z</published>
+    <updated>2021-09-17T16:39:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Created: 2021-07-04 11:18:30&lt;/p&gt;
+&lt;p&gt;Modified: &lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
+    
+      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
+    
+  </entry>
+  
+</feed>

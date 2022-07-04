@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      ML test case evaluation - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#traffic-violations"><span class="toc-text">traffic violations</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#semantic-action"><span class="toc-text">semantic action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Responsibility-Sensitive-Safety-for-planning-in-critical-situations"><span class="toc-text">Responsibility-Sensitive Safety for planning in critical situations</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stress-testing-techniques"><span class="toc-text">stress-testing techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AST"><span class="toc-text">AST</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AV-FUZZER"><span class="toc-text">AV-FUZZER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CROUTE"><span class="toc-text">CROUTE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ATLAS"><span class="toc-text">ATLAS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AutoFuzz"><span class="toc-text">AutoFuzz</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Paracosm"><span class="toc-text">Paracosm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generating-and-Characterizing-Scenarios-for-Safety-Testing-of-Autonomous-Vehicles"><span class="toc-text">Generating and Characterizing Scenarios for Safety Testing of Autonomous Vehicles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Suraksha"><span class="toc-text">Suraksha</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Adversarial-evaluation-of-autonomous-vehicles-in-lane-change-scenarios"><span class="toc-text">Adversarial evaluation of autonomous vehicles in lane-change scenarios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multimodal-Safety-Critical-Scenarios-Generation-for-Decision-Making-Algorithms-Evaluation"><span class="toc-text">Multimodal Safety-Critical Scenarios Generation for Decision-Making Algorithms Evaluation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SADL"><span class="toc-text">SADL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reference"><span class="toc-text">reference</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ML test case evaluation</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/01/04</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2022/01/04/AV-test-evaluation/" data-flag-title="ML test case evaluation">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/machine learning">machine learning</a>
+                  
+                
+                  
+                    <a href="/tags/test case evaluation">test case evaluation</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2022-1-4 21:11:13</p>
+<p>Modified: 2022-1-4 21:11:13</p>
+<a id="more"></a>
+
+<p><a href="/2022/01/04/AV-test-evaluation/image-20220206103344587.png" data-caption="image-20220206103344587" data-fancybox="images"><img src="/2022/01/04/AV-test-evaluation/image-20220206103344587.png" alt="image-20220206103344587"></a></p>
+<p>AV fuzzing: focus on diversity, find bugs (testing), evaluation</p>
+<p>safety(collision testing), functionality “correctness”(planning&amp;tracking) (traffic rules), mobility, and rider’s comfort</p>
+<h1 id="traffic-violations">traffic violations<a class="post-anchor" href="#traffic-violations"></a></h1><p>traffic offenses can be vehicle-related</p>
+<p>导航能够解决“压着导向车道实线变道”还是“应该变道”的问题</p>
+<h1 id="semantic-action">semantic action<a class="post-anchor" href="#semantic-action"></a></h1><p>motivation e.g. “follow the car in front of you” or “quickly overtake that car on your left”</p>
+<p>property: a semantic action can have a very long time horizon; small number; semantic action space -(kinematic calculations)&gt; action space</p>
+<p>formalize: goals &amp; aggressiveness level</p>
+<p>evaluation:  <em>quality function</em> based on a machine learning approach trained on a large variety of road types, instead of learning a Q function over immediate geometric action</p>
+<h1 id="Responsibility-Sensitive-Safety-for-planning-in-critical-situations">Responsibility-Sensitive Safety for planning in critical situations<a class="post-anchor" href="#Responsibility-Sensitive-Safety-for-planning-in-critical-situations"></a></h1><p>A Lane-Based Coordinate System</p>
+<p>requirement without usefulness -&gt; keep Safe Distance</p>
+<p>proper response -&gt; best effort (Proper Response with Extra Evasive Effort) -&gt; excessive response</p>
+<p>assume: under reasonable Situation</p>
+<ol>
+<li><p>a single lane road: cars cannot perform lateral maneuvers, cars never drive backward</p>
+<p>common sense rule: if someone hits you from behind it is not your fault</p>
+<p>metrics:  Safe longitudinal distance — same direction</p>
+<p>proper response: rear car’s acceleration, brake according to safe distance</p>
+</li>
+<li><p>a straight road (a general lane geometry): cars cannot perform lateral maneuvers, cars can drive backward</p>
+<p>common sense: if someone hits you from behind while you are reversing it is your fault</p>
+<p>metrics:  Safe longitudinal distance — opposite directions</p>
+<p>proper response: both cars’ acceleration, brake according to safe distance</p>
+</li>
+<li><p>a straight road (two routes of the same geometry)</p>
+<p>metrics:  Safe Lateral Distance</p>
+<p>proper response: both cars’ acceleration, brake according to safe distance</p>
+</li>
+<li><p>common sense: if you can avoid an accident without causing another accident, you must do it</p>
+</li>
+<li><p>multiple different road geometries: roundabouts, junctions, and merge into highways; one route has priority over others, and vehicles riding on it have the <em>right of way</em>; two cars <em>on different routes</em></p>
+<p>metrics:  Safe Lateral/Longitudinal Distance for Two Routes of Different Geometry (abstract? position relationship?)</p>
+</li>
+<li><p>special scenario at an intersections with traffic lights, like right of way is given, not taken</p>
+</li>
+<li><p>no route geometry, e.g. the parking lot</p>
+<p>(not consideration)</p>
+</li>
+</ol>
+<ol start="8">
+<li>Pedestrians: zebra crossing or residential street / residential road (unstructured roads?)</li>
+</ol>
+<ol start="9">
+<li><p>Occlusion</p>
+<p>common sense:  When a human driver claims “but I couldn’t see him”, a counter argument is often “well, you should’ve been more careful”, like limit <em>v</em> or <strong>proper Behaviour</strong>(always adhering to proper response)</p>
+</li>
+</ol>
+<h1 id="stress-testing-techniques">stress-testing techniques<a class="post-anchor" href="#stress-testing-techniques"></a></h1><p>fitness functions in the area of testing autonomous systems [25]</p>
+<h2 id="AST">AST<a class="post-anchor" href="#AST"></a></h2><p>Adaptive Stress Testing: Finding Likely Failure Events with Reinforcement Learning</p>
+<p>Airborne Collision Avoidance System (ACAS X, TCAS)   scenarios of near mid-air collisions (NMACs)</p>
+<p>(2 distinct types in 200 hours)</p>
+<p>formulations: simulator state (stacked system and environment states) is fully observable or partially observable, Markov process with discrete time and continuous state,  sequential decision process -&gt; MDP or MCTS-SA</p>
+<p>partial observability: a modified Monte Carlo tree search (MCTS) algorithm using only pseudorandom number generator of the simulator</p>
+<p>differential adaptive stress testing (DAST): failure in targeted system but in baseline</p>
+<h2 id="AV-FUZZER">AV-FUZZER<a class="post-anchor" href="#AV-FUZZER"></a></h2><p>AV-FUZZER: Finding Safety Violations in Autonomous Driving Systems</p>
+<p>adv: edge cases and diversity, all 5 types within 20 hours of search on Apollo</p>
+<p>GA + local fuzzer + repeat differently</p>
+<h2 id="CROUTE">CROUTE<a class="post-anchor" href="#CROUTE"></a></h2><p>labeled Petri net: map</p>
+<p>place: a road</p>
+<p>transition: a set of junction lanes connecting the same roads</p>
+<p>labels assigned to transitions: traffic signs at junctions</p>
+<p><em>route type</em> at a junction: junction topology features, route features at a junction</p>
+<p>junction topology feature: describe how a <strong>road</strong> connects with other <strong>roads</strong> at a junction</p>
+<p>(a junction contains multiple topology features, junctions maybe topology equivalent)</p>
+<p>route: consist of <strong>lanes</strong></p>
+<p>route feature: describe land changing and motions for traffic signs, to describe route feature (feature keep when only lane-changing times changes?no.)</p>
+<p>param format: (initial lanes, target lanes, obstacles positions)</p>
+<p>gene method: base + search obstacles (causing land changing)</p>
+<p>mutate method: an adding operator</p>
+<h2 id="ATLAS">ATLAS<a class="post-anchor" href="#ATLAS"></a></h2><p>classification:</p>
+<p>road-topology characteristic of a junction lane: describe intersecting lanes of junction lane using incoming and outcoming roads</p>
+<p>generate different abstract scenarios describing different interaction patterns</p>
+<p>generate in each abstract scenario:</p>
+<h2 id="AutoFuzz">AutoFuzz<a class="post-anchor" href="#AutoFuzz"></a></h2><h2 id="Paracosm">Paracosm<a class="post-anchor" href="#Paracosm"></a></h2><p>programmatically describe complex driving situations: a synchronous reactive programming model (reactive: refer to vehicles or persons)</p>
+<p>Components: It -&gt; Ot, graphical assets, physical properties</p>
+<p>A Paracosm configuration: components</p>
+<p>test parameter coverage: k-wise combinatorial coverage &amp; low dispersion</p>
+<p>various test input generation strategies: random sampling over discrete parameters &amp; deterministic quasi-Monte Carlo methods for continuous parameters</p>
+<h2 id="Generating-and-Characterizing-Scenarios-for-Safety-Testing-of-Autonomous-Vehicles">Generating and Characterizing Scenarios for Safety Testing of Autonomous Vehicles<a class="post-anchor" href="#Generating-and-Characterizing-Scenarios-for-Safety-Testing-of-Autonomous-Vehicles"></a></h2><p>interesting scenario:  where a collision or near collision happens, and the AV can avoid it in at least one way (including critical scenarios, can be ranked by complexity; scenario having less <strong>CriticalTime</strong> before collision is unavoidable)</p>
+<p>Characterizing: how many safe paths exist and how hard is it to follow them (complexity of the scenario w.r.t. possibility of avoiding accidents)</p>
+<p>metrics:  SafePathInv <strong>UnsafePercent</strong> AvgEffort MinEffort <strong>NarrowInv</strong> CriticalTime</p>
+<p>using ‘the number of computed safe driving paths, total paths in the scenario (all driving trajectories), narrowness of safe paths, and the effort required to follow each safe path’.</p>
+<p>computed safe driving paths: calculating the annulus sector in the next time-step,  discretize the 2D sector with a grid, quantizing the AV valid state</p>
+<p>tensor representation for AV only (fix the trajectories of all actors other):  enumerate all states of AV at time t</p>
+<p>Generating method: </p>
+<p>generate an unsafe sequence (initial executed driving scenario as input + perturbations) (change the policy of closest actors (three different attacking modes) &lt;-&gt; distance as cost function;) diversity? , create a critical scenario (sample interesting scenarios by starting from collision time tc and moving back in time to find t0. )</p>
+<p>Sequences: states of all the vehicles extracted from real-world data or from driving simulations</p>
+<p>generate approximately 240 scenarios (80 accidents, more than 90% avoidable) per hour on a single system</p>
+<h2 id="Suraksha">Suraksha<a class="post-anchor" href="#Suraksha"></a></h2><p>analyze the safety effects/sensitivities of using various perception (degraded perception due to HW/SW capabilities or inaccurate perception) parameters or level.</p>
+<p><em>Generating</em>: </p>
+<p>goal: efficient scenarios, difficulty levels(depend on AV velocity when the target is revealed)</p>
+<p>results: 12 driving scenarios for the four categories with difficulty levels, select four scenarios for analysis.</p>
+<p><em>Metrics</em>: </p>
+<p>scenario-independent metrics:  Braking L1,  Throttle L1,  AV coordinate L1,  Minimum distance (AV info: Actuators, Location, Velocity, Acceleration; Target obstacle info: Location)</p>
+<p><em>Perception Quality Requirements Analysis</em> (<strong>error</strong> allowed analysis): </p>
+<p>component-level design choices depend on which metrics</p>
+<p>AV implementations improvement &amp; component-level requirements (trade-off principle: system has upper limit with poor components under requirements)</p>
+<h2 id="Adversarial-evaluation-of-autonomous-vehicles-in-lane-change-scenarios">Adversarial evaluation of autonomous vehicles in lane-change scenarios<a class="post-anchor" href="#Adversarial-evaluation-of-autonomous-vehicles-in-lane-change-scenarios"></a></h2><p>reward: add penalty for violation of traffic rules</p>
+<p>driving performance:  lane-change success, collision, velocity</p>
+<p>traffic rules: rules break(?)</p>
+<p>diversity: N agents (actor and critic in DDPG) with random initializations</p>
+<p><em>Clustering</em>: DP-Means by state Sequences generated</p>
+<h2 id="Multimodal-Safety-Critical-Scenarios-Generation-for-Decision-Making-Algorithms-Evaluation">Multimodal Safety-Critical Scenarios Generation for Decision-Making Algorithms Evaluation<a class="post-anchor" href="#Multimodal-Safety-Critical-Scenarios-Generation-for-Decision-Making-Algorithms-Evaluation"></a></h2><p>Multimodal in multi-modality (pattern/logic Scenarios?)</p>
+<p> flow-based generative model (to estimate the multimodal distribution of safety-critical scenarios): </p>
+<p> as the objective function</p>
+<p>conditional input according to characteristics of the tasks</p>
+<p> generated: efficiently querying the task algorithms and a simulator</p>
+<p> flow-based to estimate the multimodal distribution</p>
+<p>testing at different stress levels</p>
+<p>pre-training a generative model (assuming RealNVP, a flow-based model) (by maximizing log-likelihood) (to approximate the distribution of the real data) , a modified flow-based model (with a conditional input) (weighted maximum likelihood estimation WMLE where weight related to the risk metric and data probability) (log-likelihood approximately proportional to risk level), adaptive sampler (step along gradient of worth exploring value related to risk metric minus risk level, calculated by NES under Monte Carlo method)</p>
+<h2 id="SADL">SADL<a class="post-anchor" href="#SADL"></a></h2><p>neuron activation traces</p>
+<p>Surprise. with respect to training data.</p>
+<p>Surprise Adequacy of sets: the range of surprise</p>
+<p>objective: higher(<em>Surprise Coverage</em>)</p>
+<p>diversified goal: from those similar to those significantly different and adversarial. with respect to training data </p>
+<p> adversarial example classifiers?</p>
+<p>sampling inputs for retraining? broader? SA values</p>
+<h1 id="reference">reference<a class="post-anchor" href="#reference"></a></h1><p>(attack and defence) Autonomous vehicle security: A taxonomy of attacks and defences 2016</p>
+<p>(defense) A non-conservatively defensive strategy for urban autonomous driving 2016</p>
+<p>Testing advanced driver assistance systems using multi-objective search and neural networks 2016 PreScan FCW</p>
+<p><strong>Deepxplore: Automated whitebox testing of deep learning systems  2017</strong></p>
+<p>Safe at any speed: A simulation-based test harness for autonomous vehicles 2017</p>
+<p><strong>Automated generation of diverse and challenging scenarios for test and evaluation of autonomous vehicles 2017</strong></p>
+<p><strong><em>Adaptive stress testing: Finding failure events with reinforcement learning 2018</em></strong></p>
+<p><strong>Adaptive stress testing for autonomous vehicles  2018</strong></p>
+<p> <strong>Scalable end-to-end autonomous vehicle testing via rare-event simulation 2018</strong></p>
+<p><strong>Simulation-based adversarial test generation for autonomous vehicles with machine learning components 2018</strong></p>
+<p><strong>Testing vision-based control systems using learnable evolutionary algorithms  2018</strong></p>
+<p><strong>Deeptest: automated testing of deep-neural-network-driven autonomous cars. In: ICSE (2018)</strong> </p>
+<p><strong>DeepRoad: GAN-based metamorphic testing and input validation framework for autonomous driving systems (<em>ASE</em>) 2018</strong></p>
+<p><strong>Chauffeur-net: Learning to drive by imitating the best and synthesizing the worst. (2019) *</strong></p>
+<p><strong>Guiding deep learning system testing using surprise adequacy 2019</strong></p>
+<p><strong>Generating adversarial driving scenarios in high-fidelity simulators 2019</strong></p>
+<p><strong>Boosting operational DNN testing efficiency through conditioning 2019 FSE/ESEC</strong></p>
+<p><strong>Adaptive stress testing with reward augmentation for autonomous vehicle validation 2019</strong></p>
+<p><strong>Automatically testing self-driving cars with search-based procedural content generation  2019</strong></p>
+<p><strong>Did we test all scenarios for automated and autonomous driving systems? 2019</strong></p>
+<p><strong>Towards system-level testing with coverage guarantees for autonomous vehicles 2019</strong></p>
+<p><strong>Genetic algorithm-based test parameter optimization for adas system testing 2019</strong></p>
+<p><strong>(attack) Attacking vision-based perception in end-to-end autonomous driving models 2019</strong></p>
+<p><strong>(attack) Are self-driving cars secure? evasion attacks against deep neural networks for steering angle prediction 2019</strong></p>
+<p><strong>Learning accurate and human-like driving using semantic maps and attention. CoRR (2020) *</strong></p>
+<p><strong>Generating avoidable collision scenarios for testing autonomous driving systems  2020</strong></p>
+<p><strong>Identification and explanation of challenging conditions for camera-based object detection of automated vehicles 2020 *</strong></p>
+<p><strong><em>AV-FUZZER: Finding Safety Violations in Autonomous Driving Systems 2020</em></strong></p>
+<p><strong><em>Coverage-based Scene Fuzzing for Virtual Autonomous Driving Testing 2021</em></strong></p>
+<p><strong>PGFUZZ: Policy-Guided Fuzzing for Robotic Vehicles 2021</strong></p>
+<p><strong>Simulation Driven Design and Test for Safety of AI Based Autonomous Vehicles 2021</strong> CVPR</p>
+<p><strong>Generating and characterizing scenarios for safety testing of autonomous vehicles 2021</strong></p>
+<p>(scenario) Depiction of priority lightvehicle pre-crash scenarios for safety applications based on vehicleto-vehicle communications</p>
+<p>(scenario) Pegasus—first steps for the safe introduction of automated driving</p>
+<p>(<em>d</em>stop, under single bit-flip) Ml-based fault injection for autonomous vehicles: A case for bayesian fault injection</p>
+<p>(<em>d</em>safe) Shared vehicle control using safe driving envelopes for obstacle avoidance and stability</p>
+<p>(<em>d</em>safe) Design and evaluation of a driving mode decision algorithm for automated driving vehicle on a motorway</p>
+<p>(fitness) Fitness functions for testing automated and autonomous driving systems</p>
+<p>Understanding Error Propagation in Deep Learning Neural Network (DNN) Accelerators and Applications</p>
+<p>Binfi: an efficient fault injector for safety-critical machine learning systems</p>
+<p>Tensorfi: A configurable fault injector for tensorflow applications</p>
+<p>Modeling input-dependent error propagation in programs</p>
+<p>Understanding error propagation in gpgpu applications</p>
+<p>VerifAI: A toolkit for the formal design and analysis of artificial intelligence-based systems</p>
+<p>(test DL) Safety verification of deep neural networks. In: CAV (2017) *</p>
+<p>(test DL) Reluplex: An efficient SMT solver for verifying deep neural networks. In: CAV (2017)  *</p>
+<p>AV accidents reported: California DMV (<a href="https://www.dmv.ca.gov/portal/dmv/detail/vr/autonomous/testing" target="_blank" rel="noopener">https://www.dmv.ca.gov/portal/dmv/detail/vr/autonomous/testing</a>), Waymo simulated driving behavior in reconstructed fatal crashes within an autonomous vehicle operating domain, Database approach for the sign-off process of highly automated vehicles, Survey on scenario-based safety assessment of  automated vehicles.</p>
+<p>Generating effective test cases for self-driving cars from police reports 2019</p>
+<p>攻击面在于软件输入：系统正常状态下能否正常实现某些功能</p>
+<p>还有纯软件层面（系统不正常）和纯算法（实现某些功能时的满意度）层面。</p>
+<p>（<strong>Formal Verification</strong>）a formal scenario description language: to represent an operational design domain (ODD) （ disa: only focus on one component of the system or a simple scenario, hard for perception component）</p>
+<p>scenarios:  sensor noise, driving maneuvers</p>
+<p>Scenic: a language for scenario specification and scene generation. (Defining and substantiating the terms scene, situation, and scenario for automated driving,  Scenarios for development, test and validation of automated vehicles, Ontology based scene creation for the development of automated vehicles)</p>
+<p>failures: possible (frequency, realistic), dangerous, </p>
+<p>Adaptive stress testing (AST) : find the most likely <strong>path</strong> from a <strong>start state</strong> to a <strong>failure state</strong> in a discrete-time simulator, a <strong>Markov decision process</strong>. (disa: <strong>failure is unavoidable</strong>; <strong>same types of failures</strong> )</p>
+<p>Fuzzing (AFL,  Fuzz revisited: A re-examination of the reliability of unix utilities and services.), grammar-based fuzzing ( Grammar-based whitebox fuzzing., Evolutionary grammar-based fuzzing.), structure-aware fuzzing ( GRIMOIRE: synthesizing structure while fuzzing., SLF: fuzzing without valid seed inputs.).</p>
+<p>RL: Observing a repeated one, necessary for RL to be effective, requires RL to accumulate a huge set of historical data, which can be very time-consuming. In contrast, GA guides the search by trial and error without relying on having a huge set of historical data.</p>
+<p>metamorphic testing:   if two inputs to a DL system are similar with respect to some human sense, the outputs should also be similar</p>
+<p>看到奇怪的名词先在原文搜索， 如果是普通词组合的描述则一般要看原文整段。</p>
+<p>论文直接的相关研究一般采用1年前的多一点，更老的更新的都会比较少。</p>
+<p>distribution</p>
+<p>function</p>
+<p>workflow</p>
+<p>objective: reward, fitness, loss</p>
+<p><a href="/2022/01/04/AV-test-evaluation/image-20220130234720474.png" data-caption="image-20220130234720474" data-fancybox="images"><img src="/2022/01/04/AV-test-evaluation/image-20220130234720474.png" alt="image-20220130234720474"></a></p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2022/01/15/Docker/">Docker</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/12/31/languageC/">C</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2022/01/04/AV-test-evaluation/">http://mingg2333.top/2022/01/04/AV-test-evaluation/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      NLP - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Word-Embeddings"><span class="toc-text">Word Embeddings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LSTM"><span class="toc-text">LSTM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ELMo"><span class="toc-text">ELMo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GRU"><span class="toc-text">GRU</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformer"><span class="toc-text">Transformer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenAI-GPT"><span class="toc-text">OpenAI GPT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPT-3"><span class="toc-text">GPT-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BERT"><span class="toc-text">BERT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PanGu-α"><span class="toc-text">PanGu-α</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERNIE"><span class="toc-text">ERNIE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#system"><span class="toc-text">system</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Datasets"><span class="toc-text">Datasets</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#reading-comprehension"><span class="toc-text">reading comprehension</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CMRC-2018"><span class="toc-text">CMRC 2018</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#more"><span class="toc-text">more</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">NLP</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/08/03</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/08/03/NLP/" data-flag-title="NLP">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/deep learning">deep learning</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><a id="more"></a>
+
+<p>RNN</p>
+<h1 id="Word-Embeddings">Word Embeddings<a class="post-anchor" href="#Word-Embeddings"></a></h1><p><a href="https://bobondemon.github.io/2017/09/07/Word-Embeddings-and-Encoder-Decoder-Neural-Net/" target="_blank" rel="noopener">https://bobondemon.github.io/2017/09/07/Word-Embeddings-and-Encoder-Decoder-Neural-Net/</a></p>
+<p>CBOW、Skip-Gram</p>
+<p><a href="https://zhuanlan.zhihu.com/p/27234078" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27234078</a></p>
+<h1 id="LSTM">LSTM<a class="post-anchor" href="#LSTM"></a></h1><p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">https://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></p>
+<h1 id="ELMo">ELMo<a class="post-anchor" href="#ELMo"></a></h1><h1 id="GRU">GRU<a class="post-anchor" href="#GRU"></a></h1><p>refer to <a href="https://blog.csdn.net/sinat_28015305/article/details/109539891" target="_blank" rel="noopener">https://blog.csdn.net/sinat_28015305/article/details/109539891</a></p>
+<h1 id="Transformer">Transformer<a class="post-anchor" href="#Transformer"></a></h1><p>Refer to the tutorials <a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html" target="_blank" rel="noopener">http://nlp.seas.harvard.edu/2018/04/03/attention.html</a>, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">http://jalammar.github.io/illustrated-transformer/</a>, <a href="https://blog.csdn.net/zhong_ddbb/article/details/107564421" target="_blank" rel="noopener">https://blog.csdn.net/zhong_ddbb/article/details/107564421</a> for a detailed introduction.</p>
+<h2 id="OpenAI-GPT">OpenAI GPT<a class="post-anchor" href="#OpenAI-GPT"></a></h2><p>pre-training(unsupervised learning) + fine-tuning(supervised learning)</p>
+<p>refer to <a href="https://zhuanlan.zhihu.com/p/59286975" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/59286975</a></p>
+<h2 id="GPT-3">GPT-3<a class="post-anchor" href="#GPT-3"></a></h2><p>few shot learning are invloved in GPT-3; for more about few shot learning refer to <a href="https://zhuanlan.zhihu.com/p/165882989" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/165882989</a>, <a href="https://www.zmonster.me/2019/12/08/few-shot-learning.html" target="_blank" rel="noopener">https://www.zmonster.me/2019/12/08/few-shot-learning.html</a></p>
+<h2 id="BERT">BERT<a class="post-anchor" href="#BERT"></a></h2><p>refer to <a href="https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/18_BERT_P1.html" target="_blank" rel="noopener">https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/18_BERT_P1.html</a>, <a href="https://zhuanlan.zhihu.com/p/103226488" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/103226488</a></p>
+<h2 id="PanGu-α">PanGu-α<a class="post-anchor" href="#PanGu-α"></a></h2><h2 id="ERNIE">ERNIE<a class="post-anchor" href="#ERNIE"></a></h2><p><a href="https://github.com/PaddlePaddle/ERNIE" target="_blank" rel="noopener">https://github.com/PaddlePaddle/ERNIE</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/87008569" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/87008569</a></p>
+<h1 id="system">system<a class="post-anchor" href="#system"></a></h1><p>Google</p>
+<p>Cloud NLP, Microsoft Azure Text Analytics, IBM Watson Nat</p>
+<p>ural Language Understanding and Amazon AWS Comprehend</p>
+<h1 id="Datasets">Datasets<a class="post-anchor" href="#Datasets"></a></h1><h2 id="reading-comprehension">reading comprehension<a class="post-anchor" href="#reading-comprehension"></a></h2><h3 id="CMRC-2018">CMRC 2018<a class="post-anchor" href="#CMRC-2018"></a></h3><p>Chinese Machine Reading Comprehension</p>
+<p>website: <a href="https://hfl-rc.com/cmrc2018/" target="_blank" rel="noopener">https://hfl-rc.com/cmrc2018/</a></p>
+<p>github: <a href="https://github.com/ymcui/cmrc2018" target="_blank" rel="noopener">https://github.com/ymcui/cmrc2018</a></p>
+<p>Baseline: <strong>BERT</strong></p>
+<p>related: <a href="https://zhuanlan.zhihu.com/p/73831398" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/73831398</a></p>
+<h2 id="more">more<a class="post-anchor" href="#more"></a></h2><p>refer to <a href="https://zhuanlan.zhihu.com/p/70355773" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/70355773</a></p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/08/03/CV/">CV</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/08/02/Windows/">Windows</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/08/03/NLP/">http://mingg2333.top/2021/08/03/NLP/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      边缘计算典型的开发板及其使用方法 - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#边缘计算的由来"><span class="toc-text">边缘计算的由来</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#与云计算对应"><span class="toc-text">与云计算对应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边缘计算"><span class="toc-text">边缘计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边缘计算芯片运行算法更好"><span class="toc-text">边缘计算芯片运行算法更好</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边缘计算的优点"><span class="toc-text">边缘计算的优点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#边缘计算开发板"><span class="toc-text">边缘计算开发板</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intel"><span class="toc-text">intel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#google"><span class="toc-text">google</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#英伟达"><span class="toc-text">英伟达</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为"><span class="toc-text">华为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比特大陆"><span class="toc-text">比特大陆</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发与使用方法"><span class="toc-text">开发与使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发思路"><span class="toc-text">开发思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发流程与方法"><span class="toc-text">开发流程与方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用服务器的开发方式"><span class="toc-text">利用服务器的开发方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边缘计算开发板与一般芯片开发板的不同"><span class="toc-text">边缘计算开发板与一般芯片开发板的不同</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献及资料"><span class="toc-text">参考文献及资料</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">边缘计算典型的开发板及其使用方法</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/06/02</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2020/06/02/EDB/" data-flag-title="边缘计算典型的开发板及其使用方法">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/presentation">presentation</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/AI">AI</a>
+                  
+                
+                  
+                    <a href="/tags/边缘计算">边缘计算</a>
+                  
+                
+                  
+                    <a href="/tags/IC">IC</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>总结对边缘计算及其芯片与开发板，不定期更新。</p>
+<a id="more"></a>
+
+<p>[TOC]</p>
+<ul>
+<li><a href="#边缘计算的由来">边缘计算的由来</a><ul>
+<li><a href="#与云计算对应">与云计算对应</a></li>
+<li><a href="#边缘计算">边缘计算</a></li>
+<li><a href="#边缘计算芯片运行算法更好">边缘计算芯片运行算法更好</a></li>
+<li><a href="#边缘计算的优点">边缘计算的优点</a></li>
+</ul>
+</li>
+<li><a href="#边缘计算开发板">边缘计算开发板</a><ul>
+<li><a href="#intel">intel</a></li>
+<li><a href="#google">google</a></li>
+<li><a href="#英伟达">英伟达</a></li>
+<li><a href="#华为">华为</a></li>
+<li><a href="#比特大陆">比特大陆</a></li>
+</ul>
+</li>
+<li><a href="#开发与使用方法">开发与使用方法</a><ul>
+<li><a href="#开发思路">开发思路</a></li>
+<li><a href="#开发流程与方法">开发流程与方法</a></li>
+<li><a href="#利用服务器的开发方式">利用服务器的开发方式</a></li>
+<li><a href="#边缘计算开发板与一般芯片开发板的不同">边缘计算开发板与一般芯片开发板的不同</a></li>
+</ul>
+</li>
+<li><a href="#参考文献及资料">参考文献及资料</a></li>
+</ul>
+<h1 id="边缘计算的由来">边缘计算的由来<a class="post-anchor" href="#边缘计算的由来"></a></h1><h2 id="与云计算对应">与云计算对应<a class="post-anchor" href="#与云计算对应"></a></h2><p>以语音识别为例，输入法里的语音输入，需要联网才能运行，联网的过程就是把语音数据上传到云端进行处理，处理后的结果再下传回用户。语音识别属于AI里的“自然语言理解”，复杂的语句识别要经历语音分析、词法分析、句法分析、语义分析、语用分析等层层过程，整个过程的运算会越来越复杂，而且还要结合训练后的语音模型，而云端既完成了基于海量数据的语音模型的训练，又能够对语音进行分析与识别。</p>
+<p><a href="/2020/06/02/EDB/image-20200602230456646.png" data-caption="image-20200602230456646" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602230456646.png" alt="image-20200602230456646"></a></p>
+<h2 id="边缘计算">边缘计算<a class="post-anchor" href="#边缘计算"></a></h2><p>还是从输入法里的语音输入说起。下载离线语音包，就可以实现不联网的语音识别，整个过程在本地运算算法，这就是一种边缘计算。</p>
+<p>下载的语音包其实是来自云端的训练，而语音分析与识别分过程确确实实是在手机端即“边缘”进行的，这就体现出一种云端与边缘的分工。</p>
+<p>在过去的手机中通常是利用CPU运行这种算法，而现在的趋势是利用集成的AI/边缘计算芯片来运行这种算法 。</p>
+<p><a href="/2020/06/02/EDB/image-20200602230549053.png" data-caption="image-20200602230549053" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602230549053.png" alt="image-20200602230549053"></a></p>
+<h2 id="边缘计算芯片运行算法更好">边缘计算芯片运行算法更好<a class="post-anchor" href="#边缘计算芯片运行算法更好"></a></h2><p>因为芯片的结构。目前的高级算法主要是进行神经网络的计算，比如CNN（卷积神经网络），这些运算本质上是向量、矩阵的乘加运算（如图），而AI/边缘计算芯片的结构能够高效地进行并行计算（如图）。</p>
+<p><a href="/2020/06/02/EDB/image-20200602230708436.png" data-caption="image-20200602230708436" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602230708436.png" alt="image-20200602230708436"></a> <a href="/2020/06/02/EDB/image-20200602230727812.png" data-caption="image-20200602230727812" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602230727812.png" alt="image-20200602230727812"></a></p>
+<h2 id="边缘计算的优点">边缘计算的优点<a class="post-anchor" href="#边缘计算的优点"></a></h2><p>运用AI/边缘计算芯片进行AI本地推理可以显著节约云端的带宽和云计算的成本，并能将数据保存在本地从而保护用户隐私。</p>
+<p><a href="/2020/06/02/EDB/image-20200602230813155.png" data-caption="image-20200602230813155" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602230813155.png" alt="image-20200602230813155"></a></p>
+<h1 id="边缘计算开发板">边缘计算开发板<a class="post-anchor" href="#边缘计算开发板"></a></h1><p>边缘计算开发板(EDB)就是以AI/边缘计算芯片为核心的开发板，用于开发者对芯片的学习与开发，和普通的开发板外观上没有什么区别，下面按照芯片供应商分类举一些典型的例子。</p>
+<h2 id="intel">intel<a class="post-anchor" href="#intel"></a></h2><p>芯片：第八代Intel®Core™处理器<br>开发板：Pico-WHU4开发板</p>
+<p><a href="/2020/06/02/EDB/image-20200602231102374.png" data-caption="image-20200602231102374" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231102374.png" alt="image-20200602231102374"></a></p>
+<h2 id="google">google<a class="post-anchor" href="#google"></a></h2><p>Google形成了以Edge TPU为核心的边缘计算开发体系。Google的开发板有很多种。</p>
+<p>芯片：Edge TPU<br>开发板：<br>    Coral Dev Board    </p>
+<p><a href="/2020/06/02/EDB/image-20200602231239209.png" data-caption="image-20200602231239209" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231239209.png" alt="image-20200602231239209"></a></p>
+<p>​    Coral System-on-Module</p>
+<p><a href="/2020/06/02/EDB/image-20200602231253068.png" data-caption="image-20200602231253068" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231253068.png" alt="image-20200602231253068"></a></p>
+<p>​    Tinker Edge T/E</p>
+<p><a href="/2020/06/02/EDB/image-20200602231304971.png" data-caption="image-20200602231304971" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231304971.png" alt="image-20200602231304971"></a></p>
+<p>​    Tiorb AIX</p>
+<p><a href="/2020/06/02/EDB/image-20200602231456662.png" data-caption="image-20200602231456662" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231456662.png" alt="image-20200602231456662"></a></p>
+<h2 id="英伟达">英伟达<a class="post-anchor" href="#英伟达"></a></h2><p>NVIDIA</p>
+<p>开发板：Jetson Nano</p>
+<p><a href="/2020/06/02/EDB/image-20200602231659067.png" data-caption="image-20200602231659067" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231659067.png" alt="image-20200602231659067"></a></p>
+<h2 id="华为">华为<a class="post-anchor" href="#华为"></a></h2><p>华为也有比较完善的边缘计算开发生态。</p>
+<p>芯片：麒麟970<br>开发板：HiHope Hikey 970</p>
+<p><a href="/2020/06/02/EDB/image-20200602231730122.png" data-caption="image-20200602231730122" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231730122.png" alt="image-20200602231730122"></a></p>
+<p>芯片：昇腾310<br>开发套件：Atlas 200 DK</p>
+<p><a href="/2020/06/02/EDB/image-20200602231902793.png" data-caption="image-20200602231902793" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231902793.png" alt="image-20200602231902793"></a></p>
+<p><a href="/2020/06/02/EDB/image-20200602231922225.png" data-caption="image-20200602231922225" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602231922225.png" alt="image-20200602231922225"></a></p>
+<h2 id="比特大陆">比特大陆<a class="post-anchor" href="#比特大陆"></a></h2><p>芯片：BM1880<br>开发板：算丰边缘计算开发板</p>
+<p><a href="/2020/06/02/EDB/image-20200602232111969.png" data-caption="image-20200602232111969" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602232111969.png" alt="image-20200602232111969"></a></p>
+<h1 id="开发与使用方法">开发与使用方法<a class="post-anchor" href="#开发与使用方法"></a></h1><h2 id="开发思路">开发思路<a class="post-anchor" href="#开发思路"></a></h2><p>SOC开发板一般有两种开发思路：</p>
+<p>1.把开发板作为USB device（即把SDK安装在电脑进行开发）</p>
+<p>2.开发板作为host role（即把SDK安装在开发板的SOC芯片中）</p>
+<h2 id="开发流程与方法">开发流程与方法<a class="post-anchor" href="#开发流程与方法"></a></h2><p>典型的边缘计算开发板都具有相似的开发流程：</p>
+<p>1.准备硬件（电源、TF卡、网卡网线、显示器、鼠标、摄像头等）</p>
+<p>2.运行（或者更换）操作系统</p>
+<p>3.下载对应的SDK，开发应用程序</p>
+<h2 id="利用服务器的开发方式">利用服务器的开发方式<a class="post-anchor" href="#利用服务器的开发方式"></a></h2><p>以华为Atlas 200 DK为例，</p>
+<p><a href="/2020/06/02/EDB/image-20200602232241881.png" data-caption="image-20200602232241881" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602232241881.png" alt="image-20200602232241881"></a></p>
+<p>1.环境部署：</p>
+<p>○硬件准备：包括SD卡、读卡器、摄像头、MIPI-CSI连接线（常用于嵌入式视觉领域）、Type-C等；</p>
+<p>○<strong>准备Ubuntu服务器</strong>，为了下一步准备；</p>
+<p>○运行环境搭建：<strong>与服务器连接制作SD卡</strong>，开发套件读取SD卡运行系统，<strong>连接服务器在服务器中部署开发工具/平台</strong>（如有UI界面的集成了DDK的专用软件SDK或者用于使用命令行的DDK）；</p>
+<p>2.应用开发：</p>
+<p>○模型转换，导入已训练好的第三方网络模型，基于模型接口进行编程；算子开发；</p>
+<p>○应用开发、应用编译及部署。</p>
+<h2 id="边缘计算开发板与一般芯片开发板的不同">边缘计算开发板与一般芯片开发板的不同<a class="post-anchor" href="#边缘计算开发板与一般芯片开发板的不同"></a></h2><p>边缘计算开发板的开发一般都与AI相关，因此离不开AI训练/模型相关的平台，通过一些平台导入模型进行训练或者推理（如Model Play），还需要借助通用的框架在移动或者嵌入式设备上调用模型（如TensorFlow Lite）。</p>
+<p><a href="/2020/06/02/EDB/image-20200602232325578.png" data-caption="image-20200602232325578" data-fancybox="images"><img src="/2020/06/02/EDB/image-20200602232325578.png" alt="image-20200602232325578"></a></p>
+<h1 id="参考文献及资料">参考文献及资料<a class="post-anchor" href="#参考文献及资料"></a></h1><p>[1]蔡自兴,刘丽珏,蔡竞峰,等.人工智能及其应用.第5版[M].清华大学出版社:北京,2016:152-159.</p>
+<p>[2]Intel开发者社区</p>
+<p><a href="https://software.intel.com/content/www/us/en/develop/home.html" target="_blank" rel="noopener">https://software.intel.com/content/www/us/en/develop/home.html</a></p>
+<p>[3]Coral Dev Board官方开发资料</p>
+<p><a href="https://www.coral.ai/docs/dev-board/get-started" target="_blank" rel="noopener">https://www.coral.ai/docs/dev-board/get-started</a></p>
+<p>[4]Nvidia Jetson Nano官方开发资料</p>
+<p><a href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit" target="_blank" rel="noopener">https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup</a></p>
+<p>[5]算丰边缘计算开发板官方开发资料</p>
+<p><a href="https://sophon-edge.gitbook.io/project/overview/edge-tpu-developer-board" target="_blank" rel="noopener">https://sophon-edge.gitbook.io/project/overview/edge-tpu-developer-board</a></p>
+<p>[6] HiHope Hikey 970官方开发资料</p>
+<p><a href="https://www.96boards.org/documentation/consumer/hikey/hikey970/" target="_blank" rel="noopener">https://www.96boards.org/documentation/consumer/hikey/hikey970/</a></p>
+<p>[7] Atlas 200 DK官方开发资料</p>
+<p><a href="https://www.huaweicloud.com/ascend/doc/atlas200dk/1.32.0.0(beta)/zh/zh-cn_topic_0204328966.html" target="_blank" rel="noopener">https://www.huaweicloud.com/ascend/doc/atlas200dk/1.32.0.0(beta)/zh/zh-cn_topic_0204328966.html</a></p>
+<p>[8]人工智能芯片与传统芯片的区别</p>
+<p><a href="https://blog.csdn.net/zhangbijun1230/article/details/80717351" target="_blank" rel="noopener">https://blog.csdn.net/zhangbijun1230/article/details/80717351</a></p>
+<p>[9]基于大数据及云计算的语音识别及其深度学习平台</p>
+<p><a href="http://www.cbdio.com/BigData/2015-04/08/content_2802203.htm" target="_blank" rel="noopener">http://www.cbdio.com/BigData/2015-04/08/content_2802203.htm</a></p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/06/11/aiic/">AI chip</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/05/25/wjsj/">简单复数计算器设计</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2020/06/02/EDB/">http://mingg2333.top/2020/06/02/EDB/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

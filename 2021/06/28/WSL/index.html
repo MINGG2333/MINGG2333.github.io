@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      Windows Subsystem for Linux - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#what-is-WSL"><span class="toc-text">what is WSL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#installation"><span class="toc-text">installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GPU-compute-support"><span class="toc-text">GPU compute support</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-Insider-Preview-Builds"><span class="toc-text">install Insider Preview Builds</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install-preview-GPU-driver"><span class="toc-text">install preview GPU driver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#develop"><span class="toc-text">develop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sample"><span class="toc-text">sample</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Running-Graphical-Applications"><span class="toc-text">Running Graphical Applications</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#troubleshooting"><span class="toc-text">troubleshooting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#installation-1"><span class="toc-text">installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPU-support"><span class="toc-text">GPU support</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-10-Insider-Preview-Builds"><span class="toc-text">Windows 10 Insider Preview Builds</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-environment"><span class="toc-text">Python environment</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Windows Subsystem for Linux</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/06/28</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/06/28/WSL/" data-flag-title="Windows Subsystem for Linux">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/PC">PC</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><a id="more"></a>
+
+<h1 id="what-is-WSL">what is WSL<a class="post-anchor" href="#what-is-WSL"></a></h1><p>WSL is a Microsoft official solution for GNU/Linux environment running on windows, instead of either virtual machine or double system, for more information referring to <a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank" rel="noopener">What is Windows Subsystem for Linux | Microsoft Docs</a>.</p>
+<p>GNU/Linux environment is a application on windows via WSL, and you can manage this environment by terminal. Now there are several GUI tool having supported it, while Microsoft team <strong>is now trying</strong> to develop GPU compute on WSL.</p>
+<h1 id="installation">installation<a class="post-anchor" href="#installation"></a></h1><p>for installation refer to <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Install WSL on Windows 10 | Microsoft Docs</a>, <a href="https://ubuntu.com/wsl" target="_blank" rel="noopener">WSL | Ubuntu</a>, <a href="https://wiki.ubuntu.com/WSL" target="_blank" rel="noopener">WSL - Ubuntu Wiki</a></p>
+<p>Notice: The Windows Subsystem for Linux only runs on your system drive(usually this is your <code>C:</code> drive).</p>
+<h1 id="GPU-compute-support">GPU compute support<a class="post-anchor" href="#GPU-compute-support"></a></h1><p>Support for GPU compute, the #1 most requested WSL feature, is now <strong>ONLY</strong> available for preview via the Windows Insider program, referring to <a href="https://docs.microsoft.com/en-us/windows/wsl/tutorials/gpu-compute" target="_blank" rel="noopener">GPU accelerated ML training in WSL | Microsoft Docs</a>, <a href="https://blogs.windows.com/windowsdeveloper/2020/06/17/gpu-accelerated-ml-training-inside-the-windows-subsystem-for-linux/" target="_blank" rel="noopener">GPU accelerated ML training inside the Windows Subsystem for Linux - Windows Developer Blog</a>.</p>
+<p>To make it, refer to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-accelerated-training#professionals" target="_blank" rel="noopener">NVIDIA CUDA preview in WSL 2 | Microsoft Docs</a>, <a href="https://forums.developer.nvidia.com/c/accelerated-computing/cuda/cuda-on-windows-subsystem-for-linux/303" target="_blank" rel="noopener">Latest CUDA/CUDA on Windows Subsystem for Linux topics - NVIDIA Developer Forums</a>, </p>
+<h2 id="install-Insider-Preview-Builds">install Insider Preview Builds<a class="post-anchor" href="#install-Insider-Preview-Builds"></a></h2><p>download and install the Windows 10 Insider Preview Builds(actually Windows 11 Insider Preview-6/29/2021).</p>
+<p><a href="/2021/06/28/WSL/preview%20win.png" data-caption="preview win" data-fancybox="images"><img src="/2021/06/28/WSL/preview%20win.png" alt="preview win"></a></p>
+<p><a href="/2021/06/28/WSL/installingwin11.png" data-caption="installingwin11" data-fancybox="images"><img src="/2021/06/28/WSL/installingwin11.png" alt="installingwin11"></a></p>
+<p><a href="/2021/06/28/WSL/win11des.png" data-caption="win11des" data-fancybox="images"><img src="/2021/06/28/WSL/win11des.png" alt="win11des"></a></p>
+<p><a href="/2021/06/28/WSL/win11os.png" data-caption="win11os" data-fancybox="images"><img src="/2021/06/28/WSL/win11os.png" alt="win11os"></a></p>
+<h2 id="install-preview-GPU-driver">install preview GPU driver<a class="post-anchor" href="#install-preview-GPU-driver"></a></h2><p>refer to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-tensorflow-wsl#install-the-preview-gpu-driver" target="_blank" rel="noopener">preview GPU driver | Microsoft Docs</a>.</p>
+<h2 id="develop">develop<a class="post-anchor" href="#develop"></a></h2><p>develop based on the above preview GPU driver</p>
+<ol>
+<li><p>if use NVIDIA GPU, the preview GPU driver actually includes the CUDA on WSL 2, refer to <a href="https://developer.nvidia.com/cuda/wsl" target="_blank" rel="noopener">CUDA on Windows Subsystem for Linux (WSL) - Public Preview | NVIDIA Developer</a>,</p>
+<p>so you can use directly CUDA C++, consulting the CUDA C++ Programming Guide, located in <code>/usr/local/cuda-10.1/doc</code>, or referring to <a href="https://blog.csdn.net/cyhbrilliant/article/details/79434090" target="_blank" rel="noopener">CUDA 高性能并行计算入门_cyhbrilliant的博客-CSDN博客_cuda并行计算</a>, and its performance is really good(Ubuntu &gt; WSL &gt; Windows);</p>
+<p><a href="/2021/06/28/WSL/-7c741225dfd3191d.png" data-caption="-7c741225dfd3191d" data-fancybox="images"><img src="/2021/06/28/WSL/-7c741225dfd3191d.png" alt="-7c741225dfd3191d"></a></p>
+<p>besides, you can start using your existing Linux workflows through <a href="https://github.com/NVIDIA/nvidia-docker" target="_blank" rel="noopener">NVIDIA Docker</a>, refer to <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#setting-containers" target="_blank" rel="noopener">CUDA on WSL Documentation (nvidia.com)</a>;</p>
+<p>Wrong try: go on installing cuDNN based on CUDA, you may need to use mirrors source, refer to <a href="https://blog.csdn.net/cathar/article/details/53729007" target="_blank" rel="noopener">使用conda安装python包_cathar的专栏-CSDN博客_conda安装python包</a> or <a href="https://www.runoob.com/w3cnote/pip-cn-mirror.html" target="_blank" rel="noopener">pip 使用国内镜像源 | 菜鸟教程 (runoob.com)</a>, actually there is error around CUDA <code>lib64</code> and hence almost frameworks (like TensorFlow2, MindSpore) cannot access to NVIDIA GPU, but <strong>PyTorch</strong>.</p>
+<p><a href="/2021/06/28/WSL/7d69554556d47e45.png" data-caption="7d69554556d47e45" data-fancybox="images"><img src="/2021/06/28/WSL/7d69554556d47e45.png" alt="7d69554556d47e45"></a></p>
+</li>
+<li><p>Besides, use TensorFlow with DirectML. AMD, Intel and NVIDIA preview GPU drivers all include DirectX WSL driver supporting DX12 APIs, so TensorFlow with a DirectML backend can access to those GPUs,refer to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-tensorflow-wsl#set-up-python-environment" target="_blank" rel="noopener">Install the Tensorflow with DirectML package | Microsoft Docs</a>. There is a <strong>sample</strong> in the following section.</p>
+</li>
+</ol>
+<p>Notice: many operations on WSL need root, so if you meet something wrong, try to type <code>sudo</code> ahead, and it is also really useful and important to look up the output information; maybe you need some knowledge of Ubuntu</p>
+<h2 id="sample">sample<a class="post-anchor" href="#sample"></a></h2><p>bash:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~<br>ls<br>mkdir mycode<br><span class="hljs-built_in">cd</span> mycode<br>touch tf_test.py<br>ls<br>vim tf_test.py<br></code></pre></td></tr></tbody></table></figure>
+
+<p>python, refer to <a href="https://github.com/tensorflow/docs/tree/master/site/en/r1/tutorials" target="_blank" rel="noopener">docs/site/en/r1/tutorials at master · tensorflow/docs · GitHub</a>:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf<br><br>mnist = tf.keras.datasets.mnist<br><br>(x_train, y_train),(x_test, y_test) = mnist.load_data()<br>x_train, x_test = x_train / <span class="hljs-number">255.0</span>, x_test / <span class="hljs-number">255.0</span><br><br>model = tf.keras.models.Sequential([<br>  tf.keras.layers.Flatten(input_shape=(<span class="hljs-number">28</span>, <span class="hljs-number">28</span>)),<br>  tf.keras.layers.Dense(<span class="hljs-number">512</span>, activation=tf.nn.relu),<br>  tf.keras.layers.Dropout(<span class="hljs-number">0.2</span>),<br>  tf.keras.layers.Dense(<span class="hljs-number">10</span>, activation=tf.nn.softmax)<br>])<br><br>model.compile(optimizer=<span class="hljs-string">'adam'</span>,<br>              loss=<span class="hljs-string">'sparse_categorical_crossentropy'</span>,<br>              metrics=[<span class="hljs-string">'accuracy'</span>])<br><br>model.fit(x_train, y_train, epochs=<span class="hljs-number">5</span>)<br>model.evaluate(x_test, y_test)<br></code></pre></td></tr></tbody></table></figure>
+
+<p>bash:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">&lt;Esc&gt;<br>:wq&lt;Enter&gt;<br><br>conda info --envs<br>conda activate directml<br>ls<br>python3 tf_test.py<br></code></pre></td></tr></tbody></table></figure>
+
+<p>output:</p>
+<p><a href="/2021/06/28/WSL/appl.png" data-caption="appl" data-fancybox="images"><img src="/2021/06/28/WSL/appl.png" alt="appl"></a></p>
+<p>You can see it working well, though there are several warnings, which are almost due to versions, refer to <a href="https://github.com/microsoft/DirectML/issues/117" target="_blank" rel="noopener">How can I address these warning messages on my first directml attempt? · Issue #117 · microsoft/DirectML · GitHub</a>, <a href="https://blog.csdn.net/zqx951102/article/details/88897117" target="_blank" rel="noopener">成功解决Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2_张齐贤的博客-CSDN博客</a>.</p>
+<p>For more samples, refer to <a href="https://github.com/microsoft/DirectML/tree/master/TensorFlow" target="_blank" rel="noopener">DirectML/TensorFlow at master · microsoft/DirectML · GitHub</a>.</p>
+<h1 id="Running-Graphical-Applications">Running Graphical Applications<a class="post-anchor" href="#Running-Graphical-Applications"></a></h1><p>refer to <a href="https://wiki.ubuntu.com/WSL#Running_Graphical_Applications" target="_blank" rel="noopener">Running Graphical Applications - Ubuntu Wiki</a>,</p>
+<h1 id="troubleshooting">troubleshooting<a class="post-anchor" href="#troubleshooting"></a></h1><h2 id="installation-1">installation<a class="post-anchor" href="#installation-1"></a></h2><p>refer to <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#troubleshooting-installation" target="_blank" rel="noopener">troubleshooting installation of WSL on Windows 10 | Microsoft Docs</a>,</p>
+<h2 id="GPU-support">GPU support<a class="post-anchor" href="#GPU-support"></a></h2><h2 id="Windows-10-Insider-Preview-Builds">Windows 10 Insider Preview Builds<a class="post-anchor" href="#Windows-10-Insider-Preview-Builds"></a></h2><p>install the Windows 10 Insider Preview Builds, but stop here</p>
+<p><a href="/2021/06/28/WSL/preparation35.png" data-caption="preparation35" data-fancybox="images"><img src="/2021/06/28/WSL/preparation35.png" alt="preparation35"></a></p>
+<p><a href="/2021/06/28/WSL/attention_bug.png" data-caption="attention_bug" data-fancybox="images"><img src="/2021/06/28/WSL/attention_bug.png" alt="attention_bug"></a></p>
+<p>solution:</p>
+<p>before building this preview, update Windows as well as kernel to the latest general version</p>
+<p><a href="/2021/06/28/WSL/updatanormal.png" data-caption="updatanormal" data-fancybox="images"><img src="/2021/06/28/WSL/updatanormal.png" alt="updatanormal"></a></p>
+<p><a href="/2021/06/28/WSL/done21h1.JPG" data-caption="done21h1" data-fancybox="images"><img src="/2021/06/28/WSL/done21h1.JPG" alt="done21h1"></a></p>
+<h2 id="Python-environment">Python environment<a class="post-anchor" href="#Python-environment"></a></h2><p>when you try to use TensorFlow with DirectML, following official steps and setting up Python environment, you may meet errors using either <code>sudo conda</code> or <code>conda</code>.</p>
+<p>solution:</p>
+<ol>
+<li>First, check the <code>bashrc</code> program on WSL:</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">vim ~/.bashrc<br></code></pre></td></tr></tbody></table></figure>
+
+<p>make sure there is <code>export PATH</code> of miniconda3, like</p>
+<p><a href="/2021/06/28/WSL/bashrc.png" data-caption="bashrc" data-fancybox="images"><img src="/2021/06/28/WSL/bashrc.png" alt="bashrc"></a></p>
+<p>and then execute it:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>Root. you need to give root to write in the direction of miniconda3, refer to <a href="https://blog.csdn.net/weixin_41804998/article/details/107499405" target="_blank" rel="noopener">conda创建环境报错：NotWritableError: The current user does not have write permissions to a required path._HaotianYan的博客-CSDN博客</a>:</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~<br>sudo chown -R {username} anaconda3<br></code></pre></td></tr></tbody></table></figure>
+
+<p>*username: user name of your Ubuntu; besides, <code>~</code> means <code>/home/{username}</code>.</p>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/06/29/conda/">conda</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/06/28/DoubleSystem/">DoubleSystem</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/06/28/WSL/">http://mingg2333.top/2021/06/28/WSL/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

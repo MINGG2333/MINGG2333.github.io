@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0c88415f420efe1479f3a99ac1a3787";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="key1, key2, key3" />
+    <meta name="description" content="学习 实践 思考 记录" />
+    
+    <title>
+      Adversarial examples - 明明的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="明明的博客" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#introduction"><span class="toc-text">introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#image"><span class="toc-text">image</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-black-box-setting"><span class="toc-text">1 black box setting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-white-box-setting"><span class="toc-text">2 white box setting</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#speech"><span class="toc-text">speech</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reinforcement-learning"><span class="toc-text">reinforcement learning</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#language"><span class="toc-text">language</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-black-box-setting-1"><span class="toc-text">1 black box setting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#distracting-sentences"><span class="toc-text">distracting sentences</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GANs"><span class="toc-text">GANs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#greedy-heuristic"><span class="toc-text">greedy heuristic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#back-translation"><span class="toc-text">back-translation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#genetic-algorithms-population-based-optimization"><span class="toc-text">genetic algorithms: population-based optimization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TextBugger"><span class="toc-text">TextBugger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PWWS"><span class="toc-text">PWWS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PSO"><span class="toc-text">PSO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TextFooler"><span class="toc-text">TextFooler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BERT-ATTACK"><span class="toc-text">BERT-ATTACK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BAE"><span class="toc-text">BAE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BU-MHS"><span class="toc-text">BU-MHS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BESA"><span class="toc-text">BESA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MAYA"><span class="toc-text">MAYA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QES"><span class="toc-text">QES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StyleAttack"><span class="toc-text">StyleAttack</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#white-box-setting"><span class="toc-text">white box setting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HotFilp"><span class="toc-text">HotFilp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TextBugger-1"><span class="toc-text">TextBugger</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#code"><span class="toc-text">code</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#apg"><span class="toc-text">apg</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tool-kit"><span class="toc-text">tool kit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TextAttack"><span class="toc-text">TextAttack</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#new-attack-design"><span class="toc-text">new attack design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#class"><span class="toc-text">class</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Application"><span class="toc-text">Application</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vocabulary-amp-knowledge"><span class="toc-text">vocabulary&amp;knowledge</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#end"><span class="toc-text">end</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/books" class="">
+          books
+        </a>
+        
+        <a href="/friends" class="">
+          链接
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">MINGG</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">MINGG</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/books" class="">
+            books
+          </a>
+          
+          <a href="/friends" class="">
+            链接
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/MINGG2333" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://gitee.com/MINGG2333" target="_block">
+              <span class="iconfont icon-gitee"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Adversarial examples</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/11/26</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2021/11/26/Adversarial-examples/" data-flag-title="Adversarial examples">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/AI">AI</a>
+                  
+                
+                  
+                    <a href="/tags/machine learning">machine learning</a>
+                  
+                
+                  
+                    <a href="/tags/adversarial examples">adversarial examples</a>
+                  
+                
+                  
+                    <a href="/tags/deep learning">deep learning</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p>Created: 2021-11-26 19:43:58</p>
+<p>Modified: 2021-11-26 19:43:58</p>
+<a id="more"></a>
+
+<h1 id="introduction">introduction<a class="post-anchor" href="#introduction"></a></h1><p>ML</p>
+<p>adversarial examples (not out-of-domain (OOD) samples, distribution shift, data transformation, shortcut learning[1-3])</p>
+<p>semantics-preserving or not</p>
+<p>perturbations/insertion</p>
+<p>(function performance, attack/adversary success rate, perturbation rate)</p>
+<p>gradient-based, query&amp;score-based(<em>search method</em> and <em>search space</em>), query&amp;class-based, none?</p>
+<p>untargeted attack and targeted attack</p>
+<p>applying on image, speech, language</p>
+<p>Mnemonic Reader’s self-alignment layer against adversarial examples</p>
+<p>defense goal: perform on par with human crowd-workers</p>
+<p> adversarial training[4-5]/randomized smoothing[6-7]</p>
+<p>[1]The effect of natural distribution shift on question answering models.</p>
+<p>[2] Tasty burgers, soggy fries: Probing aspect robustness in aspect-based sentiment analysis.</p>
+<p>[3]Shortcut learning in deep neural networks.</p>
+<p>[4] Explaining and harnessing adversarial examples.</p>
+<p>[5]Towards deep learning models resistant to adversarial attacks.</p>
+<p>[6]Certified adversarial robustness via randomized smoothing.</p>
+<p>[7]SAFER: A structure-free approach for certifified robustness to adversarial word substitutions.( data augmentation approach)</p>
+<h1 id="image">image<a class="post-anchor" href="#image"></a></h1><p>Christian Szegedy, Wojciech Zaremba, Ilya Sutskever,</p>
+<p>Joan Bruna, Dumitru Erhan, Ian Goodfellow, and</p>
+<p>Rob Fergus. 2013. Intriguing properties of neural</p>
+<p>networks. <em>arXiv preprint arXiv:1312.6199</em>.</p>
+<h2 id="1-black-box-setting">1 black box setting<a class="post-anchor" href="#1-black-box-setting"></a></h2><p>N. Papernot, P. McDaniel, I. Goodfellow, S. Jha, Z. Ce</p>
+<p>lik, and A. Swami. 2016a. Practical black-box</p>
+<p>attacks against machine learning. </p>
+<p><em>arXiv preprint</em></p>
+<p><em>arXiv:1602.02697</em>.</p>
+<h2 id="2-white-box-setting">2 white box setting<a class="post-anchor" href="#2-white-box-setting"></a></h2><p> Fast Gradient Sign method or iterative methods based on constrained gradient descent</p>
+<h1 id="speech">speech<a class="post-anchor" href="#speech"></a></h1><p>Nicholas Carlini, Pratyush Mishra, Tavish Vaidya, Yuankai Zhang, Micah Sherr, Clay Shields, David</p>
+<p>Wagner, and Wenchao Zhou. Hidden voice commands. In <em>USENIX Security Symposium</em>, pp. 513–</p>
+<p>530, 2016.</p>
+<p>Nicholas Carlini and David Wagner. 2018. Audio ad</p>
+<p>versarial examples: Targeted attacks on speech-to</p>
+<p>text. <em>arXiv preprint arXiv:1801.01944</em>.</p>
+<p>obfuscated examples</p>
+<h1 id="reinforcement-learning">reinforcement learning<a class="post-anchor" href="#reinforcement-learning"></a></h1><p>Vahid Behzadan and Arslan Munir. Vulnerability of deep reinforcement learning to policy induction</p>
+<p>attacks. <em>arXiv preprint arXiv:1701.04143</em>, 2017</p>
+<h1 id="language">language<a class="post-anchor" href="#language"></a></h1><p>language adversarial attack</p>
+<p>vulnerabilities of NLP systems</p>
+<p>discrete nature</p>
+<p>human-crafted rules/models</p>
+<p>sentence-level, word level and character-level</p>
+<h2 id="1-black-box-setting-1">1 black box setting<a class="post-anchor" href="#1-black-box-setting-1"></a></h2><p>no any explicit knowledge of the model parameters</p>
+<p>only query</p>
+<p>heuristic (scrambling, misspelling, or removing words</p>
+<h3 id="distracting-sentences">distracting sentences<a class="post-anchor" href="#distracting-sentences"></a></h3><p>R. Jia and P. Liang, “Adversarial examples for evaluating reading comprehension systems,” in <em>EMNLP</em>, 2017</p>
+<p>concatenative examples</p>
+<p>model: <em>overstability</em></p>
+<p>SQuAD, paragraphs that contain adversarially inserted sentences</p>
+<p>ADDSENT method: generate a raw distractor sentence (semantics-altering question, corresponding fake answer, declarative form, crowdsourcing, greater human-approved sentence)</p>
+<p>ADDONESENT: control group (a random human-approved sentence, model-independent)</p>
+<p>ADDANY method: random ungrammatical sentence, local search, </p>
+<p>ADDCOMMON: control group(words from common words)</p>
+<p>motivation: questions answered with heuristics based on type and keyword-matching</p>
+<p>note that: words from the question</p>
+<h3 id="GANs">GANs<a class="post-anchor" href="#GANs"></a></h3><p>[2017] Zhao, Z.; Dua, D.; and Singh, S. 2017. Generating natural adversarial examples.</p>
+<p>limited to short texts</p>
+<h3 id="greedy-heuristic">greedy heuristic<a class="post-anchor" href="#greedy-heuristic"></a></h3><p>ICLR 2018 Adversarial Examples for Natural Language Classification Problems</p>
+<p>Altered examples</p>
+<p>propose: <strong>Semantic similarity</strong> &amp; <strong>Syntactic similarity</strong></p>
+<p>method: one-word changes(N closest,  GloVE), choose best(improves the objective the most)</p>
+<h3 id="back-translation">back-translation<a class="post-anchor" href="#back-translation"></a></h3><p>Ribeiro, M. T.; Singh, S.; and Guestrin, C. 2018. Semantically equivalent adversarial rules for debugging nlp models.</p>
+<p>machine-generated rules</p>
+<h3 id="genetic-algorithms-population-based-optimization">genetic algorithms: population-based optimization<a class="post-anchor" href="#genetic-algorithms-population-based-optimization"></a></h3><p>EMNLP 2018 Generating Natural Language Adversarial Examples</p>
+<p>sentiment analysis and textual entailment</p>
+<p>method: word replacements(GloVe +  counter-fitting method + Google 1 billion words language model), fitness is target label prediction probability ?</p>
+<p>population-based (combinatorial optimization problems,  fewer modifications): fitness function to choose Fitter</p>
+<h3 id="TextBugger">TextBugger<a class="post-anchor" href="#TextBugger"></a></h3><p>NDSS 2019</p>
+<p>method: find important sentences (spaCy library), find important words(a scoring function, after removing word)</p>
+<h3 id="PWWS">PWWS<a class="post-anchor" href="#PWWS"></a></h3><p>Generating natural language adversarial examples through probability weighted word saliency.</p>
+<p>下游探测</p>
+<h3 id="PSO">PSO<a class="post-anchor" href="#PSO"></a></h3><p>Word-level textual adversarial attacking as combinatorial optimization.</p>
+<h3 id="TextFooler">TextFooler<a class="post-anchor" href="#TextFooler"></a></h3><p>AAAI 2020 (Oral)</p>
+<p>text classification and textual entailment</p>
+<p>utility-preserving</p>
+<p>method: selection mechanism for important words (by deleting each word to affect prediction score) of model (&amp;filter out stop words); replace in a special way (select Synonym with POS checking, success with highest USE as similarity scores or the closest success)</p>
+<p>BERT, CNN, RNN (LSTM)</p>
+<h3 id="BERT-ATTACK">BERT-ATTACK<a class="post-anchor" href="#BERT-ATTACK"></a></h3><p>method: finding the vulnerable words(high significance influence on the final output logit), generate substitutes using bert(BERT-based lexical substitution)</p>
+<h3 id="BAE">BAE<a class="post-anchor" href="#BAE"></a></h3><h3 id="BU-MHS">BU-MHS<a class="post-anchor" href="#BU-MHS"></a></h3><p>AAAI 2021</p>
+<p>Bigram and Unigram based Monotonic Heuristic Search (BU-MHS)</p>
+<p>unigram: change one word -&gt; phrases meaning may change</p>
+<p>method: avoid producing meaningless outputs (Bigram and Unigram Based, HowNet), replace the input words (synonyms and sememe candidates), priority of word and its combinations(BU-MHS),</p>
+<h3 id="BESA">BESA<a class="post-anchor" href="#BESA"></a></h3><p>(IJCAI-21)</p>
+<p>BERT-based Simu lated Annealing algorithm</p>
+<p>method: generate contextual-aware candidate words using BERT, determine order with global optima(Simulated Annealing (SA))</p>
+<h3 id="MAYA">MAYA<a class="post-anchor" href="#MAYA"></a></h3><p>EMNLP 2021</p>
+<p>label-based &amp; score-based</p>
+<p><strong>Multi-granularity</strong> attack agent(RL?, behavior cloning with the expert knowledge)</p>
+<p>method 1&amp;2: generate( constituency parsing[1], rewriting constituents under strict grammatical constraints/word-level MLM before WordNet), {2: candidate selected by BERT,} verify, {pick}</p>
+<p>advantage: less queries, more utility in real</p>
+<p>[1]Fast and accurate neural CRF constituency parsing.</p>
+<h3 id="QES">QES<a class="post-anchor" href="#QES"></a></h3><p>EMNLP 2021</p>
+<p>method: select(attention model, without altering the semantics), with replace choose in search space(division with locality sensitive hashing using Random Projection Method (RPM) on a sentence encoder (USE))</p>
+<p>advantage: less queries, regardless <em>search space</em></p>
+<h3 id="StyleAttack">StyleAttack<a class="post-anchor" href="#StyleAttack"></a></h3><p>EMNLP 2021</p>
+<p>text style transfer</p>
+<p>method: text style transfer(STRAP (Style Transfer via Paraphrasing), Sentence-BERT)</p>
+<h2 id="white-box-setting">white box setting<a class="post-anchor" href="#white-box-setting"></a></h2><p>complete knowledge of the model: architecture, parameters, or training data</p>
+<p>kerckhoff’s principle</p>
+<h3 id="HotFilp">HotFilp<a class="post-anchor" href="#HotFilp"></a></h3><p>ACL 2018</p>
+<p>classification</p>
+<p>real-world adversarial examples (Multiple Changes)</p>
+<p>a few atomic <em>flip</em> operation (character substitutions, enable insertion and deletion)</p>
+<p>manipulate one-hot input vectors (each represents a character of a word of a sequence)</p>
+<p><strong>gradients</strong> ( the greatest absolute directional derivatives) based : estimate which individual change and beam search to find a set : </p>
+<p>efficiency (fast)</p>
+<p>HotFlip at Word-Level (semantics-preserving constraints)</p>
+<p>CharCNN-LSTM</p>
+<p>related: S. Samanta and S. Mehta, “Towards crafting text adversarial samples,”</p>
+<h3 id="TextBugger-1">TextBugger<a class="post-anchor" href="#TextBugger-1"></a></h3><p>NDSS 2019</p>
+<p>method: find important words order (Jacobian matrix of the classifier), generate 5 types for each in order, choose optimal bug(change of confidence value, must below a threshould):</p>
+<p>character-level perturbation: use words not in the dictionary (insert, delete, swap, visually similar characters)</p>
+<p>word-level perturbation: semantic-preserving technique (GloVe model)</p>
+<h1 id="code">code<a class="post-anchor" href="#code"></a></h1><p>A Survey on Adversarial Attacks for Malware Analysis.</p>
+<p>constraint: not affect both the functionality and executability of malware file</p>
+<p>transformation: manipulate, insert, delete, bytes; code obfuscation</p>
+<p>domain: windows portable executable file, PDF file and android APK file: <strong>mutable</strong> and immutable section of the file</p>
+<p>targered model: signature based and behavioral based(against zero-day attacks) malware detector</p>
+<h2 id="apg">apg<a class="post-anchor" href="#apg"></a></h2><p>Intriguing Properties of Adversarial ML Attacks in the Problem Space.</p>
+<p>Android malware detection</p>
+<p>DREBIN classifier(Linear SVM, Sec SVM)</p>
+<p>transformation: automated software transplantation(extract slices of bytecode (i.e., <em>gadgets</em>) from benign <em>donor</em> app, inject full slices into a malicious <em>host</em>, i.e., only <em>addition</em> of bytecode): <em>program slicing</em>, never executed at runtime, <em>opaque predicates</em> to avoid Program analysis techniques,  collect in an <em>ice-box</em> <em>G</em> without on-the-fly, </p>
+<p>side-effect feature vectors:  inject each gadget into a <em>minimal app</em></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211211211337584.png" data-caption="image-20211211211337584" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211211211337584.png" alt="image-20211211211337584"></a></p>
+<p>DeepDetectNet vs RLAttackNet: An</p>
+<p>adversarial method to improve deep learning</p>
+<p>based static malware detection model</p>
+<p>Version:0.9 StartHTML:0000000105 EndHTML:0000000533 StartFragment:0000000141 EndFragment:0000000493</p>
+<p><strong>Black-Box Adversarial Attacks Against Deep Learning</strong></p>
+<p><strong>Based Malware Binaries Detection with GAN</strong></p>
+<p>Version:0.9 StartHTML:0000000105 EndHTML:0000000511 StartFragment:0000000141 EndFragment:0000000471</p>
+<p>Generating End-to-End Adversarial Examples for</p>
+<p>Malware Classififiers Using Explainability</p>
+<p>Version:0.9 StartHTML:0000000105 EndHTML:0000000350 StartFragment:0000000141 EndFragment:0000000310</p>
+<p>SAFE: Self-Attentive Function Embeddings for Binary Similarity</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207164408333.png" data-caption="image-20211207164408333" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207164408333.png" alt="image-20211207164408333"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207165617604.png" data-caption="image-20211207165617604" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207165617604.png" alt="image-20211207165617604"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207165721643.png" data-caption="image-20211207165721643" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207165721643.png" alt="image-20211207165721643"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207172705813.png" data-caption="image-20211207172705813" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207172705813.png" alt="image-20211207172705813"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207173122475.png" data-caption="image-20211207173122475" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207173122475.png" alt="image-20211207173122475"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207173222104.png" data-caption="image-20211207173222104" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207173222104.png" alt="image-20211207173222104"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207173230678.png" data-caption="image-20211207173230678" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207173230678.png" alt="image-20211207173230678"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207173251745.png" data-caption="image-20211207173251745" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207173251745.png" alt="image-20211207173251745"></a></p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207173323601.png" data-caption="image-20211207173323601" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207173323601.png" alt="image-20211207173323601"></a></p>
+<h1 id="tool-kit">tool kit<a class="post-anchor" href="#tool-kit"></a></h1><h2 id="TextAttack">TextAttack<a class="post-anchor" href="#TextAttack"></a></h2><h3 id="new-attack-design">new attack design<a class="post-anchor" href="#new-attack-design"></a></h3><p>refer to query-attack</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs plain">textattack/__init__.py<br>textattack/attack_args.py(args.attention_model, arg, build())# for arg process<br><br>textattack/attack_recipes/__init__.py<br>textattack/attack_recipes/lsh_with_attention_maheshwary_2021.py # queryatt: search method<br><br>textattack/search_methods/greedy_word_swap_wir.py # queryatt: search method add lsh_with_attention<br><br>textattack/attention_models/*<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="class">class<a class="post-anchor" href="#class"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModelWrapper</span><span class="hljs-params">(ABC)</span>:</span><br>    <span class="hljs-string">"""A model wrapper queries a model with a list of text inputs.</span><br><span class="hljs-string">    </span><br><span class="hljs-string">    Classification-based models return a list of lists, where each sublist</span><br><span class="hljs-string">    represents the model's scores for a given input.</span><br><span class="hljs-string"></span><br><span class="hljs-string">    Text-to-text models return a list of strings, where each string is the</span><br><span class="hljs-string">    output – like a translation or summarization – for a given input.</span><br><span class="hljs-string">    """</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-keyword">return</span> outputs<br>    <br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HuggingFaceDataset</span><span class="hljs-params">(Dataset)</span>:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, i)</span>:</span><br>        <span class="hljs-string">"""Return i-th sample."""</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h1 id="list">list<a class="post-anchor" href="#list"></a></h1><p><a href="https://nicholas.carlini.com/writing/2019/all-adversarial-example-papers.html" target="_blank" rel="noopener">https://nicholas.carlini.com/writing/2019/all-adversarial-example-papers.html</a></p>
+<h1 id="Application">Application<a class="post-anchor" href="#Application"></a></h1><p>adversarial training: interleaves training with generation of adversarial examples</p>
+<p>interpretability: Feng, S.; Wallace, E.; Grissom, I.; Iyyer, M.; Rodriguez, P.; Boyd-Graber, J.; et al. 2018. Pathologies of neural models make interpretations difficult</p>
+<h1 id="vocabulary-amp-knowledge">vocabulary&amp;knowledge<a class="post-anchor" href="#vocabulary-amp-knowledge"></a></h1><p>with respect to, like “of”</p>
+<p>a one-hot vector:</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211126202552496.png" data-caption="image-20211126202552496" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211126202552496.png" alt="image-20211126202552496"></a></p>
+<p>adversary</p>
+<p>L2 norm:</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211126221832375.png" data-caption="image-20211126221832375" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211126221832375.png" alt="image-20211126221832375"></a></p>
+<p>L ∞ norm: </p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211207160543564.png" data-caption="image-20211207160543564" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211207160543564.png" alt="image-20211207160543564"></a></p>
+<p><em>L</em> <em>≥</em> 1 constraints: </p>
+<p>-ed, means previous introduction in above paragraph</p>
+<p>, or more concretely</p>
+<p>Specifically</p>
+<p>L0 distance</p>
+<p>greedy or beam search: r being the budget and b, the beam width</p>
+<p>We elaborate on this with an example:</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211126225035057.png" data-caption="image-20211126225035057" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211126225035057.png" alt="image-20211126225035057"></a></p>
+<p>as:</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211127115913345.png" data-caption="image-20211127115913345" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211127115913345.png" alt="image-20211127115913345"></a></p>
+<p>Comparison based on:</p>
+<p><a href="/2021/11/26/Adversarial-examples/image-20211127120127823.png" data-caption="image-20211127120127823" data-fancybox="images"><img src="/2021/11/26/Adversarial-examples/image-20211127120127823.png" alt="image-20211127120127823"></a></p>
+<p>effective:  outperforms the previous</p>
+<p>efficient: lower computational complexity </p>
+<p>utility-preserving:  preserves semantic content, grammaticality, and correct types classified by humans</p>
+<p>trivial: ordinary</p>
+<p>strikes a balance between </p>
+<p>raw texts: edit distance and Jaccard similarity coefficient</p>
+<p>word vectors:  Euclidean distance and semantic similarity </p>
+<p>Universal Sentence Encoder: a encoder transferring sentence to high dimensional vector</p>
+<p>greater than 0.5</p>
+<p>with probability proportional to </p>
+<p>perform on par with human crowd-workers</p>
+<p>shed light on</p>
+<p>thick solid line</p>
+<p>thin solid line</p>
+<p>is attributed to: 取决于,归咎于</p>
+<h1 id="end">end<a class="post-anchor" href="#end"></a></h1></body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('//images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('//images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2021/12/07/multi-device-learning/">multi-device learning</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2021/11/16/paradigm/">copywriting paradigm</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://mingg2333.top">MINGG</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://mingg2333.top/2021/11/26/Adversarial-examples/">http://mingg2333.top/2021/11/26/Adversarial-examples/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>    
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"NIexJzAwkLhSbiDm6VP839ON-gzGzoHsz\",\"API_KEY\":\"C2CnoocNxhlAiPdAHf8pkyCl\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/4/22\",\"site_id\":\"e0c88415f420efe1479f3a99ac1a3787\",\"access_token\":\"xxxxx\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 
