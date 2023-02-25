@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2022-01-21T07:23:02.000Z</updated>
+  <updated>2023-02-25T07:00:25.005Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTeX</title>
+    <link href="http://mingg2333.top/2023/02/25/LaTeX/"/>
+    <id>http://mingg2333.top/2023/02/25/LaTeX/</id>
+    <published>2023-02-25T07:00:25.005Z</published>
+    <updated>2023-02-25T07:00:25.005Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs yaml&quot;&gt;&lt;span class=&quot;hljs-at
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ADS</title>
@@ -425,28 +445,6 @@
     
       &lt;p&gt;Created: 2021-07-04 11:18:30&lt;/p&gt;
 &lt;p&gt;Modified: Fri Sep 17 18:39:12 CST 2021&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
-    
-      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shared documents</title>
-    <link href="http://mingg2333.top/2021/09/17/shared-documents/"/>
-    <id>http://mingg2333.top/2021/09/17/shared-documents/</id>
-    <published>2021-09-17T16:39:12.000Z</published>
-    <updated>2021-09-17T16:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Created: 2021-07-04 11:18:30&lt;/p&gt;
-&lt;p&gt;Modified: &lt;/p&gt;
     
     </summary>
     

@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#computer-vision"><span class="toc-text">computer vision</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#video"><span class="toc-text">video</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Model"><span class="toc-text">Model</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Apollo"><span class="toc-text">Apollo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#industry"><span class="toc-text">industry</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#safety"><span class="toc-text">safety</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LGSVL-with-Apollo"><span class="toc-text">LGSVL with  Apollo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CARLA"><span class="toc-text">CARLA</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#computer-vision"><span class="toc-text">computer vision</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#video"><span class="toc-text">video</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Model"><span class="toc-text">Model</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ChauffeurNet"><span class="toc-text">ChauffeurNet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apollo"><span class="toc-text">Apollo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAVE-2-a-steering-angle-model"><span class="toc-text">DAVE-2 (a steering angle model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-steering-angle-models"><span class="toc-text">Other steering angle models</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#industry"><span class="toc-text">industry</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#safety"><span class="toc-text">safety</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LGSVL-with-Apollo"><span class="toc-text">LGSVL with  Apollo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CARLA"><span class="toc-text">CARLA</span></a></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -217,7 +217,41 @@
 <h1 id="Model">Model<a class="post-anchor" href="#Model"></a></h1><p>lane-change: </p>
 <p>traditional rule-based model: assesses the positions and speeds + decides gap acceptance</p>
 <p>Reinforcement Learning-based: end-to-end; decision-making part (deep Q-learning) +  an optimal lattice planner + a model predictive controller</p>
+<h2 id="ChauffeurNet">ChauffeurNet<a class="post-anchor" href="#ChauffeurNet"></a></h2><p>ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst</p>
+<p><a href="https://paperswithcode.com/paper/chauffeurnet-learning-to-drive-by-imitating" target="_blank" rel="noopener">ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst | Papers With Code</a></p>
+<p><a href="https://github.com/Iftimie/ChauffeurNet" target="_blank" rel="noopener">Iftimie/ChauffeurNet (github.com)</a></p>
 <h2 id="Apollo">Apollo<a class="post-anchor" href="#Apollo"></a></h2><p>map:</p>
+<h2 id="DAVE-2-a-steering-angle-model">DAVE-2 (a steering angle model)<a class="post-anchor" href="#DAVE-2-a-steering-angle-model"></a></h2><p>(refer to DeepXplore: Automated Whitebox Testing of Deep Learning Systems <a href="https://github.com/peikexin9/deepxplore" target="_blank" rel="noopener">peikexin9/deepxplore: DeepXplore code release (github.com)</a>)</p>
+<p>Dave-2 (End to end learning for self-driving cars, 2016, 3808 citations, 1+114 code implementations):</p>
+<p><a href="https://paperswithcode.com/paper/end-to-end-learning-for-self-driving-cars" target="_blank" rel="noopener">End to End Learning for Self-Driving Cars | Papers With Code</a></p>
+<p><a href="https://github.com/0bserver07/Nvidia-Autopilot-Keras" target="_blank" rel="noopener">0bserver07/Nvidia-Autopilot-Keras: Keras Implementation of End to End Learning for Self-Driving Cars by (Baris Kayalibay, Grady Jensen, Patrick van der Smagt) (github.com)</a></p>
+<p><a href="https://github.com/SullyChen/Autopilot-TensorFlow" target="_blank" rel="noopener">GitHub - SullyChen/Autopilot-TensorFlow: A TensorFlow implementation of this Nvidia paper: https://arxiv.org/pdf/1604.07316.pdf with some changes</a></p>
+<p><a href="https://github.com/tech-rules/DAVE2-Keras" target="_blank" rel="noopener">tech-rules/DAVE2-Keras: Implementation of Nvidia’s DAVE2 NN in Keras, with some enhancements (github.com)</a></p>
+<p><a href="https://developer.nvidia.com/blog/deep-learning-self-driving-cars/" target="_blank" rel="noopener">End-to-End Deep Learning for Self-Driving Cars | NVIDIA Technical Blog</a> (video; also introduce how the simulator works)</p>
+<p><a href="https://github.com/milsun/AI-Driver-CNN-DeepLearning-PyTorch" target="_blank" rel="noopener">GitHub - milsun/AI-Driver-CNN-DeepLearning-PyTorch: AI-driving Vehicle Simulation using Machine Learning(CNN) | PyTorch implementation of "End to End Learning for Self-Driving Cars" (arXiv:1604.07316)</a></p>
+<p><a href="https://github.com/nerdimite/behavioral-cloning" target="_blank" rel="noopener">GitHub - nerdimite/behavioral-cloning: Code for Intro to Self Driving Cars Webinar (CellStrat AI Lab)</a></p>
+<p><a href="https://github.com/simonazy/ResearchNotes/blob/9d35c65c107978722ea1e85ed193862a6f389b83/CARLA/implement_behavioral_cloning.md" target="_blank" rel="noopener">ResearchNotes/implement_behavioral_cloning.md at 9d35c65c107978722ea1e85ed193862a6f389b83 · simonazy/ResearchNotes (github.com)</a></p>
+<p><a href="/2022/01/21/ADS/2022-11-22-01-59-13-image.png" data-caption="" data-fancybox="images"><img src="/2022/01/21/ADS/2022-11-22-01-59-13-image.png" alt=""></a></p>
+<p><a href="/2022/01/21/ADS/2022-11-22-02-18-43-image.png" data-caption="" data-fancybox="images"><img src="/2022/01/21/ADS/2022-11-22-02-18-43-image.png" alt=""></a></p>
+<p>Dave-norminit (Visualizations for understanding the regressed wheel steering angle for self driving cars):</p>
+<p><a href="https://github.com/jacobgil/keras-steering-angle-visualizations" target="_blank" rel="noopener">jacobgil/keras-steering-angle-visualizations: Visualizations for understanding the regressed wheel steering angle for self driving cars (github.com)</a></p>
+<p><a href="https://jacobgil.github.io/deeplearning/vehicle-steering-angle-visualizations" target="_blank" rel="noopener">Visualizations for regressing wheel steering angles in self driving cars (jacobgil.github.io)</a></p>
+<p>Dave-dropout (Behavioral cloning: end-to-end learning for self-driving cars)</p>
+<p>1 <a href="https://navoshta.com/end-to-end-deep-learning/" target="_blank" rel="noopener">End-to-end learning for self-driving cars - Alex Staravoitau’s Blog</a></p>
+<p><a href="https://github.com/navoshta/behavioral-cloning" target="_blank" rel="noopener">navoshta/behavioral-cloning: Behavioral cloning: end-to-end learning for self-driving cars. (github.com)</a></p>
+<p>2 <a href="https://medium.com/swlh/behavioural-cloning-end-to-end-learning-for-self-driving-cars-50b959708e59" target="_blank" rel="noopener">Behavioural Cloning — End to End Learning for Self-Driving Cars. | by nachiket tanksale | The Startup | Medium</a></p>
+<p><a href="https://github.com/naokishibuya/car-behavioral-cloning" target="_blank" rel="noopener">naokishibuya/car-behavioral-cloning: Built and trained a convolutional network for end-to-end driving in a simulator using Tensorflow and Keras (github.com)</a></p>
+<p><a href="https://github.com/nachiket273/Self_Driving_Car/tree/master/CarND-Behavioral-Cloning-P3" target="_blank" rel="noopener">Self_Driving_Car/CarND-Behavioral-Cloning-P3 at master · nachiket273/Self_Driving_Car (github.com)</a></p>
+<p><a href="/2022/01/21/ADS/2022-11-22-02-22-24-image.png" data-caption="" data-fancybox="images"><img src="/2022/01/21/ADS/2022-11-22-02-22-24-image.png" alt=""></a></p>
+<h2 id="Other-steering-angle-models">Other steering angle models<a class="post-anchor" href="#Other-steering-angle-models"></a></h2><p>(refer to DeepTest: Automated Testing of Deep-Neural-Network-driven Autonomous Cars &amp; DeepRoad: GAN-Based Metamorphic Testing and Input Validation Framework for Autonomous Driving Systems)</p>
+<p><a href="https://github.com/udacity/self-driving-car/tree/master/challenges/challenge-2" target="_blank" rel="noopener">self-driving-car/challenges/challenge-2 at master · udacity/self-driving-car · GitHub</a> (Udacity self-driving car challenge)</p>
+<p><a href="https://medium.com/udacity/challenge-2-using-deep-learning-to-predict-steering-angles-f42004a36ff3" target="_blank" rel="noopener">https://medium.com/udacity/challenge-2-using-deep-learning-to-predict-steering-angles-f42004a36ff3</a></p>
+<p><a href="https://medium.com/udacity/teaching-a-machine-to-steer-a-car-d73217f2492c" target="_blank" rel="noopener">Teaching a Machine to Steer a Car | by Oliver Cameron | Udacity Inc | Medium</a> (results)</p>
+<p><a href="/2022/01/21/ADS/2022-11-22-01-36-56-image.png" data-caption="" data-fancybox="images"><img src="/2022/01/21/ADS/2022-11-22-01-36-56-image.png" alt=""></a></p>
+<p>refer to Deep Steering: Learning End-to-End Driving Model from Spatial and Temporal Visual Cues</p>
+<p><a href="/2022/01/21/ADS/2022-11-22-01-40-11-image.png" data-caption="" data-fancybox="images"><img src="/2022/01/21/ADS/2022-11-22-01-40-11-image.png" alt=""></a></p>
+<p>The dataset we used is provided by Udacity, which is generated by NVIDIAs DAVE-2 System (refer to Self-Driving Car Steering Angle Prediction Based on Image Recognition)</p>
+<p><a href="https://medium.com/udacity/open-sourcing-223gb-of-mountain-view-driving-data-f6b5593fbfa5#.50xu5fkz9" target="_blank" rel="noopener">Open Sourcing 223GB of Driving Data | by Oliver Cameron | Udacity Inc | Medium</a> (dataset for challenge)</p>
 <h1 id="industry">industry<a class="post-anchor" href="#industry"></a></h1><h2 id="safety">safety<a class="post-anchor" href="#safety"></a></h2><p>read: <a href="https://developer.nvidia.com/blog/training-self-driving-vehicles-challenge-scale/" target="_blank" rel="noopener">https://developer.nvidia.com/blog/training-self-driving-vehicles-challenge-scale/</a>, <a href="https://www.rand.org/content/dam/rand/pubs/research_reports/RR1400/RR1478/RAND_RR1478.pdf" target="_blank" rel="noopener">https://www.rand.org/content/dam/rand/pubs/research_reports/RR1400/RR1478/RAND_RR1478.pdf</a></p>
 <h1 id="LGSVL-with-Apollo">LGSVL with  Apollo<a class="post-anchor" href="#LGSVL-with-Apollo"></a></h1><p><a href="https://www.youtube.com/watch?v=Ucr0aM334_k" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ucr0aM334_k</a>: about API</p>
 <p><em>LGSVL</em> graphical simulator (LG. Lgsvl simulator. [Online]. Available: <a href="https://www.lgsvlsimulator.com/" target="_blank" rel="noopener">https://www.lgsvlsimulator.com/</a>) that supports both freeway and urban road structures.</p>
@@ -255,6 +289,8 @@
   <div class="post-guide">
     <div class="item left">
         
+          <a href="/2023/02/25/LaTeX/">LaTeX</a>
+        
     </div>
     <div class="item right">
         
@@ -284,7 +320,7 @@
 </article>
         <footer>
           <div class="copyright">
-            ©2022
+            ©2023
             <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
             <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
           </div>

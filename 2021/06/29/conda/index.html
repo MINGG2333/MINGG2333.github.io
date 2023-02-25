@@ -200,18 +200,15 @@
     <html><head></head><body><a id="more"></a>
 
 <p>refer to <a href="https://blog.csdn.net/zjc910997316/article/details/93662410" target="_blank" rel="noopener">Conda常用命令整理—创建环境—-conda create –name your_env_name python=3.7_如何利用html码转载别人的博客-CSDN博客_conda create</a></p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><br>conda info --envs<br>conda activate {your_env_name}<br>conda deactivate<br><br>conda create --name {your_env_name} [python=3.7]<br>conda install -n {your_env_name} {package_name}<br><br><span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> requirement; <span class="hljs-keyword">do</span> conda install --yes <span class="hljs-variable">$requirement</span>; <span class="hljs-keyword">done</span> &lt; requirements.txt<br><span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> requirement; <span class="hljs-keyword">do</span> conda install --yes <span class="hljs-variable">$requirement</span> || pip install <span class="hljs-variable">$requirement</span>; <span class="hljs-keyword">done</span> &lt; requirements.txt<br><br><br><br><br>conda remove --name {your_env_name} --all<br><br>conda list --revisions<br>conda install --rev 0<br><br> <span class="hljs-comment"># delete all packager &amp; cache</span><br>conda clean -y --all<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">conda info --envs<br>conda activate {your_env_name}<br>conda deactivate<br><br>conda create --name {your_env_name} [python=3.7]<br>conda install -n {your_env_name} {package_name}<br><br><span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> requirement; <span class="hljs-keyword">do</span> conda install --yes <span class="hljs-variable">$requirement</span>; <span class="hljs-keyword">done</span> &lt; requirements.txt<br><span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> requirement; <span class="hljs-keyword">do</span> conda install --yes <span class="hljs-variable">$requirement</span> || pip install <span class="hljs-variable">$requirement</span>; <span class="hljs-keyword">done</span> &lt; requirements.txt<br><br><br><br><br>conda remove --name {your_env_name} --all<br><br>conda list --revisions<br>conda install --rev 0<br><br> <span class="hljs-comment"># delete all packager &amp; cache</span><br>conda clean -y --all<br><br><span class="hljs-comment"># 不太适合移动</span><br>conda config --add envs_dirs C:\Anaconda3\envs<br></code></pre></td></tr></tbody></table></figure>
 
 <p>for Miniconda3, refer to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-tensorflow-wsl#set-up-python-environment" target="_blank" rel="noopener">Tensorflow with DirectML on WSL 2 - Win32 apps | Microsoft Docs</a>, <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html" target="_blank" rel="noopener">Installation — conda 4.10.2.post1+248741a84 documentation</a>.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># or wget https://repo.anaconda.com/archive/Miniconda3-latest-Linux-x86_64.sh</span><br>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh <br>bash Miniconda3-latest-Linux-x86_64.sh<br>conda init<br></code></pre></td></tr></tbody></table></figure>
-
-
 
 <p><a href="/2021/06/29/conda/AD49D34880B09A1AB1866543BA26746E.jpg" data-caption="AD49D34880B09A1AB1866543BA26746E" data-fancybox="images"><img src="/2021/06/29/conda/AD49D34880B09A1AB1866543BA26746E.jpg" alt="AD49D34880B09A1AB1866543BA26746E"></a></p>
 <h1 id="use-conda-installed-by-root">use conda installed by root<a class="post-anchor" href="#use-conda-installed-by-root"></a></h1><p><a href="https://blog.csdn.net/u010510962/article/details/109508896" target="_blank" rel="noopener">https://blog.csdn.net/u010510962/article/details/109508896</a></p>
 <p><a href="https://blog.csdn.net/weixin_39518984/article/details/111766550" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39518984/article/details/111766550</a></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">anaconda3/bin/conda init bash<br><span class="hljs-built_in">source</span> ~/.bashrc<br><span class="hljs-built_in">source</span> activate base<br>conda activate base<br></code></pre></td></tr></tbody></table></figure>
-
 </body></html>
 
   
@@ -269,7 +266,7 @@
 </article>
         <footer>
           <div class="copyright">
-            ©2022
+            ©2023
             <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
             <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
           </div>

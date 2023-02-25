@@ -215,11 +215,10 @@
 <p><a href="/2021/06/28/DoubleSystem/image-20220130150756058.png" data-caption="image-20220130150756058" data-fancybox="images"><img src="/2021/06/28/DoubleSystem/image-20220130150756058.png" alt="image-20220130150756058"></a></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># grub: refer to https://blog.csdn.net/qq_33406883/article/details/106708621</span><br><span class="hljs-comment"># m1:</span><br>sudo gedit /boot/grub/grub.cfg<br><span class="hljs-comment"># set default="2"</span><br><span class="hljs-comment"># m2:</span><br>sudo gedit /etc/default/grub<br><span class="hljs-comment"># GRUB_DEFAULT=2</span><br>sudo update-grub<br><br><span class="hljs-comment"># bootmgr: refer to https://www.reneelab.com.cn/m/windows-10-windows-boot-manager.html</span><br>bcdedit /<span class="hljs-built_in">set</span> {bootmgr} displaybootmenu yes<br>bcdedit /<span class="hljs-built_in">set</span> {bootmgr} timeout 30<br></code></pre></td></tr></tbody></table></figure>
 
-
-
 <p>refer to <a href="https://blog.csdn.net/liao20081228/article/details/81297143" target="_blank" rel="noopener">https://blog.csdn.net/liao20081228/article/details/81297143</a></p>
 <h1 id="Installation">Installation<a class="post-anchor" href="#Installation"></a></h1><p>refer to <a href="https://www.cnblogs.com/masbay/p/11627727.html" target="_blank" rel="noopener">Windows10安装ubuntu18.04双系统教程 - 不妨不妨，来日方长 - 博客园 (cnblogs.com)</a>, <a href="https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-ubuntu-18-04-alongside-with-windows-10-or-8-in-dual-boot.html" target="_blank" rel="noopener">How to Install Ubuntu 18.04 Alongside With Windows 10 or 8 in Dual Boot (itzgeek.com)</a>.</p>
 <p>Download: <a href="https://releases.ubuntu.com/18.04.5/" target="_blank" rel="noopener">Ubuntu 18.04.5 LTS (Bionic Beaver) offical websit</a></p>
+<p><a href="https://blog.csdn.net/xl_1851252/article/details/83545511" target="_blank" rel="noopener">Ubuntu官方推荐U盘写入工具_捭阖人生的博客-CSDN博客_u盘写入工具</a>, <a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-windows" target="_blank" rel="noopener">Create a bootable USB stick with Rufus on Windows | Ubuntu</a></p>
 <p>Notice: </p>
 <ol>
 <li><p>BIOS and Boot GUIs differ from each other due to different vendor of Computer, so it is better to search the guide according to Computer on the Internet. And in some GUIs, there is no <code>USB Boot</code> option, but only USB model name instead, like Kingston Data Traveler.</p>
@@ -236,7 +235,6 @@
 </li>
 <li><p>Install NVIDIA driver, refer to <a href="https://jingyan.baidu.com/article/7e440953e161436ec0e2efb3.html?qq-pf-to=pcqq.c2c" target="_blank" rel="noopener">Ubuntu 安装Nvidia显卡驱动-百度经验 (baidu.com)</a>. Use the following command line to check your diver, if nothing outputs, try to restart.</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">nvidia-smi<br></code></pre></td></tr></tbody></table></figure>
-
 
 </li>
 </ol>
@@ -301,7 +299,7 @@
 </article>
         <footer>
           <div class="copyright">
-            ©2022
+            ©2023
             <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
             <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
           </div>

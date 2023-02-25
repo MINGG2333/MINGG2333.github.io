@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sync"><span class="toc-text">Sync</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dropbox"><span class="toc-text">Dropbox</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cloud"><span class="toc-text">Cloud</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-1"><span class="toc-text">Configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Operation"><span class="toc-text">Operation</span></a></li></ol></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -226,23 +226,27 @@
 <p>or use <code>.deb</code> file</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">./set_launcher_icon<br>ln -s ~/zotero/zotero.desktop ~/.<span class="hljs-built_in">local</span>/share/applications/zotero.desktop<br></code></pre></td></tr></tbody></table></figure>
 
-
-
 <h1 id="Configuration">Configuration<a class="post-anchor" href="#Configuration"></a></h1><p>Refer to <a href="https://zhuanlan.zhihu.com/p/31852030" target="_blank" rel="noopener">初始设定</a></p>
-<h2 id="Sync">Sync<a class="post-anchor" href="#Sync"></a></h2><h3 id="Dropbox">Dropbox<a class="post-anchor" href="#Dropbox"></a></h3><p>prepare a own cloud for sync, like <strong>Dropbox</strong>, for installation on Ubuntu refer to <a href="https://vitux.com/how-to-install-and-sync-dropbox-on-ubuntu/" target="_blank" rel="noopener">https://vitux.com/how-to-install-and-sync-dropbox-on-ubuntu/</a>, <a href="https://www.mywiki.cn/hovercool/index.php/%E5%AE%89%E8%A3%85Dropbox%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="noopener">https://www.mywiki.cn/hovercool/index.php/%E5%AE%89%E8%A3%85Dropbox%E5%AE%A2%E6%88%B7%E7%AB%AF</a>, <a href="https://ywnz.com/linuxjc/5772.html" target="_blank" rel="noopener">https://ywnz.com/linuxjc/5772.html</a>.</p>
+<h1 id="Cloud">Cloud<a class="post-anchor" href="#Cloud"></a></h1><p>prepare a own cloud for sync, taking <strong>Dropbox</strong> for example (installation on Ubuntu refer to <a href="https://vitux.com/how-to-install-and-sync-dropbox-on-ubuntu/" target="_blank" rel="noopener">How to Install and Sync DropBox on Ubuntu 18.04 LTS - VITUX</a>, <a href="https://www.mywiki.cn/hovercool/index.php/%E5%AE%89%E8%A3%85Dropbox%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="noopener">安装Dropbox客户端 - 哈库 - 个人维基 (mywiki.cn)</a>)</p>
 <p>Note: if you use proxy, you’d better to configure it manually in <strong>Dropbox Preferences</strong>.</p>
-<p>Refer to <a href="https://zhuanlan.zhihu.com/p/31453719" target="_blank" rel="noopener">ZotFile 配合同步盘</a>, <a href="https://zhuanlan.zhihu.com/p/104848524" target="_blank" rel="noopener">Zotero和zotfile插件关联以及使用</a>.</p>
+<h2 id="Configuration-1">Configuration<a class="post-anchor" href="#Configuration-1"></a></h2><p>Refer to <a href="https://zhuanlan.zhihu.com/p/31453719" target="_blank" rel="noopener">ZotFile 配合同步盘</a>, <a href="https://zhuanlan.zhihu.com/p/104848524" target="_blank" rel="noopener">Zotero和zotfile插件关联以及使用</a>.</p>
 <p>From <a href="https://link.zhihu.com/?target=http%3A//zotfile.com/">zotfile offical website</a> download <code>zotfile</code> Add-ons, then install and configure it.</p>
 <p><a href="/2021/11/04/Zotero/zotfileprefer.png" data-caption="zotfileprefer" data-fancybox="images"><img src="/2021/11/04/Zotero/zotfileprefer.png" alt="zotfileprefer"></a></p>
 <p><a href="/2021/11/04/Zotero/image-20211104225200656.png" data-caption="image-20211104225200656" data-fancybox="images"><img src="/2021/11/04/Zotero/image-20211104225200656.png" alt="image-20211104225200656"></a></p>
+<p>Source folder：插件自动检索文件夹里的新增文件。</p>
 <p><a href="/2021/11/04/Zotero/image-20211104225013898.png" data-caption="image-20211104225013898" data-fancybox="images"><img src="/2021/11/04/Zotero/image-20211104225013898.png" alt="image-20211104225013898"></a></p>
-<p>原理：</p>
-<p>实体文件 虚链接 </p>
-<p>manage attachments，rename attachments </p>
-<p>工具—管理附件——转换已链接文件为已存储文件</p>
-<p>() tablet</p>
-<p>manage attachments—send to tablet</p>
-<p>manage attachments—get from tablet</p>
+<p>Linked files/相对路径下的文件：对应云端文件，用于Zotero的读。</p>
+<p>Stored files：终端文件。</p>
+<h2 id="Operation">Operation<a class="post-anchor" href="#Operation"></a></h2><ol>
+<li>local_clound</li>
+</ol>
+<p>manage attachments - rename attachments meanwhile move from local</p>
+<p>Tools - manage attachments - to stored files</p>
+<ol start="2">
+<li>tablet</li>
+</ol>
+<p>manage attachments - send to tablet</p>
+<p>manage attachments - get from tablet with <strong>contents</strong></p>
 </body></html>
 
   
@@ -300,7 +304,7 @@
 </article>
         <footer>
           <div class="copyright">
-            ©2022
+            ©2023
             <a href="http://mingg2333.top">MINGG</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
             <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
           </div>
