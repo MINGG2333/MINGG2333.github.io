@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingg2333.top/"/>
-  <updated>2023-02-25T07:00:25.005Z</updated>
+  <updated>2024-02-04T13:26:18.977Z</updated>
   <id>http://mingg2333.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>LaTeX</title>
-    <link href="http://mingg2333.top/2023/02/25/LaTeX/"/>
-    <id>http://mingg2333.top/2023/02/25/LaTeX/</id>
-    <published>2023-02-25T07:00:25.005Z</published>
-    <updated>2023-02-25T07:00:25.005Z</updated>
+    <link href="http://mingg2333.top/2024/02/04/LaTeX/"/>
+    <id>http://mingg2333.top/2024/02/04/LaTeX/</id>
+    <published>2024-02-04T13:26:18.977Z</published>
+    <updated>2024-02-04T13:26:18.977Z</updated>
     
     <summary type="html">
     
@@ -33,6 +33,28 @@
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>Co-simulation of Baidu Apollo with Carla</title>
+    <link href="http://mingg2333.top/2024/02/03/Baidu%20Apollo/"/>
+    <id>http://mingg2333.top/2024/02/03/Baidu%20Apollo/</id>
+    <published>2024-02-03T14:18:17.000Z</published>
+    <updated>2024-02-03T14:18:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Modified: 2024-2-4 21:17:51&lt;/p&gt;
+&lt;p&gt;Co-simulation with Carla.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Apollo" scheme="http://mingg2333.top/tags/Apollo/"/>
+    
+      <category term="simulation" scheme="http://mingg2333.top/tags/simulation/"/>
     
   </entry>
   
@@ -431,28 +453,6 @@
       <category term="tool" scheme="http://mingg2333.top/tags/tool/"/>
     
       <category term="Perl" scheme="http://mingg2333.top/tags/Perl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ML Environment</title>
-    <link href="http://mingg2333.top/2021/09/17/ai-env/"/>
-    <id>http://mingg2333.top/2021/09/17/ai-env/</id>
-    <published>2021-09-17T16:39:12.000Z</published>
-    <updated>2021-09-17T16:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Created: 2021-07-04 11:18:30&lt;/p&gt;
-&lt;p&gt;Modified: Fri Sep 17 18:39:12 CST 2021&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="AI" scheme="http://mingg2333.top/tags/AI/"/>
-    
-      <category term="machine learning" scheme="http://mingg2333.top/tags/machine-learning/"/>
     
   </entry>
   
