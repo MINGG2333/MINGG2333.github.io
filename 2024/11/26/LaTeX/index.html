@@ -16,7 +16,7 @@
     <meta name="description" content="学习 实践 思考 记录" />
     
     <title>
-       学与做  - 明明的博客
+      LaTeX - 明明的博客
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/bitbug_favicon2.ico" type="image/x-icon" />
@@ -27,6 +27,11 @@
 </head>
   <body>
     <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#grammar"><span class="toc-text">grammar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Format"><span class="toc-text">Format</span></a></li></ol>
+    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -73,7 +78,7 @@
           标签
         </a>
         
-        <a href="/books" class="current">
+        <a href="/books" class="">
           books
         </a>
         
@@ -131,7 +136,7 @@
             标签
           </a>
           
-          <a href="/books" class="current">
+          <a href="/books" class="">
             books
           </a>
           
@@ -171,7 +176,7 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title"></div>
+      <div class="title">LaTeX</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
@@ -179,7 +184,7 @@
         </span>
 
         
-          <span class="item leancloud-visitors" id="/books/" data-flag-title="">
+          <span class="item leancloud-visitors" id="/2024/11/26/LaTeX/" data-flag-title="LaTeX">
             <span class="iconfont icon-eye1"></span>
             <span class="leancloud-visitors-count"></span>
           </span>
@@ -192,9 +197,16 @@
       <div>
       </div>
     </div>
-    <p> <a href="../files/paper/中国计算机学会推荐国际学术会议和期刊目录-2019.pdf">中国计算机学会推荐国际学术会议和期刊目录-2019.pdf</a> </p>
-<p><a href="https://mingg2333.top/files/paper/%E4%B8%AD%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%8E%A8%E8%8D%90%E5%9B%BD%E9%99%85%E5%AD%A6%E6%9C%AF%E4%BC%9A%E8%AE%AE%E5%92%8C%E6%9C%9F%E5%88%8A%E7%9B%AE%E5%BD%95-2019.pdf">https://mingg2333.top/files/paper/%E4%B8%AD%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%BC%9A%E6%8E%A8%E8%8D%90%E5%9B%BD%E9%99%85%E5%AD%A6%E6%9C%AF%E4%BC%9A%E8%AE%AE%E5%92%8C%E6%9C%9F%E5%88%8A%E7%9B%AE%E5%BD%95-2019.pdf</a></p>
+    <html><head></head><body><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">LaTeX</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2022</span><span class="hljs-number">-10</span><span class="hljs-number">-17</span> <span class="hljs-number">23</span><span class="hljs-string">:11:01</span><br><span class="hljs-attr">tags:</span><br> <span class="hljs-bullet">-</span> <span class="hljs-string">LaTeX</span><br></code></pre></td></tr></tbody></table></figure>
 
+<h1 id="grammar">grammar<a class="post-anchor" href="#grammar"></a></h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs latex">\section{Introduction}<br>\subsection{Template Styles}<br><br>\cite{lousurvey, zhong2021survey}<br><br>{\itshape scenario semantic}<br><br>\begin{itemize}[leftmargin=5.5mm]<br>\item xxx.<br>\end{itemize}<br><br>\begin{figure}[ht]<br>  \centering<br>  \includegraphics[width=\textwidth]{images/cla2.png}<br>  \caption{xxxx.}<br>  \Description{A woman and a girl in white dresses sit in an open car.}<br>  \label{fig:cla2}<br>\end{figure}<br><br>\begin{figure}[htbp]<br>\centering<br>\subfigure[pic1.]{<br>    \begin{minipage}[t]{0.25\linewidth}<br>    \centering<br>    \includegraphics[width=1in]{images/cla2.png}<br>    \end{minipage}<br>}<br><br>\subfigure[pic2.]{<br>    \begin{minipage}[t]{0.25\linewidth}<br>    \centering<br>    \includegraphics[width=1in]{images/cla117.png}<br>    \end{minipage}<br>}<br>\caption{Similar scenarios in an image, like (a). In each scenario, NPC1 starts from the left top, NPC2 starts from the left bottom, and ego starts from the right bottom.}<br>\Description{My classes.}<br>\label{fig:cla2}<br>\end{figure}<br><br>Fig. \ref{fig:cla2}<br><br>\label{tab:freq}<br>\ref{tab:freq}<br><br>\url{https://goo.gl/VLCRBB}<br><br>\verb|acmart|<br>\begin{verbatim}<br>  \documentclass[STYLE]{acmart}<br>\end{verbatim}<br><br>\begin{description}<br>  \item[\texttt{sidebar}:]  Place formatted text in the margin.<br>\end{description}<br><br>\texttt{acmsmall}<br><br>{\bfseries Your document will be returned to you for revision if<br>  modifications are discovered.}<br><br>\textbf{math}<br><br>$\mathbb{Z} \setminus \{ 0 \}$<br><br>\makecell[c]{Semi-Supervised \\ Learning}<br><br>% for special characters<br>\&amp;<br>\O<br>{\char'134}<br>$\pi$<br>$\Psi$<br>$\alpha$<br>$\omega$<br>\lim_{n\rightarrow \infty}x=0<br>\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f<br><br>% “”<br>`` ''<br>% ...<br>\texttt{$\,\ldots$}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><a href="https://capitalizemytitle.com/" target="_blank" rel="noopener">Title Capitalization Tool - Capitalize My Title - Title Case Tool</a> </p>
+<p><a href="https://dl.acm.org/ccs/ccs.cfm" target="_blank" rel="noopener">Computing Classification System</a></p>
+<p>document class includes package</p>
+<p><a href="https://zinglix.xyz/2017/08/23/latex-maths-cheatsheet/" target="_blank" rel="noopener">Latex 数学符号 汇总 - ZingLix Blog</a></p>
+<h1 id="Format">Format<a class="post-anchor" href="#Format"></a></h1><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><code class="hljs latex">% 1. at first, the preamble<br>\documentclass[sigconf]{acmart}<br>\usepackage{enumitem}<br>\usepackage{subfigure}<br><br>%% \BibTeX command to typeset BibTeX logo in the docs<br>\AtBeginDocument{%<br>  \providecommand\BibTeX{{%<br>    Bib\TeX}}}<br><br>% 2. start of the document<br>\begin{document}<br><br>%% The "title" command has an optional parameter,<br>%% allowing the author to define a "short title" to be used in page headers.<br>\title{xxx}<br>% \title[short title]{full title}<br><br>\author{Ben Trovato}<br>\authornote{Both authors contributed equally to this research.}<br>\email{trovato@corporation.com}<br>\orcid{1234-5678-9012}<br>\author{G.K.M. Tobin}<br>\authornotemark[1]<br>\email{webmaster@marysville-ohio.com}<br>\affiliation{%<br>  \institution{Institute for Clarity in Documentation}<br>  \streetaddress{P.O. Box 1212}<br>  \city{Dublin}<br>  \state{Ohio}<br>  \country{USA}<br>  \postcode{43017-6221}<br>}<br>\renewcommand{\shortauthors}{Trovato et al.}<br><br>\begin{abstract}<br>xxx<br>\end{abstract}<br><br>\keywords{datasets, neural networks, gaze detection, text tagging}<br><br>\maketitle<br><br>tttt<br>\end{document}<br><br>% 3. after last section of main body in document<br>\begin{acks}<br><br>\end{acks}<br><br>\balance<br>%% The next two lines define the bibliography style to be used, and<br>%% the bibliography file.<br>\bibliographystyle{ACM-Reference-Format}<br>\bibliography{documents/sample-base}<br><br>%% If your work has an appendix, this is the place to put it.<br>\appendix<br><br><br>% 4. main body in document<br></code></pre></td></tr></tbody></table></figure>
+</body></html>
 
   
     <div class="post-reward">
@@ -223,6 +235,8 @@
     </div>
     <div class="item right">
         
+          <a href="/2024/02/03/Baidu%20Apollo/">Co-simulation of Baidu Apollo with Carla</a>
+        
     </div>
   </div>
 
@@ -233,7 +247,7 @@
       本文作者：<a href="http://mingg2333.top">MINGG</a>
     </div>
     <div class="link">
-      永久链接：<a href="http://mingg2333.top/books/">http://mingg2333.top/books/</a>
+      永久链接：<a href="http://mingg2333.top/2024/11/26/LaTeX/">http://mingg2333.top/2024/11/26/LaTeX/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="http://mingg2333.top">MINGG</a>的博客，转载请注明出处！

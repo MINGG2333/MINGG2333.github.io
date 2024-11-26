@@ -30,7 +30,7 @@
     
     <div id="post-toc" class="animated hiddenToc hide">
       <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Quick-start"><span class="toc-text">Quick start</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Co-simulation-with-carla"><span class="toc-text">Co-simulation with carla</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Quick-start"><span class="toc-text">Quick start</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Co-simulation-with-carla"><span class="toc-text">Co-simulation with carla</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#debug"><span class="toc-text">debug</span></a></li></ol>
     </div>
     
     <div id="fixed-menu-wrap">
@@ -216,11 +216,12 @@
 <p>Co-simulation with Carla.</p>
 <a id="more"></a>
 
-<h1 id="Quick-start">Quick start<a class="post-anchor" href="#Quick-start"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Build Apollo docker</span><br>bash docker/scripts/dev_start.sh stop<br>bash docker/scripts/dev_start.sh<br><br><span class="hljs-comment"># Introduce bridge scripts</span><br><span class="hljs-built_in">cd</span> carla_apollo_bridge<br>docker cp carla_bridge &lt;apollo_container_name&gt;:/apollo/modules/carla_bridge<br><br><span class="hljs-comment"># Build Apollo</span><br>bash docker/scripts/dev_into.sh<br>./apollo.sh clean<br>./apollo.sh build_gpu<br><br><span class="hljs-comment"># Build bridge</span><br><span class="hljs-built_in">cd</span> /apollo/modules/carla_bridge<br>chmod +x install.sh<br>./install.sh<br><span class="hljs-built_in">source</span> ~/.bashrc<br><br><span class="hljs-comment"># Visual Apollo channel</span><br>cyber_monitor<br><br>./scripts/bootstrap.sh stop<br>./scripts/bootstrap.sh<br><br><span class="hljs-comment"># Inject channel message</span><br><span class="hljs-comment">## start simulator</span><br><span class="hljs-built_in">cd</span> carla_apollo_bridge<br><span class="hljs-built_in">cd</span> carla_scripts<br>./stop_carla.sh<br>./docker_run_carla.sh<br><span class="hljs-comment">## start bridge</span><br><span class="hljs-built_in">cd</span> /apollo/modules/carla_bridge<br>python main.py<br><br><span class="hljs-comment"># Launch Apollo modules</span><br>bash docker/scripts/dev_into.sh<br><span class="hljs-comment">## perception module</span><br>mainboard -d /apollo/modules/localization/dag/dag_streaming_rtk_localization.dag<br>cyber_launch start modules/drivers/tools/image_decompress/launch/image_decompress.launch<br>cyber_launch start /apollo/modules/perception/production/launch/perception_lidar.launch<br><span class="hljs-comment">## turn on "Transform", "Routing", "Prediction", "Planning"</span><br><span class="hljs-comment">## set route</span><br><span class="hljs-comment">## control module</span><br>ps aux | grep -i apollo<br></code></pre></td></tr></tbody></table></figure>
+<h1 id="Quick-start">Quick start<a class="post-anchor" href="#Quick-start"></a></h1><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Build Apollo docker</span><br>bash docker/scripts/dev_start.sh stop<br>bash docker/scripts/dev_start.sh<br><br><span class="hljs-comment"># Introduce bridge scripts</span><br><span class="hljs-built_in">cd</span> carla_apollo_bridge<br>docker cp carla_bridge &lt;apollo_container_name&gt;:/apollo/modules/carla_bridge<br><br><span class="hljs-comment"># Build Apollo</span><br>bash docker/scripts/dev_into.sh<br>./apollo.sh clean<br>./apollo.sh build_gpu<br><br><span class="hljs-comment"># Build bridge</span><br><span class="hljs-built_in">cd</span> /apollo/modules/carla_bridge<br>chmod +x install.sh<br>./install.sh<br><span class="hljs-built_in">source</span> ~/.bashrc<br><br><span class="hljs-comment"># Visual Apollo channel</span><br>cyber_monitor<br><br>./scripts/bootstrap.sh stop<br>./scripts/bootstrap.sh<br><br><span class="hljs-comment"># Inject channel message</span><br><span class="hljs-comment">## start simulator</span><br><span class="hljs-built_in">cd</span> carla_apollo_bridge<br><span class="hljs-built_in">cd</span> carla_scripts<br>./stop_carla.sh<br>./docker_run_carla.sh<br><span class="hljs-comment">## start bridge</span><br>bash docker/scripts/dev_into.sh<br><span class="hljs-built_in">cd</span> /apollo/modules/carla_bridge<br>python main.py<br><br><span class="hljs-comment"># Launch Apollo modules</span><br><span class="hljs-comment">## perception module</span><br>mainboard -d /apollo/modules/localization/dag/dag_streaming_rtk_localization.dag<br>cyber_launch start modules/drivers/tools/image_decompress/launch/image_decompress.launch<br>cyber_launch start /apollo/modules/perception/production/launch/perception_lidar.launch<br><span class="hljs-comment">## turn on "Transform" (once), "Routing", "Prediction", "Planning", "control"</span><br><span class="hljs-comment">## set route</span><br>ps aux | grep -i apollo<br></code></pre></td></tr></tbody></table></figure>
 
 <!--more-->
 
-<h1 id="Co-simulation-with-carla">Co-simulation with carla<a class="post-anchor" href="#Co-simulation-with-carla"></a></h1></body></html>
+<h1 id="Co-simulation-with-carla">Co-simulation with carla<a class="post-anchor" href="#Co-simulation-with-carla"></a></h1><h1 id="debug">debug<a class="post-anchor" href="#debug"></a></h1><p>debug string For code trace</p>
+</body></html>
 
   
     <div class="post-reward">
@@ -246,7 +247,7 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2024/02/04/LaTeX/">LaTeX</a>
+          <a href="/2024/11/26/LaTeX/">LaTeX</a>
         
     </div>
     <div class="item right">
